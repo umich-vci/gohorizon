@@ -12,19 +12,51 @@ Method | HTTP request | Description
 
 ## LoginUser
 
-> AuthTokens LoginUser(ctx, body)
+> AuthTokens LoginUser(ctx).Body(body).Execute()
 
 Logs in a user. Returns access token and refresh token.
 
-Note: UPN(e.g. testadmin@example.com) based login is not supported.<br/> Only Administrators on Root access group are allowed to login.
 
-### Required Parameters
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewAuthLogin("AD-TEST-DOMAIN", []string{"Password_example"}, "Administrator") // AuthLogin | Login credentials needed for Authentication
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.AuthApi.LoginUser(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.LoginUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `LoginUser`: AuthTokens
+    fmt.Fprintf(os.Stdout, "Response from `AuthApi.LoginUser`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLoginUserRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**body** | [**AuthLogin**](AuthLogin.md)| Login credentials needed for Authentication | 
+ **body** | [**AuthLogin**](AuthLogin.md) | Login credentials needed for Authentication | 
 
 ### Return type
 
@@ -46,17 +78,47 @@ No authorization required
 
 ## LogoutUser
 
-> LogoutUser(ctx, body)
+> LogoutUser(ctx).Body(body).Execute()
 
 Logs out a user.
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewRefreshToken("<jwt.refresh.token>") // RefreshToken | Refresh token needed for Logout
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.AuthApi.LogoutUser(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.LogoutUser``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLogoutUserRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**body** | [**RefreshToken**](RefreshToken.md)| Refresh token needed for Logout | 
+ **body** | [**RefreshToken**](RefreshToken.md) | Refresh token needed for Logout | 
 
 ### Return type
 
@@ -78,17 +140,49 @@ No authorization required
 
 ## RefreshAccessToken
 
-> AccessToken RefreshAccessToken(ctx, body)
+> AccessToken RefreshAccessToken(ctx).Body(body).Execute()
 
 Refreshes access token from refresh token.
 
-### Required Parameters
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewRefreshToken("<jwt.refresh.token>") // RefreshToken | Refresh token needed to generate new Access Token
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.AuthApi.RefreshAccessToken(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.RefreshAccessToken``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `RefreshAccessToken`: AccessToken
+    fmt.Fprintf(os.Stdout, "Response from `AuthApi.RefreshAccessToken`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiRefreshAccessTokenRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**body** | [**RefreshToken**](RefreshToken.md)| Refresh token needed to generate new Access Token | 
+ **body** | [**RefreshToken**](RefreshToken.md) | Refresh token needed to generate new Access Token | 
 
 ### Return type
 
