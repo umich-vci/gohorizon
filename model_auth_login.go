@@ -19,7 +19,7 @@ type AuthLogin struct {
 	// Domain
 	Domain string `json:"domain"`
 	// User password
-	Password []string `json:"password"`
+	Password string `json:"password"`
 	// User Name
 	Username string `json:"username"`
 }
@@ -28,7 +28,7 @@ type AuthLogin struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuthLogin(domain string, password []string, username string) *AuthLogin {
+func NewAuthLogin(domain string, password string, username string) *AuthLogin {
 	this := AuthLogin{}
 	this.Domain = domain
 	this.Password = password
@@ -69,9 +69,9 @@ func (o *AuthLogin) SetDomain(v string) {
 }
 
 // GetPassword returns the Password field value
-func (o *AuthLogin) GetPassword() []string {
+func (o *AuthLogin) GetPassword() string {
 	if o == nil {
-		var ret []string
+		var ret string
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *AuthLogin) GetPassword() []string {
 
 // GetPasswordOk returns a tuple with the Password field value
 // and a boolean to check if the value has been set.
-func (o *AuthLogin) GetPasswordOk() (*[]string, bool) {
+func (o *AuthLogin) GetPasswordOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +88,7 @@ func (o *AuthLogin) GetPasswordOk() (*[]string, bool) {
 }
 
 // SetPassword sets field value
-func (o *AuthLogin) SetPassword(v []string) {
+func (o *AuthLogin) SetPassword(v string) {
 	o.Password = v
 }
 
