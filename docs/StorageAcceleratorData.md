@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DefaultCacheSizeMb** | Pointer to **int32** | Default size of the cache in megabytes. This property has a default value of 1024. This property has a minimum value of 100. This property has a maximum value of 2048.  | [optional] 
-**Enabled** | **bool** | Is View Storage Accelerator enabled? This property has a default value of false. | 
+**Enabled** | Pointer to **bool** | Is View Storage Accelerator enabled? This property has a default value of false. | [optional] 
 **HostOverrides** | Pointer to [**[]HostOverrideData**](HostOverrideData.md) | Cache size overrides for hosts which support View Storage Accelerator. | [optional] 
 
 ## Methods
 
 ### NewStorageAcceleratorData
 
-`func NewStorageAcceleratorData(enabled bool, ) *StorageAcceleratorData`
+`func NewStorageAcceleratorData() *StorageAcceleratorData`
 
 NewStorageAcceleratorData instantiates a new StorageAcceleratorData object
 This constructor will assign default values to properties that have it defined,
@@ -71,6 +71,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *StorageAcceleratorData) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetHostOverrides
 

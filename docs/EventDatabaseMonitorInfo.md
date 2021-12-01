@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Details** | Pointer to [**EventDatabaseMonitorDetails**](EventDatabaseMonitorDetails.md) |  | [optional] 
 **EventCount** | Pointer to **int32** | Number of events recorded in the database | [optional] 
-**Status** | Pointer to **string** | State of the database. * CONNECTED: Connection Server is connected to the database. * CONNECTING: Connection Server is connecting to the database. * DISCONNECTED: Connection Server is disconnected from the database. * RECONNECTING: Connection Server is reconnecting to the database. * ERROR: Error in connecting to the database from Connection Server. * NOT_CONFIGURED: Database is not configured. | [optional] 
+**Status** | Pointer to **string** | State of the database. * CONNECTED: Connection Server is connected to the database. * CONNECTING: Connection Server is connecting to the database. * DISCONNECTED: Connection Server is disconnected from the database. * RECONNECTING: Connection Server is reconnecting to the database. * ERROR: Error in connecting to the database from Connection Server. * NOT_CONFIGURED: Database is not configured. * UNKNOWN: Unknown state. | [optional] 
 
 ## Methods
 

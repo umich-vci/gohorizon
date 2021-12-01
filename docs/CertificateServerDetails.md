@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | Certificate Server name. | 
-**Status** | **string** | Certificate Server status. * OK: The state of the certificate server is OK as reported by the enrollment servers. * WARN: At least one enrollment server reports a warning on this certificate server. * ERROR: At least one enrollment server reports an error on this certificate server. | 
+**Name** | Pointer to **string** | Certificate Server name. | [optional] 
+**Status** | Pointer to **string** | Certificate Server status. * OK: The state of the certificate server is OK as reported by the enrollment servers. * WARN: At least one enrollment server reports a warning on this certificate server. * ERROR: At least one enrollment server reports an error on this certificate server. | [optional] 
 
 ## Methods
 
 ### NewCertificateServerDetails
 
-`func NewCertificateServerDetails(name string, status string, ) *CertificateServerDetails`
+`func NewCertificateServerDetails() *CertificateServerDetails`
 
 NewCertificateServerDetails instantiates a new CertificateServerDetails object
 This constructor will assign default values to properties that have it defined,
@@ -45,6 +45,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *CertificateServerDetails) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetStatus
 
@@ -65,6 +70,11 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
+### HasStatus
+
+`func (o *CertificateServerDetails) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

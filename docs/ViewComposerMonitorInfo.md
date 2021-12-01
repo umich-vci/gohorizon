@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ConnectionServers** | [**[]ViewComposerMonitorConnectionServer**](ViewComposerMonitorConnectionServer.md) | Information about the View Composer connections from each of the connection servers. | 
-**Details** | [**ViewComposerMonitorDetails**](ViewComposerMonitorDetails.md) |  | 
-**Name** | **string** | View Composer server host name or IP address. | 
-**Port** | **int32** | View Composer server port number. | 
+**ConnectionServers** | Pointer to [**[]ViewComposerMonitorConnectionServer**](ViewComposerMonitorConnectionServer.md) | Information about the View Composer connections from each of the connection servers. | [optional] 
+**Details** | Pointer to [**ViewComposerMonitorDetails**](ViewComposerMonitorDetails.md) |  | [optional] 
+**Name** | Pointer to **string** | View Composer server host name or IP address. | [optional] 
+**Port** | Pointer to **int32** | View Composer server port number. | [optional] 
 
 ## Methods
 
 ### NewViewComposerMonitorInfo
 
-`func NewViewComposerMonitorInfo(connectionServers []ViewComposerMonitorConnectionServer, details ViewComposerMonitorDetails, name string, port int32, ) *ViewComposerMonitorInfo`
+`func NewViewComposerMonitorInfo() *ViewComposerMonitorInfo`
 
 NewViewComposerMonitorInfo instantiates a new ViewComposerMonitorInfo object
 This constructor will assign default values to properties that have it defined,
@@ -47,6 +47,11 @@ and a boolean to check if the value has been set.
 
 SetConnectionServers sets ConnectionServers field to given value.
 
+### HasConnectionServers
+
+`func (o *ViewComposerMonitorInfo) HasConnectionServers() bool`
+
+HasConnectionServers returns a boolean if a field has been set.
 
 ### GetDetails
 
@@ -67,6 +72,11 @@ and a boolean to check if the value has been set.
 
 SetDetails sets Details field to given value.
 
+### HasDetails
+
+`func (o *ViewComposerMonitorInfo) HasDetails() bool`
+
+HasDetails returns a boolean if a field has been set.
 
 ### GetName
 
@@ -87,6 +97,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *ViewComposerMonitorInfo) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetPort
 
@@ -107,6 +122,11 @@ and a boolean to check if the value has been set.
 
 SetPort sets Port field to given value.
 
+### HasPort
+
+`func (o *ViewComposerMonitorInfo) HasPort() bool`
+
+HasPort returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

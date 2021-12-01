@@ -8,13 +8,13 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | Description number of this user or group. Supported Filters : &#39;Equals&#39;, &#39;StartsWith&#39;, &#39;Contains&#39;. | [optional] 
 **DisplayName** | Pointer to **string** | Login name with domain of this user or group. | [optional] 
 **DistinguishedName** | Pointer to **string** | Active Directory distinguished name for this user or group. | [optional] 
-**Domain** | **string** | DNS name of the domain in which this user or group belongs. Supported Filters : &#39;Equals&#39;.  Also, if &#39;Or&#39; filter is used anywhere in filter string for this model class, then that &#39;Or&#39; filter should nest only &#39;Equals&#39; filter on &#39;domain&#39; or &#39;id&#39; field. | 
+**Domain** | Pointer to **string** | DNS name of the domain in which this user or group belongs. Supported Filters : &#39;Equals&#39;.  Also, if &#39;Or&#39; filter is used anywhere in filter string for this model class, then that &#39;Or&#39; filter should nest only &#39;Equals&#39; filter on &#39;domain&#39; or &#39;id&#39; field. | [optional] 
 **Email** | Pointer to **string** | Email address of this user or group. Supported Filters : &#39;Equals&#39;, &#39;StartsWith&#39;, &#39;Contains&#39;. | [optional] 
 **FirstName** | Pointer to **string** | First name of this user or group. | [optional] 
-**Group** | **bool** | Indicates if this object represents a group. This field is NOT supported in filter string. To use any filter on &#39;group&#39;, use &#39;group_only&#39; query param directly. | 
+**Group** | Pointer to **bool** | Indicates if this object represents a group. This field is NOT supported in filter string. To use any filter on &#39;group&#39;, use &#39;group_only&#39; query param directly. | [optional] 
 **GroupMembershipIds** | Pointer to **[]string** | List of unique SIDs of the groups, this user or group belongs to. | [optional] 
-**Guid** | **string** | GUID of the user or group in RFC 4122 format. Supported Filters : &#39;Equals&#39;. | 
-**Id** | **string** | Unique SID representing this AD User or Group. Supported Filters : &#39;Equals&#39;.&#39;Or&#39; filter chain of &#39;Equals&#39; filter can be used to query for more than one id. For this model, if &#39;Or&#39; filter is used, then it should nest only &#39;Equals&#39; filter on &#39;domain&#39; or &#39;id&#39; field. | 
+**Guid** | Pointer to **string** | GUID of the user or group in RFC 4122 format. Supported Filters : &#39;Equals&#39;. | [optional] 
+**Id** | Pointer to **string** | Unique SID representing this AD User or Group. Supported Filters : &#39;Equals&#39;.&#39;Or&#39; filter chain of &#39;Equals&#39; filter can be used to query for more than one id. For this model, if &#39;Or&#39; filter is used, then it should nest only &#39;Equals&#39; filter on &#39;domain&#39; or &#39;id&#39; field. | [optional] 
 **KioskUser** | Pointer to **bool** | Indicates if this user or group is a \&quot;kiosk user\&quot; that supports client authentication. Client authentication is the process of supporting client devices directly logging into resources. | [optional] 
 **LastName** | Pointer to **string** | Last name of this user or group. | [optional] 
 **LoginName** | Pointer to **string** | Login name of this user or group.  Supported Filters : &#39;Equals&#39;, &#39;StartsWith&#39;, &#39;Contains&#39;. | [optional] 
@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 
 ### NewADUserOrGroupInfo
 
-`func NewADUserOrGroupInfo(domain string, group bool, guid string, id string, ) *ADUserOrGroupInfo`
+`func NewADUserOrGroupInfo() *ADUserOrGroupInfo`
 
 NewADUserOrGroupInfo instantiates a new ADUserOrGroupInfo object
 This constructor will assign default values to properties that have it defined,
@@ -164,6 +164,11 @@ and a boolean to check if the value has been set.
 
 SetDomain sets Domain field to given value.
 
+### HasDomain
+
+`func (o *ADUserOrGroupInfo) HasDomain() bool`
+
+HasDomain returns a boolean if a field has been set.
 
 ### GetEmail
 
@@ -234,6 +239,11 @@ and a boolean to check if the value has been set.
 
 SetGroup sets Group field to given value.
 
+### HasGroup
+
+`func (o *ADUserOrGroupInfo) HasGroup() bool`
+
+HasGroup returns a boolean if a field has been set.
 
 ### GetGroupMembershipIds
 
@@ -279,6 +289,11 @@ and a boolean to check if the value has been set.
 
 SetGuid sets Guid field to given value.
 
+### HasGuid
+
+`func (o *ADUserOrGroupInfo) HasGuid() bool`
+
+HasGuid returns a boolean if a field has been set.
 
 ### GetId
 
@@ -299,6 +314,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *ADUserOrGroupInfo) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetKioskUser
 

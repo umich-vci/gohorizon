@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Unique ID representing a datacenter. | 
-**Name** | **string** | Name of the datacenter. | 
-**Path** | **string** | Datacenter path. | 
+**Id** | Pointer to **string** | Unique ID representing a datacenter. | [optional] 
+**Name** | Pointer to **string** | Name of the datacenter. | [optional] 
+**Path** | Pointer to **string** | Datacenter path. | [optional] 
 
 ## Methods
 
 ### NewDatacenterInfo
 
-`func NewDatacenterInfo(id string, name string, path string, ) *DatacenterInfo`
+`func NewDatacenterInfo() *DatacenterInfo`
 
 NewDatacenterInfo instantiates a new DatacenterInfo object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +46,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *DatacenterInfo) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -66,6 +71,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *DatacenterInfo) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetPath
 
@@ -86,6 +96,11 @@ and a boolean to check if the value has been set.
 
 SetPath sets Path field to given value.
 
+### HasPath
+
+`func (o *DatacenterInfo) HasPath() bool`
+
+HasPath returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

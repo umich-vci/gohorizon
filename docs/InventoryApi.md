@@ -9,9 +9,11 @@ Method | HTTP request | Description
 [**AddLocalDesktopPoolsToGDE**](InventoryApi.md#AddLocalDesktopPoolsToGDE) | **Post** /inventory/v1/global-desktop-entitlements/{id}/local-desktop-pools | Adds Local Desktop Pools to Global Desktop Entitlement.
 [**AddMachines**](InventoryApi.md#AddMachines) | **Post** /inventory/v1/desktop-pools/{id}/action/add-machines | Adds machines to the given manual desktop pool.
 [**AddMachinesByName**](InventoryApi.md#AddMachinesByName) | **Post** /inventory/v1/desktop-pools/{id}/action/add-machines-by-name | Adds the named machines to the given desktop pool.
+[**AddRdsServers**](InventoryApi.md#AddRdsServers) | **Post** /inventory/v1/farms/{id}/action/add-rds-servers | Add RDS servers to the specified manual farm.
 [**AssignMachineAliases**](InventoryApi.md#AssignMachineAliases) | **Post** /inventory/v1/machines/{id}/action/assign-aliases | Assigns the specified aliases to the assigned users of the machine.
 [**AssignUsers**](InventoryApi.md#AssignUsers) | **Post** /inventory/v1/machines/{id}/action/assign-users | Assigns the specified users to the machine.
 [**CancelDesktopPoolTask**](InventoryApi.md#CancelDesktopPoolTask) | **Post** /inventory/v1/desktop-pools/{id}/tasks/{taskId}/action/cancel | Cancels the instant clone desktop pool push image task.
+[**CancelScheduledMaintenance**](InventoryApi.md#CancelScheduledMaintenance) | **Post** /inventory/v1/farms/{id}/action/cancel-scheduled-maintenance | Requests cancellation of the current scheduled maintenance on the specified Instant Clone farm.
 [**CancelScheduledPushImage**](InventoryApi.md#CancelScheduledPushImage) | **Post** /inventory/v1/desktop-pools/{id}/action/cancel-scheduled-push-image | Request the cancellation of the current scheduled push image operation on the specified instant clone desktop pool.
 [**CheckApplicationPoolNameAvailability**](InventoryApi.md#CheckApplicationPoolNameAvailability) | **Post** /inventory/v1/application-pools/action/check-name-availability | Checks if the given name is available for application pool creation.
 [**CheckDesktopPoolNameAvailability**](InventoryApi.md#CheckDesktopPoolNameAvailability) | **Post** /inventory/v1/desktop-pools/action/check-name-availability | Checks if the given name is available for desktop pool creation.
@@ -21,15 +23,23 @@ Method | HTTP request | Description
 [**CreateApplicationIcon**](InventoryApi.md#CreateApplicationIcon) | **Post** /inventory/v1/application-icons | Creates an application icon.
 [**CreateApplicationPool**](InventoryApi.md#CreateApplicationPool) | **Post** /inventory/v1/application-pools | Creates an application pool.
 [**CreateApplicationPoolV2**](InventoryApi.md#CreateApplicationPoolV2) | **Post** /inventory/v2/application-pools | Creates an application pool.
+[**CreateDesktopPool**](InventoryApi.md#CreateDesktopPool) | **Post** /inventory/v1/desktop-pools | Creates a desktop pool.
 [**CreateFarm**](InventoryApi.md#CreateFarm) | **Post** /inventory/v1/farms | Creates a farm.
+[**CreateFarmV2**](InventoryApi.md#CreateFarmV2) | **Post** /inventory/v2/farms | Creates a farm.
+[**CreateGlobalApplicationEntitlement**](InventoryApi.md#CreateGlobalApplicationEntitlement) | **Post** /inventory/v1/global-application-entitlements | Creates a Global Application Entitlement.
 [**CreateGlobalDesktopEntitlement**](InventoryApi.md#CreateGlobalDesktopEntitlement) | **Post** /inventory/v1/global-desktop-entitlements | Creates a Global Desktop Entitlement.
+[**CreateGlobalDesktopEntitlementV2**](InventoryApi.md#CreateGlobalDesktopEntitlementV2) | **Post** /inventory/v2/global-desktop-entitlements | Creates a Global Desktop Entitlement.
 [**DeleteApplicationPool**](InventoryApi.md#DeleteApplicationPool) | **Delete** /inventory/v1/application-pools/{id} | Deletes application pool.
+[**DeleteDesktopPool**](InventoryApi.md#DeleteDesktopPool) | **Delete** /inventory/v1/desktop-pools/{id} | Deletes a desktop pool.
 [**DeleteFarm**](InventoryApi.md#DeleteFarm) | **Delete** /inventory/v1/farms/{id} | Deletes a farm.
+[**DeleteGlobalApplicationEntitlement**](InventoryApi.md#DeleteGlobalApplicationEntitlement) | **Delete** /inventory/v1/global-application-entitlements/{id} | Deletes a Global Application Entitlement.
+[**DeleteGlobalDesktopEntitlement**](InventoryApi.md#DeleteGlobalDesktopEntitlement) | **Delete** /inventory/v1/global-desktop-entitlements/{id} | Deletes a Global Desktop Entitlement.
 [**DeleteMachine**](InventoryApi.md#DeleteMachine) | **Delete** /inventory/v1/machines/{id} | Deletes the machine.
 [**DeleteMachines**](InventoryApi.md#DeleteMachines) | **Delete** /inventory/v1/machines | Deletes the specified machines.
 [**DeletePhysicalMachine**](InventoryApi.md#DeletePhysicalMachine) | **Delete** /inventory/v1/physical-machines/{id} | Deletes the Physical Machine.
 [**DeleteRDSServer**](InventoryApi.md#DeleteRDSServer) | **Delete** /inventory/v1/rds-servers/{id} | Deletes the RDS Server.
-[**DisconnectSessions**](InventoryApi.md#DisconnectSessions) | **Post** /inventory/v1/sessions/action/disconnect | Disconnects user sessions
+[**DisconnectGlobalSessions**](InventoryApi.md#DisconnectGlobalSessions) | **Post** /inventory/v1/global-sessions/action/disconnect | Disconnects global sessions in the environment.
+[**DisconnectSessions**](InventoryApi.md#DisconnectSessions) | **Post** /inventory/v1/sessions/action/disconnect | Disconnects locally resourced user sessions.
 [**EnterMaintenance**](InventoryApi.md#EnterMaintenance) | **Post** /inventory/v1/machines/action/enter-maintenance | Puts the machines into maintenance mode.
 [**ExitMaintenance**](InventoryApi.md#ExitMaintenance) | **Post** /inventory/v1/machines/action/exit-maintenance | Puts the machines out of maintenance mode.
 [**GetApplicationIcon**](InventoryApi.md#GetApplicationIcon) | **Get** /inventory/v1/application-icons/{id} | Gets application icon.
@@ -41,19 +51,25 @@ Method | HTTP request | Description
 [**GetDesktopPoolV2**](InventoryApi.md#GetDesktopPoolV2) | **Get** /inventory/v2/desktop-pools/{id} | Gets the desktop pool information.
 [**GetDesktopPoolV3**](InventoryApi.md#GetDesktopPoolV3) | **Get** /inventory/v3/desktop-pools/{id} | Gets the desktop pool information.
 [**GetDesktopPoolV4**](InventoryApi.md#GetDesktopPoolV4) | **Get** /inventory/v4/desktop-pools/{id} | Gets the desktop pool information.
+[**GetDesktopPoolV5**](InventoryApi.md#GetDesktopPoolV5) | **Get** /inventory/v5/desktop-pools/{id} | Gets the desktop pool information.
 [**GetFarm**](InventoryApi.md#GetFarm) | **Get** /inventory/v1/farms/{id} | Gets the Farm information.
 [**GetFarmV2**](InventoryApi.md#GetFarmV2) | **Get** /inventory/v2/farms/{id} | Gets the Farm information.
+[**GetFarmV3**](InventoryApi.md#GetFarmV3) | **Get** /inventory/v3/farms/{id} | Gets the Farm information.
 [**GetGlobalApplicationEntitlement**](InventoryApi.md#GetGlobalApplicationEntitlement) | **Get** /inventory/v1/global-application-entitlements/{id} | Gets the Global Application Entitlement in the environment.
+[**GetGlobalApplicationEntitlementV2**](InventoryApi.md#GetGlobalApplicationEntitlementV2) | **Get** /inventory/v2/global-application-entitlements/{id} | Gets the Global Application Entitlement in the environment.
 [**GetGlobalDesktopEntitlement**](InventoryApi.md#GetGlobalDesktopEntitlement) | **Get** /inventory/v1/global-desktop-entitlements/{id} | Gets the Global Desktop Entitlement in the environment.
+[**GetGlobalDesktopEntitlementV2**](InventoryApi.md#GetGlobalDesktopEntitlementV2) | **Get** /inventory/v2/global-desktop-entitlements/{id} | Gets the Global Desktop Entitlement in the environment.
 [**GetMachine**](InventoryApi.md#GetMachine) | **Get** /inventory/v1/machines/{id} | Gets the Machine information.
 [**GetMachineV2**](InventoryApi.md#GetMachineV2) | **Get** /inventory/v2/machines/{id} | Gets the Machine information.
 [**GetPhysicalMachine**](InventoryApi.md#GetPhysicalMachine) | **Get** /inventory/v1/physical-machines/{id} | Gets the Physical Machine information.
 [**GetRDSServer**](InventoryApi.md#GetRDSServer) | **Get** /inventory/v1/rds-servers/{id} | Gets the RDS Server information.
-[**GetSessionInfo**](InventoryApi.md#GetSessionInfo) | **Get** /inventory/v1/sessions/{id} | Gets the Session information.
+[**GetSessionInfo**](InventoryApi.md#GetSessionInfo) | **Get** /inventory/v1/sessions/{id} | Gets the Session information for locally resourced session.
 [**ListApplicationIcons**](InventoryApi.md#ListApplicationIcons) | **Get** /inventory/v1/application-icons | Lists the application icons for the given application pool.
 [**ListApplicationPools**](InventoryApi.md#ListApplicationPools) | **Get** /inventory/v1/application-pools | Lists the application pools in the environment.
 [**ListApplicationPoolsV2**](InventoryApi.md#ListApplicationPoolsV2) | **Get** /inventory/v2/application-pools | Lists the application pools in the environment.
 [**ListApplicationPoolsV3**](InventoryApi.md#ListApplicationPoolsV3) | **Get** /inventory/v3/application-pools | Lists the application pools in the environment.
+[**ListCompatibleBackupGAEs**](InventoryApi.md#ListCompatibleBackupGAEs) | **Get** /inventory/v1/global-application-entitlements/{id}/compatible-backup-global-application-entitlements | Lists the Global Application Entitlements that can be associated as backup Global Application Entitlement.
+[**ListCompatibleBackupGDEs**](InventoryApi.md#ListCompatibleBackupGDEs) | **Get** /inventory/v1/global-desktop-entitlements/{id}/compatible-backup-global-desktop-entitlements | Lists the Global Desktop Entitlements that can be associated as backup Global Desktop Entitlement.
 [**ListCompatibleLocalApplicationPools**](InventoryApi.md#ListCompatibleLocalApplicationPools) | **Get** /inventory/v1/global-application-entitlements/{id}/compatible-local-application-pools | Lists Local Application Pools which are compatible with Global Application Entitlement.
 [**ListCompatibleLocalDesktopPools**](InventoryApi.md#ListCompatibleLocalDesktopPools) | **Get** /inventory/v1/global-desktop-entitlements/{id}/compatible-local-desktop-pools | Lists Local Desktop Pools which are compatible with Global Desktop Entitlement.
 [**ListDesktopPoolTasks**](InventoryApi.md#ListDesktopPoolTasks) | **Get** /inventory/v1/desktop-pools/{id}/tasks | Lists the tasks on the desktop pool.
@@ -61,10 +77,14 @@ Method | HTTP request | Description
 [**ListDesktopPoolsV2**](InventoryApi.md#ListDesktopPoolsV2) | **Get** /inventory/v2/desktop-pools | Lists the desktop pools in the environment.
 [**ListDesktopPoolsV3**](InventoryApi.md#ListDesktopPoolsV3) | **Get** /inventory/v3/desktop-pools | Lists the desktop pools in the environment.
 [**ListDesktopPoolsV4**](InventoryApi.md#ListDesktopPoolsV4) | **Get** /inventory/v4/desktop-pools | Lists the desktop pools in the environment.
+[**ListDesktopPoolsV5**](InventoryApi.md#ListDesktopPoolsV5) | **Get** /inventory/v5/desktop-pools | Lists the desktop pools in the environment.
 [**ListFarms**](InventoryApi.md#ListFarms) | **Get** /inventory/v1/farms | Lists the Farms in the environment.
 [**ListFarmsV2**](InventoryApi.md#ListFarmsV2) | **Get** /inventory/v2/farms | Lists the Farms in the environment.
+[**ListFarmsV3**](InventoryApi.md#ListFarmsV3) | **Get** /inventory/v3/farms | Lists the Farms in the environment.
 [**ListGlobalApplicationEntitlements**](InventoryApi.md#ListGlobalApplicationEntitlements) | **Get** /inventory/v1/global-application-entitlements | Lists the Global Application Entitlements in the environment.
+[**ListGlobalApplicationEntitlementsV2**](InventoryApi.md#ListGlobalApplicationEntitlementsV2) | **Get** /inventory/v2/global-application-entitlements | Lists the Global Application Entitlements in the environment.
 [**ListGlobalDesktopEntitlements**](InventoryApi.md#ListGlobalDesktopEntitlements) | **Get** /inventory/v1/global-desktop-entitlements | Lists the Global Desktop Entitlements in the environment.
+[**ListGlobalDesktopEntitlementsV2**](InventoryApi.md#ListGlobalDesktopEntitlementsV2) | **Get** /inventory/v2/global-desktop-entitlements | Lists the Global Desktop Entitlements in the environment.
 [**ListInstalledApplicationsOnDesktopPool**](InventoryApi.md#ListInstalledApplicationsOnDesktopPool) | **Get** /inventory/v1/desktop-pools/{id}/installed-applications | Lists the installed applications on the given desktop pool.
 [**ListInstalledApplicationsOnFarm**](InventoryApi.md#ListInstalledApplicationsOnFarm) | **Get** /inventory/v1/farms/{id}/installed-applications | Lists the installed applications on the given farm.
 [**ListLocalApplicationPools**](InventoryApi.md#ListLocalApplicationPools) | **Get** /inventory/v1/global-application-entitlements/{id}/local-application-pools | Lists Local Application Pools which are assigned to Global Application Entitlement.
@@ -73,8 +93,11 @@ Method | HTTP request | Description
 [**ListMachinesV2**](InventoryApi.md#ListMachinesV2) | **Get** /inventory/v2/machines | Lists the Machines in the environment.
 [**ListPhysicalMachines**](InventoryApi.md#ListPhysicalMachines) | **Get** /inventory/v1/physical-machines | Lists the Physical Machines in the environment.
 [**ListRDSServers**](InventoryApi.md#ListRDSServers) | **Get** /inventory/v1/rds-servers | Lists the RDS Servers in the environment.
-[**ListSessionInfo**](InventoryApi.md#ListSessionInfo) | **Get** /inventory/v1/sessions | Lists the Session information in the environment.
-[**LogOffSessions**](InventoryApi.md#LogOffSessions) | **Post** /inventory/v1/sessions/action/logoff | Logs off user sessions, if they are not locked.
+[**ListSessionInfo**](InventoryApi.md#ListSessionInfo) | **Get** /inventory/v1/sessions | Lists the locally resourced Sessions in the environment
+[**LogOffGlobalSessions**](InventoryApi.md#LogOffGlobalSessions) | **Post** /inventory/v1/global-sessions/action/logoff | Logs off global sessions in the environment.
+[**LogOffSessions**](InventoryApi.md#LogOffSessions) | **Post** /inventory/v1/sessions/action/logoff | Logs off locally resourced user sessions, if they are not locked.
+[**PauseDesktopPoolTask**](InventoryApi.md#PauseDesktopPoolTask) | **Post** /inventory/v1/desktop-pools/{id}/tasks/{taskId}/action/pause | Pause the instant clone desktop pool push image task.
+[**QueryGlobalSessions**](InventoryApi.md#QueryGlobalSessions) | **Get** /inventory/v1/global-sessions | Lists global sessions in the environment for the given user, pod or brokering pod.
 [**RebuildMachines**](InventoryApi.md#RebuildMachines) | **Post** /inventory/v1/machines/action/rebuild | Rebuilds the specified machines.
 [**RecoverMachines**](InventoryApi.md#RecoverMachines) | **Post** /inventory/v1/machines/action/recover | Recovers the specified machines.
 [**RecoverRDSServers**](InventoryApi.md#RecoverRDSServers) | **Post** /inventory/v1/rds-servers/action/recover | Recovers the specified RDS Servers.
@@ -84,18 +107,31 @@ Method | HTTP request | Description
 [**RemoveLocalApplicationPoolsFromGAE**](InventoryApi.md#RemoveLocalApplicationPoolsFromGAE) | **Delete** /inventory/v1/global-application-entitlements/{id}/local-application-pools | Removes Local Application Pools from Global Application Entitlement.
 [**RemoveLocalDesktopPoolsFromGDE**](InventoryApi.md#RemoveLocalDesktopPoolsFromGDE) | **Delete** /inventory/v1/global-desktop-entitlements/{id}/local-desktop-pools | Removes Local Desktop Pools from Global Desktop Entitlement.
 [**RemoveMachines**](InventoryApi.md#RemoveMachines) | **Post** /inventory/v1/desktop-pools/{id}/action/remove-machines | Removes machines from the given manual desktop pool.
+[**RemoveRdsServers**](InventoryApi.md#RemoveRdsServers) | **Post** /inventory/v1/farms/{id}/action/remove-rds-servers | Remove RDS servers from the specified farm.
+[**ResetGlobalSessions**](InventoryApi.md#ResetGlobalSessions) | **Post** /inventory/v1/global-sessions/action/reset | Resets machines of global sessions in the environment.
 [**ResetMachines**](InventoryApi.md#ResetMachines) | **Post** /inventory/v1/machines/action/reset | Resets the specified machines.
-[**ResetSessions**](InventoryApi.md#ResetSessions) | **Post** /inventory/v1/sessions/action/reset | Resets machine of user sessions. The machine must be managed by Virtual Center and the session cannot be an application or an RDS desktop session.
+[**ResetSessions**](InventoryApi.md#ResetSessions) | **Post** /inventory/v1/sessions/action/reset | Resets machine of locally resourced user sessions. The machine must be managed by Virtual Center and the session cannot be an application or an RDS desktop session.
+[**RestartGlobalSessions**](InventoryApi.md#RestartGlobalSessions) | **Post** /inventory/v1/global-sessions/action/restart | Restarts machines of global sessions in the environment.
 [**RestartMachines**](InventoryApi.md#RestartMachines) | **Post** /inventory/v1/machines/action/restart | Restarts the specified machines.
-[**RestartSessions**](InventoryApi.md#RestartSessions) | **Post** /inventory/v1/sessions/action/restart | Restarts machine of user sessions. The machine must be managed by Virtual Center and the session cannot be an application or an RDS desktop session.
+[**RestartSessions**](InventoryApi.md#RestartSessions) | **Post** /inventory/v1/sessions/action/restart | Restarts machine of locally resourced user sessions. The machine must be managed by Virtual Center and the session cannot be an application or an RDS desktop session.
+[**ResumeDesktopPoolTask**](InventoryApi.md#ResumeDesktopPoolTask) | **Post** /inventory/v1/desktop-pools/{id}/tasks/{taskId}/action/resume | Resume the instant clone desktop pool push image task.
+[**ScheduleMaintenance**](InventoryApi.md#ScheduleMaintenance) | **Post** /inventory/v1/farms/{id}/action/schedule-maintenance | Creates maintenance schedule for the specified farm.
 [**SchedulePushImage**](InventoryApi.md#SchedulePushImage) | **Post** /inventory/v1/desktop-pools/{id}/action/schedule-push-image | Schedule/reschedule a request to update the image in an instant clone desktop pool.
-[**SendMessageToSessions**](InventoryApi.md#SendMessageToSessions) | **Post** /inventory/v1/sessions/action/send-message | Sends the message to user sessions
+[**SendMessageToGlobalSessions**](InventoryApi.md#SendMessageToGlobalSessions) | **Post** /inventory/v1/global-sessions/action/send-message | Sends message to global sessions in the environment.
+[**SendMessageToSessions**](InventoryApi.md#SendMessageToSessions) | **Post** /inventory/v1/sessions/action/send-message | Sends the message to locally resourced user sessions.
 [**UnassignMachineAliases**](InventoryApi.md#UnassignMachineAliases) | **Post** /inventory/v1/machines/{id}/action/unassign-aliases | Un-assigns the aliases for the specified users from the machine.
 [**UnassignUsers**](InventoryApi.md#UnassignUsers) | **Post** /inventory/v1/machines/{id}/action/unassign-users | Un-assigns the specified users from the machine.
 [**UpdateApplicationPool**](InventoryApi.md#UpdateApplicationPool) | **Put** /inventory/v1/application-pools/{id} | Updates application pool.
 [**UpdateApplicationPoolV2**](InventoryApi.md#UpdateApplicationPoolV2) | **Put** /inventory/v2/application-pools/{id} | Updates application pool.
+[**UpdateDesktopPool**](InventoryApi.md#UpdateDesktopPool) | **Put** /inventory/v1/desktop-pools/{id} | Updates desktop pool.
 [**UpdateFarm**](InventoryApi.md#UpdateFarm) | **Put** /inventory/v1/farms/{id} | Updates farm.
+[**UpdateFarmV2**](InventoryApi.md#UpdateFarmV2) | **Put** /inventory/v2/farms/{id} | Updates farm.
+[**UpdateGlobalApplicationEntitlement**](InventoryApi.md#UpdateGlobalApplicationEntitlement) | **Put** /inventory/v1/global-application-entitlements/{id} | Updates a Global Application Entitlement.
+[**UpdateGlobalDesktopEntitlement**](InventoryApi.md#UpdateGlobalDesktopEntitlement) | **Put** /inventory/v1/global-desktop-entitlements/{id} | Updates a Global Desktop Entitlement.
 [**UpdateRDSServer**](InventoryApi.md#UpdateRDSServer) | **Put** /inventory/v1/rds-servers/{id} | Updates the RDS Server.
+[**ValidateInstalledApplicationsOnDesktopPool**](InventoryApi.md#ValidateInstalledApplicationsOnDesktopPool) | **Post** /inventory/v1/desktop-pools/{id}/action/validate-installed-applications | Validates that each application in the given list is installed on the machines belonging to the specified desktop pool.
+[**ValidateInstalledApplicationsOnFarm**](InventoryApi.md#ValidateInstalledApplicationsOnFarm) | **Post** /inventory/v1/farms/{id}/action/validate-installed-applications | Validates that each application in the given list is installed on the RDS Servers belonging to the specified Farm.
+[**ValidateSpecifiedNames**](InventoryApi.md#ValidateSpecifiedNames) | **Post** /inventory/v1/desktop-pools/action/validate-specified-names | Validates manually specified virtual machines. Ensures machine and user names are valid and aren&#39;t duplicated in the given desktop pool.
 
 
 
@@ -457,6 +493,78 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## AddRdsServers
+
+> []BulkItemResponseInfo AddRdsServers(ctx, id).Body(body).Execute()
+
+Add RDS servers to the specified manual farm.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "5134796a-322g-5fe5-343f-4daa5d25ebfe" // string | Farm ID
+    body := []string{"Property_example"} // []string | List of RDS server IDs representing the RDS servers to be added to the farm.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.AddRdsServers(context.Background(), id).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.AddRdsServers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `AddRdsServers`: []BulkItemResponseInfo
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.AddRdsServers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | Farm ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiAddRdsServersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | **[]string** | List of RDS server IDs representing the RDS servers to be added to the farm. | 
+
+### Return type
+
+[**[]BulkItemResponseInfo**](BulkItemResponseInfo.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## AssignMachineAliases
 
 > []BulkItemResponseInfo AssignMachineAliases(ctx, id).Body(body).Execute()
@@ -665,6 +773,76 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CancelScheduledMaintenance
+
+> CancelScheduledMaintenance(ctx, id).Body(body).Execute()
+
+Requests cancellation of the current scheduled maintenance on the specified Instant Clone farm.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "5134796a-322g-5fe5-343f-4daa5d25ebfe" // string | Farm ID
+    body := *openapiclient.NewFarmCancelMaintenanceSpec("IMMEDIATE") // FarmCancelMaintenanceSpec | The specification to cancel the scheduled maintenance operation.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.CancelScheduledMaintenance(context.Background(), id).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.CancelScheduledMaintenance``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | Farm ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCancelScheduledMaintenanceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**FarmCancelMaintenanceSpec**](FarmCancelMaintenanceSpec.md) | The specification to cancel the scheduled maintenance operation. | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -1262,6 +1440,70 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## CreateDesktopPool
+
+> CreateDesktopPool(ctx).Body(body).Execute()
+
+Creates a desktop pool.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewDesktopPoolCreateSpec("ManualPool", "AUTOMATED") // DesktopPoolCreateSpec | Desktop pool object to be created.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.CreateDesktopPool(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.CreateDesktopPool``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateDesktopPoolRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DesktopPoolCreateSpec**](DesktopPoolCreateSpec.md) | Desktop pool object to be created. | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## CreateFarm
 
 > CreateFarm(ctx).Body(body).Execute()
@@ -1326,6 +1568,134 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## CreateFarmV2
+
+> CreateFarmV2(ctx).Body(body).Execute()
+
+Creates a farm.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewFarmCreateSpecV2("6fd4638a-381f-4518-aed6-042aa3d9f14c", "ManualFarm", "MANUAL") // FarmCreateSpecV2 | Farm object to be created.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.CreateFarmV2(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.CreateFarmV2``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateFarmV2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**FarmCreateSpecV2**](FarmCreateSpecV2.md) | Farm object to be created. | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateGlobalApplicationEntitlement
+
+> CreateGlobalApplicationEntitlement(ctx).Body(body).Execute()
+
+Creates a Global Application Entitlement.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewGlobalApplicationEntitlementCreateSpec("310927ee-1195-44c3-b877-5b194b4b4ea8", "global-application-entitlement") // GlobalApplicationEntitlementCreateSpec | Global Application Entitlement object to be created.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.CreateGlobalApplicationEntitlement(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.CreateGlobalApplicationEntitlement``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateGlobalApplicationEntitlementRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GlobalApplicationEntitlementCreateSpec**](GlobalApplicationEntitlementCreateSpec.md) | Global Application Entitlement object to be created. | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## CreateGlobalDesktopEntitlement
 
 > CreateGlobalDesktopEntitlement(ctx).Body(body).Execute()
@@ -1371,6 +1741,70 @@ Other parameters are passed through a pointer to a apiCreateGlobalDesktopEntitle
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**GlobalDesktopEntitlementCreateSpec**](GlobalDesktopEntitlementCreateSpec.md) | Global Desktop Entitlement object to be created. | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateGlobalDesktopEntitlementV2
+
+> CreateGlobalDesktopEntitlementV2(ctx).Body(body).Execute()
+
+Creates a Global Desktop Entitlement.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewGlobalDesktopEntitlementCreateSpecV2("310927ee-1195-44c3-b877-5b194b4b4ea8", "global-desktop-entitlement") // GlobalDesktopEntitlementCreateSpecV2 | Global Desktop Entitlement object to be created.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.CreateGlobalDesktopEntitlementV2(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.CreateGlobalDesktopEntitlementV2``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateGlobalDesktopEntitlementV2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GlobalDesktopEntitlementCreateSpecV2**](GlobalDesktopEntitlementCreateSpecV2.md) | Global Desktop Entitlement object to be created. | 
 
 ### Return type
 
@@ -1458,6 +1892,76 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## DeleteDesktopPool
+
+> DeleteDesktopPool(ctx, id).Body(body).Execute()
+
+Deletes a desktop pool.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "0103796c-102b-4ed3-953f-3dfe3d23e0fe" // string | ID of the desktop pool to be deleted.
+    body := *openapiclient.NewDesktopPoolDeleteSpec() // DesktopPoolDeleteSpec | Desktop pool object to be deleted. (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.DeleteDesktopPool(context.Background(), id).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.DeleteDesktopPool``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | ID of the desktop pool to be deleted. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteDesktopPoolRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**DesktopPoolDeleteSpec**](DesktopPoolDeleteSpec.md) | Desktop pool object to be deleted. | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## DeleteFarm
 
 > DeleteFarm(ctx, id).Execute()
@@ -1502,6 +2006,142 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDeleteFarmRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteGlobalApplicationEntitlement
+
+> DeleteGlobalApplicationEntitlement(ctx, id).Execute()
+
+Deletes a Global Application Entitlement.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "5134796a-322g-5fe5-343f-4daa5d25ebfe" // string | Global Application Entitlement ID
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.DeleteGlobalApplicationEntitlement(context.Background(), id).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.DeleteGlobalApplicationEntitlement``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | Global Application Entitlement ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteGlobalApplicationEntitlementRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteGlobalDesktopEntitlement
+
+> DeleteGlobalDesktopEntitlement(ctx, id).Execute()
+
+Deletes a Global Desktop Entitlement.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "5134796a-322g-5fe5-343f-4daa5d25ebfe" // string | Global Desktop Entitlement ID
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.DeleteGlobalDesktopEntitlement(context.Background(), id).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.DeleteGlobalDesktopEntitlement``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | Global Desktop Entitlement ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteGlobalDesktopEntitlementRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1798,11 +2438,77 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## DisconnectGlobalSessions
+
+> []BulkGlobalSessionActionResponseInfo DisconnectGlobalSessions(ctx).GlobalSessionActionSpecs(globalSessionActionSpecs).Execute()
+
+Disconnects global sessions in the environment.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    globalSessionActionSpecs := []openapiclient.GlobalSessionActionSpec{*openapiclient.NewGlobalSessionActionSpec([]string{"Ids_example"}, "54c122e0-d6b5-476c-af91-fd00392e5983")} // []GlobalSessionActionSpec | Sessions which are to be disconnected.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.DisconnectGlobalSessions(context.Background()).GlobalSessionActionSpecs(globalSessionActionSpecs).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.DisconnectGlobalSessions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DisconnectGlobalSessions`: []BulkGlobalSessionActionResponseInfo
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.DisconnectGlobalSessions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDisconnectGlobalSessionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **globalSessionActionSpecs** | [**[]GlobalSessionActionSpec**](GlobalSessionActionSpec.md) | Sessions which are to be disconnected. | 
+
+### Return type
+
+[**[]BulkGlobalSessionActionResponseInfo**](BulkGlobalSessionActionResponseInfo.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## DisconnectSessions
 
 > []BulkItemResponseInfo DisconnectSessions(ctx).Body(body).Execute()
 
-Disconnects user sessions
+Disconnects locally resourced user sessions.
 
 
 
@@ -2629,6 +3335,76 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetDesktopPoolV5
+
+> DesktopPoolInfoV5 GetDesktopPoolV5(ctx, id).Execute()
+
+Gets the desktop pool information.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "id_example" // string | id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.GetDesktopPoolV5(context.Background(), id).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.GetDesktopPoolV5``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetDesktopPoolV5`: DesktopPoolInfoV5
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.GetDesktopPoolV5`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetDesktopPoolV5Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**DesktopPoolInfoV5**](DesktopPoolInfoV5.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetFarm
 
 > FarmInfo GetFarm(ctx, id).Execute()
@@ -2769,6 +3545,76 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetFarmV3
+
+> FarmInfoV3 GetFarmV3(ctx, id).Execute()
+
+Gets the Farm information.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "id_example" // string | id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.GetFarmV3(context.Background(), id).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.GetFarmV3``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetFarmV3`: FarmInfoV3
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.GetFarmV3`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetFarmV3Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**FarmInfoV3**](FarmInfoV3.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetGlobalApplicationEntitlement
 
 > GlobalApplicationEntitlementInfo GetGlobalApplicationEntitlement(ctx, id).Execute()
@@ -2839,6 +3685,76 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetGlobalApplicationEntitlementV2
+
+> GlobalApplicationEntitlementInfoV2 GetGlobalApplicationEntitlementV2(ctx, id).Execute()
+
+Gets the Global Application Entitlement in the environment.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "id_example" // string | id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.GetGlobalApplicationEntitlementV2(context.Background(), id).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.GetGlobalApplicationEntitlementV2``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetGlobalApplicationEntitlementV2`: GlobalApplicationEntitlementInfoV2
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.GetGlobalApplicationEntitlementV2`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetGlobalApplicationEntitlementV2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GlobalApplicationEntitlementInfoV2**](GlobalApplicationEntitlementInfoV2.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetGlobalDesktopEntitlement
 
 > GlobalDesktopEntitlementInfo GetGlobalDesktopEntitlement(ctx, id).Execute()
@@ -2894,6 +3810,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GlobalDesktopEntitlementInfo**](GlobalDesktopEntitlementInfo.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetGlobalDesktopEntitlementV2
+
+> GlobalDesktopEntitlementInfoV2 GetGlobalDesktopEntitlementV2(ctx, id).Execute()
+
+Gets the Global Desktop Entitlement in the environment.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "id_example" // string | id
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.GetGlobalDesktopEntitlementV2(context.Background(), id).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.GetGlobalDesktopEntitlementV2``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetGlobalDesktopEntitlementV2`: GlobalDesktopEntitlementInfoV2
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.GetGlobalDesktopEntitlementV2`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetGlobalDesktopEntitlementV2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GlobalDesktopEntitlementInfoV2**](GlobalDesktopEntitlementInfoV2.md)
 
 ### Authorization
 
@@ -3193,7 +4179,7 @@ Name | Type | Description  | Notes
 
 > SessionInfo GetSessionInfo(ctx, id).Execute()
 
-Gets the Session information.
+Gets the Session information for locally resourced session.
 
 
 
@@ -3348,7 +4334,7 @@ import (
 func main() {
     filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
     page := int32(1) // int32 | page, if passed should be > 0. (optional)
-    size := int32(10) // int32 | size, if passed should be > 0 (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -3375,7 +4361,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
  **page** | **int32** | page, if passed should be &gt; 0. | 
- **size** | **int32** | size, if passed should be &gt; 0 | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
 
 ### Return type
 
@@ -3418,7 +4404,7 @@ import (
 func main() {
     filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
     page := int32(1) // int32 | page, if passed should be > 0. (optional)
-    size := int32(10) // int32 | size, if passed should be > 0 (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -3445,7 +4431,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
  **page** | **int32** | page, if passed should be &gt; 0. | 
- **size** | **int32** | size, if passed should be &gt; 0 | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
 
 ### Return type
 
@@ -3488,7 +4474,7 @@ import (
 func main() {
     filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
     page := int32(1) // int32 | page, if passed should be > 0. (optional)
-    size := int32(10) // int32 | size, if passed should be > 0 (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -3515,11 +4501,151 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
  **page** | **int32** | page, if passed should be &gt; 0. | 
- **size** | **int32** | size, if passed should be &gt; 0 | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
 
 ### Return type
 
 [**[]ApplicationPoolInfoV3**](ApplicationPoolInfoV3.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListCompatibleBackupGAEs
+
+> []string ListCompatibleBackupGAEs(ctx, id).Execute()
+
+Lists the Global Application Entitlements that can be associated as backup Global Application Entitlement.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "5134796a-322g-5fe5-343f-4daa5d25ebfe" // string | Global Application Entitlement ID
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.ListCompatibleBackupGAEs(context.Background(), id).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.ListCompatibleBackupGAEs``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListCompatibleBackupGAEs`: []string
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.ListCompatibleBackupGAEs`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | Global Application Entitlement ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListCompatibleBackupGAEsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+**[]string**
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListCompatibleBackupGDEs
+
+> []string ListCompatibleBackupGDEs(ctx, id).Execute()
+
+Lists the Global Desktop Entitlements that can be associated as backup Global Desktop Entitlement.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "5134796a-322g-5fe5-343f-4daa5d25ebfe" // string | Global Desktop Entitlement ID
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.ListCompatibleBackupGDEs(context.Background(), id).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.ListCompatibleBackupGDEs``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListCompatibleBackupGDEs`: []string
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.ListCompatibleBackupGDEs`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | Global Desktop Entitlement ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListCompatibleBackupGDEsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+**[]string**
 
 ### Authorization
 
@@ -3829,7 +4955,7 @@ import (
 func main() {
     filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
     page := int32(1) // int32 | page, if passed should be > 0. (optional)
-    size := int32(10) // int32 | size, if passed should be > 0 (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -3856,7 +4982,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
  **page** | **int32** | page, if passed should be &gt; 0. | 
- **size** | **int32** | size, if passed should be &gt; 0 | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
 
 ### Return type
 
@@ -3899,7 +5025,7 @@ import (
 func main() {
     filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
     page := int32(1) // int32 | page, if passed should be > 0. (optional)
-    size := int32(10) // int32 | size, if passed should be > 0 (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -3926,7 +5052,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
  **page** | **int32** | page, if passed should be &gt; 0. | 
- **size** | **int32** | size, if passed should be &gt; 0 | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
 
 ### Return type
 
@@ -3969,7 +5095,7 @@ import (
 func main() {
     filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
     page := int32(1) // int32 | page, if passed should be > 0. (optional)
-    size := int32(10) // int32 | size, if passed should be > 0 (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -3996,11 +5122,81 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
  **page** | **int32** | page, if passed should be &gt; 0. | 
- **size** | **int32** | size, if passed should be &gt; 0 | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
 
 ### Return type
 
 [**[]DesktopPoolInfoV4**](DesktopPoolInfoV4.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListDesktopPoolsV5
+
+> []DesktopPoolInfoV5 ListDesktopPoolsV5(ctx).Filter(filter).Page(page).Size(size).Execute()
+
+Lists the desktop pools in the environment.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
+    page := int32(1) // int32 | page, if passed should be > 0. (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.ListDesktopPoolsV5(context.Background()).Filter(filter).Page(page).Size(size).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.ListDesktopPoolsV5``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListDesktopPoolsV5`: []DesktopPoolInfoV5
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.ListDesktopPoolsV5`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListDesktopPoolsV5Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
+ **page** | **int32** | page, if passed should be &gt; 0. | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
+
+### Return type
+
+[**[]DesktopPoolInfoV5**](DesktopPoolInfoV5.md)
 
 ### Authorization
 
@@ -4100,7 +5296,7 @@ import (
 func main() {
     filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
     page := int32(1) // int32 | page, if passed should be > 0. (optional)
-    size := int32(10) // int32 | size, if passed should be > 0 (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -4127,11 +5323,81 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
  **page** | **int32** | page, if passed should be &gt; 0. | 
- **size** | **int32** | size, if passed should be &gt; 0 | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
 
 ### Return type
 
 [**[]FarmInfoV2**](FarmInfoV2.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListFarmsV3
+
+> []FarmInfoV3 ListFarmsV3(ctx).Filter(filter).Page(page).Size(size).Execute()
+
+Lists the Farms in the environment.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
+    page := int32(1) // int32 | page, if passed should be > 0. (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.ListFarmsV3(context.Background()).Filter(filter).Page(page).Size(size).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.ListFarmsV3``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListFarmsV3`: []FarmInfoV3
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.ListFarmsV3`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListFarmsV3Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
+ **page** | **int32** | page, if passed should be &gt; 0. | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
+
+### Return type
+
+[**[]FarmInfoV3**](FarmInfoV3.md)
 
 ### Authorization
 
@@ -4170,7 +5436,7 @@ import (
 func main() {
     filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
     page := int32(1) // int32 | page, if passed should be > 0. (optional)
-    size := int32(10) // int32 | size, if passed should be > 0 (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -4197,11 +5463,81 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
  **page** | **int32** | page, if passed should be &gt; 0. | 
- **size** | **int32** | size, if passed should be &gt; 0 | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
 
 ### Return type
 
 [**[]GlobalApplicationEntitlementSummary**](GlobalApplicationEntitlementSummary.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListGlobalApplicationEntitlementsV2
+
+> []GlobalApplicationEntitlementSummaryV2 ListGlobalApplicationEntitlementsV2(ctx).Filter(filter).Page(page).Size(size).Execute()
+
+Lists the Global Application Entitlements in the environment.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
+    page := int32(1) // int32 | page, if passed should be > 0. (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.ListGlobalApplicationEntitlementsV2(context.Background()).Filter(filter).Page(page).Size(size).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.ListGlobalApplicationEntitlementsV2``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListGlobalApplicationEntitlementsV2`: []GlobalApplicationEntitlementSummaryV2
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.ListGlobalApplicationEntitlementsV2`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListGlobalApplicationEntitlementsV2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
+ **page** | **int32** | page, if passed should be &gt; 0. | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
+
+### Return type
+
+[**[]GlobalApplicationEntitlementSummaryV2**](GlobalApplicationEntitlementSummaryV2.md)
 
 ### Authorization
 
@@ -4240,7 +5576,7 @@ import (
 func main() {
     filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
     page := int32(1) // int32 | page, if passed should be > 0. (optional)
-    size := int32(10) // int32 | size, if passed should be > 0 (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -4267,11 +5603,81 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
  **page** | **int32** | page, if passed should be &gt; 0. | 
- **size** | **int32** | size, if passed should be &gt; 0 | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
 
 ### Return type
 
 [**[]GlobalDesktopEntitlementSummary**](GlobalDesktopEntitlementSummary.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListGlobalDesktopEntitlementsV2
+
+> []GlobalDesktopEntitlementSummaryV2 ListGlobalDesktopEntitlementsV2(ctx).Filter(filter).Page(page).Size(size).Execute()
+
+Lists the Global Desktop Entitlements in the environment.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
+    page := int32(1) // int32 | page, if passed should be > 0. (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.ListGlobalDesktopEntitlementsV2(context.Background()).Filter(filter).Page(page).Size(size).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.ListGlobalDesktopEntitlementsV2``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ListGlobalDesktopEntitlementsV2`: []GlobalDesktopEntitlementSummaryV2
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.ListGlobalDesktopEntitlementsV2`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListGlobalDesktopEntitlementsV2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
+ **page** | **int32** | page, if passed should be &gt; 0. | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
+
+### Return type
+
+[**[]GlobalDesktopEntitlementSummaryV2**](GlobalDesktopEntitlementSummaryV2.md)
 
 ### Authorization
 
@@ -4590,7 +5996,7 @@ import (
 func main() {
     filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
     page := int32(1) // int32 | page, if passed should be > 0. (optional)
-    size := int32(10) // int32 | size, if passed should be > 0 (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -4617,7 +6023,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
  **page** | **int32** | page, if passed should be &gt; 0. | 
- **size** | **int32** | size, if passed should be &gt; 0 | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
 
 ### Return type
 
@@ -4660,7 +6066,7 @@ import (
 func main() {
     filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
     page := int32(1) // int32 | page, if passed should be > 0. (optional)
-    size := int32(10) // int32 | size, if passed should be > 0 (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -4687,7 +6093,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
  **page** | **int32** | page, if passed should be &gt; 0. | 
- **size** | **int32** | size, if passed should be &gt; 0 | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
 
 ### Return type
 
@@ -4730,7 +6136,7 @@ import (
 func main() {
     filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
     page := int32(1) // int32 | page, if passed should be > 0. (optional)
-    size := int32(10) // int32 | size, if passed should be > 0 (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -4757,7 +6163,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
  **page** | **int32** | page, if passed should be &gt; 0. | 
- **size** | **int32** | size, if passed should be &gt; 0 | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
 
 ### Return type
 
@@ -4800,7 +6206,7 @@ import (
 func main() {
     filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
     page := int32(1) // int32 | page, if passed should be > 0. (optional)
-    size := int32(10) // int32 | size, if passed should be > 0 (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -4827,7 +6233,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
  **page** | **int32** | page, if passed should be &gt; 0. | 
- **size** | **int32** | size, if passed should be &gt; 0 | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
 
 ### Return type
 
@@ -4851,7 +6257,7 @@ Name | Type | Description  | Notes
 
 > []SessionInfo ListSessionInfo(ctx).Filter(filter).Page(page).Size(size).Execute()
 
-Lists the Session information in the environment.
+Lists the locally resourced Sessions in the environment
 
 
 
@@ -4870,7 +6276,7 @@ import (
 func main() {
     filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
     page := int32(1) // int32 | page, if passed should be > 0. (optional)
-    size := int32(10) // int32 | size, if passed should be > 0 (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -4897,7 +6303,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
  **page** | **int32** | page, if passed should be &gt; 0. | 
- **size** | **int32** | size, if passed should be &gt; 0 | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
 
 ### Return type
 
@@ -4917,11 +6323,79 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## LogOffGlobalSessions
+
+> []BulkGlobalSessionActionResponseInfo LogOffGlobalSessions(ctx).GlobalSessionActionSpecs(globalSessionActionSpecs).Forced(forced).Execute()
+
+Logs off global sessions in the environment.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    globalSessionActionSpecs := []openapiclient.GlobalSessionActionSpec{*openapiclient.NewGlobalSessionActionSpec([]string{"Ids_example"}, "54c122e0-d6b5-476c-af91-fd00392e5983")} // []GlobalSessionActionSpec | Sessions which are to be logged off.
+    forced := true // bool | Indicates whether sessions should be logged off forcibly.  If set to true, sessions would be logged off forcibly even if they are locked.  If set to false, sessions would be logged off if they are not locked.   (optional) (default to false)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.LogOffGlobalSessions(context.Background()).GlobalSessionActionSpecs(globalSessionActionSpecs).Forced(forced).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.LogOffGlobalSessions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `LogOffGlobalSessions`: []BulkGlobalSessionActionResponseInfo
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.LogOffGlobalSessions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLogOffGlobalSessionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **globalSessionActionSpecs** | [**[]GlobalSessionActionSpec**](GlobalSessionActionSpec.md) | Sessions which are to be logged off. | 
+ **forced** | **bool** | Indicates whether sessions should be logged off forcibly.  If set to true, sessions would be logged off forcibly even if they are locked.  If set to false, sessions would be logged off if they are not locked.   | [default to false]
+
+### Return type
+
+[**[]BulkGlobalSessionActionResponseInfo**](BulkGlobalSessionActionResponseInfo.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## LogOffSessions
 
 > []BulkItemResponseInfo LogOffSessions(ctx).Body(body).Forced(forced).Execute()
 
-Logs off user sessions, if they are not locked.
+Logs off locally resourced user sessions, if they are not locked.
 
 
 
@@ -4978,6 +6452,151 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PauseDesktopPoolTask
+
+> PauseDesktopPoolTask(ctx, id, taskId).Execute()
+
+Pause the instant clone desktop pool push image task.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "id_example" // string | Desktop pool ID
+    taskId := "taskId_example" // string | Desktop pool task ID
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.PauseDesktopPoolTask(context.Background(), id, taskId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.PauseDesktopPoolTask``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | Desktop pool ID | 
+**taskId** | **string** | Desktop pool task ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPauseDesktopPoolTaskRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## QueryGlobalSessions
+
+> []GlobalSessionInfo QueryGlobalSessions(ctx).BrokeringPodId(brokeringPodId).Page(page).PodId(podId).Size(size).UserId(userId).Execute()
+
+Lists global sessions in the environment for the given user, pod or brokering pod.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    brokeringPodId := "806ca35f-bcab-4a42-9006-04ba27cad900" // string | ID of the pod that brokered the session. (optional)
+    page := int32(1) // int32 | page, if passed should be > 0. (optional)
+    podId := "96d708fe-badb-40f8-9b80-9029b0ab2ef2" // string | ID of the pod that hosted the session. (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
+    userId := "S-1-5-21-1111111111-2222222222-3333333333-500" // string | SID of the user. (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.QueryGlobalSessions(context.Background()).BrokeringPodId(brokeringPodId).Page(page).PodId(podId).Size(size).UserId(userId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.QueryGlobalSessions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `QueryGlobalSessions`: []GlobalSessionInfo
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.QueryGlobalSessions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiQueryGlobalSessionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **brokeringPodId** | **string** | ID of the pod that brokered the session. | 
+ **page** | **int32** | page, if passed should be &gt; 0. | 
+ **podId** | **string** | ID of the pod that hosted the session. | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
+ **userId** | **string** | SID of the user. | 
+
+### Return type
+
+[**[]GlobalSessionInfo**](GlobalSessionInfo.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -5599,6 +7218,144 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## RemoveRdsServers
+
+> []BulkItemResponseInfo RemoveRdsServers(ctx, id).Body(body).Execute()
+
+Remove RDS servers from the specified farm.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "5134796a-322g-5fe5-343f-4daa5d25ebfe" // string | Farm ID
+    body := []string{"Property_example"} // []string | List of RDS server IDs representing the RDS servers to be removed from the farm.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.RemoveRdsServers(context.Background(), id).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.RemoveRdsServers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `RemoveRdsServers`: []BulkItemResponseInfo
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.RemoveRdsServers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | Farm ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiRemoveRdsServersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | **[]string** | List of RDS server IDs representing the RDS servers to be removed from the farm. | 
+
+### Return type
+
+[**[]BulkItemResponseInfo**](BulkItemResponseInfo.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ResetGlobalSessions
+
+> []BulkGlobalSessionActionResponseInfo ResetGlobalSessions(ctx).GlobalSessionActionSpecs(globalSessionActionSpecs).Execute()
+
+Resets machines of global sessions in the environment.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    globalSessionActionSpecs := []openapiclient.GlobalSessionActionSpec{*openapiclient.NewGlobalSessionActionSpec([]string{"Ids_example"}, "54c122e0-d6b5-476c-af91-fd00392e5983")} // []GlobalSessionActionSpec | Sessions which are to be reset.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.ResetGlobalSessions(context.Background()).GlobalSessionActionSpecs(globalSessionActionSpecs).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.ResetGlobalSessions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ResetGlobalSessions`: []BulkGlobalSessionActionResponseInfo
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.ResetGlobalSessions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiResetGlobalSessionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **globalSessionActionSpecs** | [**[]GlobalSessionActionSpec**](GlobalSessionActionSpec.md) | Sessions which are to be reset. | 
+
+### Return type
+
+[**[]BulkGlobalSessionActionResponseInfo**](BulkGlobalSessionActionResponseInfo.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ResetMachines
 
 > []BulkItemResponseInfo ResetMachines(ctx).Body(body).Execute()
@@ -5669,7 +7426,7 @@ Name | Type | Description  | Notes
 
 > []BulkItemResponseInfo ResetSessions(ctx).Body(body).Execute()
 
-Resets machine of user sessions. The machine must be managed by Virtual Center and the session cannot be an application or an RDS desktop session.
+Resets machine of locally resourced user sessions. The machine must be managed by Virtual Center and the session cannot be an application or an RDS desktop session.
 
 
 
@@ -5716,6 +7473,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]BulkItemResponseInfo**](BulkItemResponseInfo.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## RestartGlobalSessions
+
+> []BulkGlobalSessionActionResponseInfo RestartGlobalSessions(ctx).GlobalSessionActionSpecs(globalSessionActionSpecs).Execute()
+
+Restarts machines of global sessions in the environment.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    globalSessionActionSpecs := []openapiclient.GlobalSessionActionSpec{*openapiclient.NewGlobalSessionActionSpec([]string{"Ids_example"}, "54c122e0-d6b5-476c-af91-fd00392e5983")} // []GlobalSessionActionSpec | Sessions which are to be restarted.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.RestartGlobalSessions(context.Background()).GlobalSessionActionSpecs(globalSessionActionSpecs).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.RestartGlobalSessions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `RestartGlobalSessions`: []BulkGlobalSessionActionResponseInfo
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.RestartGlobalSessions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiRestartGlobalSessionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **globalSessionActionSpecs** | [**[]GlobalSessionActionSpec**](GlobalSessionActionSpec.md) | Sessions which are to be restarted. | 
+
+### Return type
+
+[**[]BulkGlobalSessionActionResponseInfo**](BulkGlobalSessionActionResponseInfo.md)
 
 ### Authorization
 
@@ -5801,7 +7624,7 @@ Name | Type | Description  | Notes
 
 > []BulkItemResponseInfo RestartSessions(ctx).Body(body).Execute()
 
-Restarts machine of user sessions. The machine must be managed by Virtual Center and the session cannot be an application or an RDS desktop session.
+Restarts machine of locally resourced user sessions. The machine must be managed by Virtual Center and the session cannot be an application or an RDS desktop session.
 
 
 
@@ -5857,6 +7680,149 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json
 - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ResumeDesktopPoolTask
+
+> ResumeDesktopPoolTask(ctx, id, taskId).Body(body).Execute()
+
+Resume the instant clone desktop pool push image task.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "id_example" // string | Desktop pool ID
+    taskId := "taskId_example" // string | Desktop pool task ID
+    body := *openapiclient.NewResumeTaskSpec() // ResumeTaskSpec | Specification for resuming the task. If not provided, specification will be set to default values. (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.ResumeDesktopPoolTask(context.Background(), id, taskId).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.ResumeDesktopPoolTask``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | Desktop pool ID | 
+**taskId** | **string** | Desktop pool task ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiResumeDesktopPoolTaskRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **body** | [**ResumeTaskSpec**](ResumeTaskSpec.md) | Specification for resuming the task. If not provided, specification will be set to default values. | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ScheduleMaintenance
+
+> ScheduleMaintenance(ctx, id).Body(body).Execute()
+
+Creates maintenance schedule for the specified farm.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "id_example" // string | Farm ID
+    body := *openapiclient.NewFarmMaintenanceSpec("FORCE_LOGOFF", "IMMEDIATE") // FarmMaintenanceSpec | The specification to schedule maintenance.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.ScheduleMaintenance(context.Background(), id).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.ScheduleMaintenance``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | Farm ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiScheduleMaintenanceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**FarmMaintenanceSpec**](FarmMaintenanceSpec.md) | The specification to schedule maintenance. | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5933,11 +7899,77 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## SendMessageToGlobalSessions
+
+> []BulkGlobalSessionActionResponseInfo SendMessageToGlobalSessions(ctx).Body(body).Execute()
+
+Sends message to global sessions in the environment.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewGlobalSessionSendMessageSpec([]openapiclient.GlobalSessionActionSpec{*openapiclient.NewGlobalSessionActionSpec([]string{"Ids_example"}, "54c122e0-d6b5-476c-af91-fd00392e5983")}, "Sample Info Message", "INFO") // GlobalSessionSendMessageSpec | Global sessions to which message is to be sent.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.SendMessageToGlobalSessions(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.SendMessageToGlobalSessions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SendMessageToGlobalSessions`: []BulkGlobalSessionActionResponseInfo
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.SendMessageToGlobalSessions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSendMessageToGlobalSessionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GlobalSessionSendMessageSpec**](GlobalSessionSendMessageSpec.md) | Global sessions to which message is to be sent. | 
+
+### Return type
+
+[**[]BulkGlobalSessionActionResponseInfo**](BulkGlobalSessionActionResponseInfo.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## SendMessageToSessions
 
 > []BulkItemResponseInfo SendMessageToSessions(ctx).Body(body).Execute()
 
-Sends the message to user sessions
+Sends the message to locally resourced user sessions.
 
 
 
@@ -6283,6 +8315,76 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## UpdateDesktopPool
+
+> UpdateDesktopPool(ctx, id).Body(body).Execute()
+
+Updates desktop pool.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "id_example" // string | id
+    body := *openapiclient.NewDesktopPoolUpdateSpec(false, false, false, true, "pool", false, true) // DesktopPoolUpdateSpec | Desktop Pool object to be updated.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.UpdateDesktopPool(context.Background(), id).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.UpdateDesktopPool``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateDesktopPoolRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**DesktopPoolUpdateSpec**](DesktopPoolUpdateSpec.md) | Desktop Pool object to be updated. | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## UpdateFarm
 
 > UpdateFarm(ctx, id).Body(body).Execute()
@@ -6334,6 +8436,216 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **body** | [**FarmUpdateSpec**](FarmUpdateSpec.md) | Farm object to be updated. | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateFarmV2
+
+> UpdateFarmV2(ctx, id).Body(body).Execute()
+
+Updates farm.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "id_example" // string | id
+    body := *openapiclient.NewFarmUpdateSpecV2("6fd4638a-381f-4518-aed6-042aa3d9f14c", "ManualFarm", *openapiclient.NewFarmDisplayProtocolSettingsUpdateSpec(true, "PCOIP", false), true, int32(0), *openapiclient.NewFarmSessionSettingsUpdateSpec("NEVER", "AFTER"), false) // FarmUpdateSpecV2 | Farm object to be updated.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.UpdateFarmV2(context.Background(), id).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.UpdateFarmV2``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateFarmV2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**FarmUpdateSpecV2**](FarmUpdateSpecV2.md) | Farm object to be updated. | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateGlobalApplicationEntitlement
+
+> UpdateGlobalApplicationEntitlement(ctx, id).Body(body).Execute()
+
+Updates a Global Application Entitlement.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "5134796a-322g-5fe5-343f-4daa5d25ebfe" // string | Global Application Entitlement object to be updated
+    body := *openapiclient.NewGlobalApplicationEntitlementUpdateSpec("PCOIP", "global-application-entitlement", false, false, true, "310927ee-1195-44c3-b877-5b194b4b4ea8", "ENABLED_ENFORCED", true, "global-application-entitlement", false, "ALL_SITES", false) // GlobalApplicationEntitlementUpdateSpec | Global Application Entitlement object to be updated.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.UpdateGlobalApplicationEntitlement(context.Background(), id).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.UpdateGlobalApplicationEntitlement``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | Global Application Entitlement object to be updated | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateGlobalApplicationEntitlementRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**GlobalApplicationEntitlementUpdateSpec**](GlobalApplicationEntitlementUpdateSpec.md) | Global Application Entitlement object to be updated. | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateGlobalDesktopEntitlement
+
+> UpdateGlobalDesktopEntitlement(ctx, id).Body(body).Execute()
+
+Updates a Global Desktop Entitlement.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "5134796a-322g-5fe5-343f-4daa5d25ebfe" // string | Global Desktop Entitlement object to be updated
+    body := *openapiclient.NewGlobalDesktopEntitlementUpdateSpec(true, false, "PCOIP", false, false, "global-desktop-entitlement", false, true, "310927ee-1195-44c3-b877-5b194b4b4ea8", false, "global-desktop-entitlement", false, "ALL_SITES", false, false) // GlobalDesktopEntitlementUpdateSpec | Global Desktop Entitlement object to be updated.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.UpdateGlobalDesktopEntitlement(context.Background(), id).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.UpdateGlobalDesktopEntitlement``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | Global Desktop Entitlement object to be updated | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateGlobalDesktopEntitlementRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**GlobalDesktopEntitlementUpdateSpec**](GlobalDesktopEntitlementUpdateSpec.md) | Global Desktop Entitlement object to be updated. | 
 
 ### Return type
 
@@ -6417,6 +8729,216 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ValidateInstalledApplicationsOnDesktopPool
+
+> []InstalledApplicationValidationInfo ValidateInstalledApplicationsOnDesktopPool(ctx, id).Body(body).Execute()
+
+Validates that each application in the given list is installed on the machines belonging to the specified desktop pool.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "id_example" // string | Desktop Pool ID
+    body := []string{"Property_example"} // []string | List of application exe paths for the applications to be validated.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.ValidateInstalledApplicationsOnDesktopPool(context.Background(), id).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.ValidateInstalledApplicationsOnDesktopPool``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ValidateInstalledApplicationsOnDesktopPool`: []InstalledApplicationValidationInfo
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.ValidateInstalledApplicationsOnDesktopPool`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | Desktop Pool ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiValidateInstalledApplicationsOnDesktopPoolRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | **[]string** | List of application exe paths for the applications to be validated. | 
+
+### Return type
+
+[**[]InstalledApplicationValidationInfo**](InstalledApplicationValidationInfo.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ValidateInstalledApplicationsOnFarm
+
+> []InstalledApplicationValidationInfo ValidateInstalledApplicationsOnFarm(ctx, id).Body(body).Execute()
+
+Validates that each application in the given list is installed on the RDS Servers belonging to the specified Farm.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    id := "id_example" // string | Farm ID
+    body := []string{"Property_example"} // []string | List of application exe paths for the applications to be validated.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.ValidateInstalledApplicationsOnFarm(context.Background(), id).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.ValidateInstalledApplicationsOnFarm``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ValidateInstalledApplicationsOnFarm`: []InstalledApplicationValidationInfo
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.ValidateInstalledApplicationsOnFarm`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | Farm ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiValidateInstalledApplicationsOnFarmRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | **[]string** | List of application exe paths for the applications to be validated. | 
+
+### Return type
+
+[**[]InstalledApplicationValidationInfo**](InstalledApplicationValidationInfo.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ValidateSpecifiedNames
+
+> []SpecifiedNamesValidationInfo ValidateSpecifiedNames(ctx).Body(body).Execute()
+
+Validates manually specified virtual machines. Ensures machine and user names are valid and aren't duplicated in the given desktop pool.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    body := *openapiclient.NewSpecifiedNamesValidationSpec([]openapiclient.NamesSpec{*openapiclient.NewNamesSpec("Machine-002-jdoe")}) // SpecifiedNamesValidationSpec | The specification for specified names validation that needs to be validated.
+
+    configuration := openapiclient.NewConfiguration()
+    api_client := openapiclient.NewAPIClient(configuration)
+    resp, r, err := api_client.InventoryApi.ValidateSpecifiedNames(context.Background()).Body(body).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `InventoryApi.ValidateSpecifiedNames``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ValidateSpecifiedNames`: []SpecifiedNamesValidationInfo
+    fmt.Fprintf(os.Stdout, "Response from `InventoryApi.ValidateSpecifiedNames`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiValidateSpecifiedNamesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SpecifiedNamesValidationSpec**](SpecifiedNamesValidationSpec.md) | The specification for specified names validation that needs to be validated. | 
+
+### Return type
+
+[**[]SpecifiedNamesValidationInfo**](SpecifiedNamesValidationInfo.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

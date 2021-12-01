@@ -4,23 +4,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DatacenterId** | **string** | Datacenter id for this VM template. | 
-**DiskSizeInBytes** | **int64** | Sum of capacities of all the virtual disks in the template, in bytes. | 
-**Id** | **string** | Unique ID representing a VM template. | 
-**IncompatibleReasons** | **[]string** | Reasons that may preclude this VM template from being used in full clone desktop pool creation. | 
-**MemoryMb** | **int32** | Memory size of the VM template, in MB | 
-**Name** | **string** | VM template name. | 
-**OperatingSystem** | **string** | Operating system. * UNKNOWN: Unknown * WINDOWS_XP: Windows XP * WINDOWS_VISTA: Windows Vista * WINDOWS_7: Windows 7 * WINDOWS_8: Windows 8 * WINDOWS_10: Windows 10 * WINDOWS_SERVER_2003: Windows Server 2003 * WINDOWS_SERVER_2008: Windows Server 2008 * WINDOWS_SERVER_2008_R2: Windows Server 2008 R2 * WINDOWS_SERVER_2012: Windows Server 2012 * WINDOWS_SERVER_2012_R2: Windows Server 2012 R2 * WINDOWS_SERVER_2016_OR_ABOVE: Windows Server 2016 or above * LINUX_OTHER: Linux (other) * LINUX_SERVER_OTHER: Linux server (other) * LINUX_UBUNTU: Linux (Ubuntu) * LINUX_RHEL: Linux (Red Hat Enterprise) * LINUX_SUSE: Linux (Suse) * LINUX_CENTOS: Linux (CentOS) | 
-**OperatingSystemDisplayName** | **string** | Operating system display name from Virtual Center. | 
-**Path** | **string** | VM template path. | 
-**VcenterId** | **string** | ID of the vCenter to which this VM template belongs to. | 
+**DatacenterId** | Pointer to **string** | Datacenter id for this VM template. | [optional] 
+**DiskSizeInBytes** | Pointer to **int64** | Sum of capacities of all the virtual disks in the template, in bytes. | [optional] 
+**Id** | Pointer to **string** | Unique ID representing a VM template. | [optional] 
+**IncompatibleReasons** | Pointer to **[]string** | Reasons that may preclude this VM template from being used in full clone desktop pool creation. | [optional] 
+**MemoryMb** | Pointer to **int32** | Memory size of the VM template, in MB | [optional] 
+**Name** | Pointer to **string** | VM template name. | [optional] 
+**OperatingSystem** | Pointer to **string** | Operating system. * UNKNOWN: Unknown * WINDOWS_XP: Windows XP * WINDOWS_VISTA: Windows Vista * WINDOWS_7: Windows 7 * WINDOWS_8: Windows 8 * WINDOWS_10: Windows 10 * WINDOWS_SERVER_2003: Windows Server 2003 * WINDOWS_SERVER_2008: Windows Server 2008 * WINDOWS_SERVER_2008_R2: Windows Server 2008 R2 * WINDOWS_SERVER_2012: Windows Server 2012 * WINDOWS_SERVER_2012_R2: Windows Server 2012 R2 * WINDOWS_SERVER_2016_OR_ABOVE: Windows Server 2016 or above * LINUX_OTHER: Linux (other) * LINUX_SERVER_OTHER: Linux server (other) * LINUX_UBUNTU: Linux (Ubuntu) * LINUX_RHEL: Linux (Red Hat Enterprise) * LINUX_SUSE: Linux (Suse) * LINUX_CENTOS: Linux (CentOS) | [optional] 
+**OperatingSystemDisplayName** | Pointer to **string** | Operating system display name from Virtual Center. | [optional] 
+**Path** | Pointer to **string** | VM template path. | [optional] 
+**VcenterId** | Pointer to **string** | ID of the vCenter to which this VM template belongs to. | [optional] 
 **VgpuType** | Pointer to **string** | NVIDIA GRID vGPU type configured on this VM template. | [optional] 
 
 ## Methods
 
 ### NewVMTemplateInfo
 
-`func NewVMTemplateInfo(datacenterId string, diskSizeInBytes int64, id string, incompatibleReasons []string, memoryMb int32, name string, operatingSystem string, operatingSystemDisplayName string, path string, vcenterId string, ) *VMTemplateInfo`
+`func NewVMTemplateInfo() *VMTemplateInfo`
 
 NewVMTemplateInfo instantiates a new VMTemplateInfo object
 This constructor will assign default values to properties that have it defined,
@@ -54,6 +54,11 @@ and a boolean to check if the value has been set.
 
 SetDatacenterId sets DatacenterId field to given value.
 
+### HasDatacenterId
+
+`func (o *VMTemplateInfo) HasDatacenterId() bool`
+
+HasDatacenterId returns a boolean if a field has been set.
 
 ### GetDiskSizeInBytes
 
@@ -74,6 +79,11 @@ and a boolean to check if the value has been set.
 
 SetDiskSizeInBytes sets DiskSizeInBytes field to given value.
 
+### HasDiskSizeInBytes
+
+`func (o *VMTemplateInfo) HasDiskSizeInBytes() bool`
+
+HasDiskSizeInBytes returns a boolean if a field has been set.
 
 ### GetId
 
@@ -94,6 +104,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *VMTemplateInfo) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetIncompatibleReasons
 
@@ -114,6 +129,11 @@ and a boolean to check if the value has been set.
 
 SetIncompatibleReasons sets IncompatibleReasons field to given value.
 
+### HasIncompatibleReasons
+
+`func (o *VMTemplateInfo) HasIncompatibleReasons() bool`
+
+HasIncompatibleReasons returns a boolean if a field has been set.
 
 ### GetMemoryMb
 
@@ -134,6 +154,11 @@ and a boolean to check if the value has been set.
 
 SetMemoryMb sets MemoryMb field to given value.
 
+### HasMemoryMb
+
+`func (o *VMTemplateInfo) HasMemoryMb() bool`
+
+HasMemoryMb returns a boolean if a field has been set.
 
 ### GetName
 
@@ -154,6 +179,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *VMTemplateInfo) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetOperatingSystem
 
@@ -174,6 +204,11 @@ and a boolean to check if the value has been set.
 
 SetOperatingSystem sets OperatingSystem field to given value.
 
+### HasOperatingSystem
+
+`func (o *VMTemplateInfo) HasOperatingSystem() bool`
+
+HasOperatingSystem returns a boolean if a field has been set.
 
 ### GetOperatingSystemDisplayName
 
@@ -194,6 +229,11 @@ and a boolean to check if the value has been set.
 
 SetOperatingSystemDisplayName sets OperatingSystemDisplayName field to given value.
 
+### HasOperatingSystemDisplayName
+
+`func (o *VMTemplateInfo) HasOperatingSystemDisplayName() bool`
+
+HasOperatingSystemDisplayName returns a boolean if a field has been set.
 
 ### GetPath
 
@@ -214,6 +254,11 @@ and a boolean to check if the value has been set.
 
 SetPath sets Path field to given value.
 
+### HasPath
+
+`func (o *VMTemplateInfo) HasPath() bool`
+
+HasPath returns a boolean if a field has been set.
 
 ### GetVcenterId
 
@@ -234,6 +279,11 @@ and a boolean to check if the value has been set.
 
 SetVcenterId sets VcenterId field to given value.
 
+### HasVcenterId
+
+`func (o *VMTemplateInfo) HasVcenterId() bool`
+
+HasVcenterId returns a boolean if a field has been set.
 
 ### GetVgpuType
 

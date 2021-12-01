@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**InstantCloneEngineProvisioningLimit** | **int32** | Maximum concurrent instant clone engine provisioning operations. This property has a default value of 20. This property has a minimum value of 1. | 
-**PowerOperationsLimit** | **int32** | Maximum concurrent virtual center power operations. This property has a default value of 50. This property has a minimum value of 1. | 
-**ProvisioningLimit** | **int32** | Maximum concurrent virtual center provisioning operations. This property has a default value of 20. This property has a minimum value of 1. | 
+**InstantCloneEngineProvisioningLimit** | Pointer to **int32** | Maximum concurrent instant clone engine provisioning operations. This property has a default value of 20. This property has a minimum value of 1. | [optional] 
+**PowerOperationsLimit** | Pointer to **int32** | Maximum concurrent virtual center power operations. This property has a default value of 50. This property has a minimum value of 1. | [optional] 
+**ProvisioningLimit** | Pointer to **int32** | Maximum concurrent virtual center provisioning operations. This property has a default value of 20. This property has a minimum value of 1. | [optional] 
 
 ## Methods
 
 ### NewVCLimits
 
-`func NewVCLimits(instantCloneEngineProvisioningLimit int32, powerOperationsLimit int32, provisioningLimit int32, ) *VCLimits`
+`func NewVCLimits() *VCLimits`
 
 NewVCLimits instantiates a new VCLimits object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +46,11 @@ and a boolean to check if the value has been set.
 
 SetInstantCloneEngineProvisioningLimit sets InstantCloneEngineProvisioningLimit field to given value.
 
+### HasInstantCloneEngineProvisioningLimit
+
+`func (o *VCLimits) HasInstantCloneEngineProvisioningLimit() bool`
+
+HasInstantCloneEngineProvisioningLimit returns a boolean if a field has been set.
 
 ### GetPowerOperationsLimit
 
@@ -66,6 +71,11 @@ and a boolean to check if the value has been set.
 
 SetPowerOperationsLimit sets PowerOperationsLimit field to given value.
 
+### HasPowerOperationsLimit
+
+`func (o *VCLimits) HasPowerOperationsLimit() bool`
+
+HasPowerOperationsLimit returns a boolean if a field has been set.
 
 ### GetProvisioningLimit
 
@@ -86,6 +96,11 @@ and a boolean to check if the value has been set.
 
 SetProvisioningLimit sets ProvisioningLimit field to given value.
 
+### HasProvisioningLimit
+
+`func (o *VCLimits) HasProvisioningLimit() bool`
+
+HasProvisioningLimit returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

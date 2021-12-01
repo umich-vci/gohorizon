@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Address** | **string** | Gateway host name or IP address. | 
-**Internal** | **bool** | Indicates if the Gateway is internal. | 
-**Type** | **string** | Type of the Gateway. * UAG: Unified Access Gateway type. * F5: F5 Gateway type. * UNKNOWN: Unknown type. | 
-**Version** | **string** | Version of the Gateway. | 
+**Address** | Pointer to **string** | Gateway host name or IP address. | [optional] 
+**Internal** | Pointer to **bool** | Indicates if the Gateway is internal. | [optional] 
+**Type** | Pointer to **string** | Type of the Gateway. * UAG: Unified Access Gateway type. * F5: F5 Gateway type. * UNKNOWN: Unknown type. | [optional] 
+**Version** | Pointer to **string** | Version of the Gateway. | [optional] 
 
 ## Methods
 
 ### NewGatewayMonitorDetails
 
-`func NewGatewayMonitorDetails(address string, internal bool, type_ string, version string, ) *GatewayMonitorDetails`
+`func NewGatewayMonitorDetails() *GatewayMonitorDetails`
 
 NewGatewayMonitorDetails instantiates a new GatewayMonitorDetails object
 This constructor will assign default values to properties that have it defined,
@@ -47,6 +47,11 @@ and a boolean to check if the value has been set.
 
 SetAddress sets Address field to given value.
 
+### HasAddress
+
+`func (o *GatewayMonitorDetails) HasAddress() bool`
+
+HasAddress returns a boolean if a field has been set.
 
 ### GetInternal
 
@@ -67,6 +72,11 @@ and a boolean to check if the value has been set.
 
 SetInternal sets Internal field to given value.
 
+### HasInternal
+
+`func (o *GatewayMonitorDetails) HasInternal() bool`
+
+HasInternal returns a boolean if a field has been set.
 
 ### GetType
 
@@ -87,6 +97,11 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+### HasType
+
+`func (o *GatewayMonitorDetails) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -107,6 +122,11 @@ and a boolean to check if the value has been set.
 
 SetVersion sets Version field to given value.
 
+### HasVersion
+
+`func (o *GatewayMonitorDetails) HasVersion() bool`
+
+HasVersion returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

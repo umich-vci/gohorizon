@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**FeatureSettings** | [**FeatureSettings**](FeatureSettings.md) |  | 
-**GeneralSettings** | [**GeneralSettings**](GeneralSettings.md) |  | 
-**SecuritySettings** | [**SecuritySettings**](SecuritySettings.md) |  | 
+**FeatureSettings** | Pointer to [**FeatureSettings**](FeatureSettings.md) |  | [optional] 
+**GeneralSettings** | Pointer to [**GeneralSettings**](GeneralSettings.md) |  | [optional] 
+**SecuritySettings** | Pointer to [**SecuritySettings**](SecuritySettings.md) |  | [optional] 
 
 ## Methods
 
 ### NewSettingsInfo
 
-`func NewSettingsInfo(featureSettings FeatureSettings, generalSettings GeneralSettings, securitySettings SecuritySettings, ) *SettingsInfo`
+`func NewSettingsInfo() *SettingsInfo`
 
 NewSettingsInfo instantiates a new SettingsInfo object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +46,11 @@ and a boolean to check if the value has been set.
 
 SetFeatureSettings sets FeatureSettings field to given value.
 
+### HasFeatureSettings
+
+`func (o *SettingsInfo) HasFeatureSettings() bool`
+
+HasFeatureSettings returns a boolean if a field has been set.
 
 ### GetGeneralSettings
 
@@ -66,6 +71,11 @@ and a boolean to check if the value has been set.
 
 SetGeneralSettings sets GeneralSettings field to given value.
 
+### HasGeneralSettings
+
+`func (o *SettingsInfo) HasGeneralSettings() bool`
+
+HasGeneralSettings returns a boolean if a field has been set.
 
 ### GetSecuritySettings
 
@@ -86,6 +96,11 @@ and a boolean to check if the value has been set.
 
 SetSecuritySettings sets SecuritySettings field to given value.
 
+### HasSecuritySettings
+
+`func (o *SettingsInfo) HasSecuritySettings() bool`
+
+HasSecuritySettings returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

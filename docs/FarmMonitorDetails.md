@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Source** | Pointer to **string** | Source of farm machines. This property is required if type is set to \&quot;AUTOMATED\&quot;. * LINKED_CLONE: Linked clone share the same base image and use less storage space than full RDS Servers. * INSTANT_CLONE: Instant clone engine uses vmfork technology to create the instant clones. These clones take much less time for provisioning. | [optional] 
-**Type** | **string** | Farm type. * AUTOMATED: Automated Farm. * MANUAL: Manual farm. | 
+**Type** | Pointer to **string** | Farm type. * AUTOMATED: Automated Farm. * MANUAL: Manual farm. | [optional] 
 
 ## Methods
 
 ### NewFarmMonitorDetails
 
-`func NewFarmMonitorDetails(type_ string, ) *FarmMonitorDetails`
+`func NewFarmMonitorDetails() *FarmMonitorDetails`
 
 NewFarmMonitorDetails instantiates a new FarmMonitorDetails object
 This constructor will assign default values to properties that have it defined,
@@ -70,6 +70,11 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+### HasType
+
+`func (o *FarmMonitorDetails) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

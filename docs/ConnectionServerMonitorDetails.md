@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Build** | **string** | Connection Server build number. | 
-**Version** | **string** | Connection Server version number. | 
+**Build** | Pointer to **string** | Connection Server build number. | [optional] 
+**Version** | Pointer to **string** | Connection Server version number. | [optional] 
 
 ## Methods
 
 ### NewConnectionServerMonitorDetails
 
-`func NewConnectionServerMonitorDetails(build string, version string, ) *ConnectionServerMonitorDetails`
+`func NewConnectionServerMonitorDetails() *ConnectionServerMonitorDetails`
 
 NewConnectionServerMonitorDetails instantiates a new ConnectionServerMonitorDetails object
 This constructor will assign default values to properties that have it defined,
@@ -45,6 +45,11 @@ and a boolean to check if the value has been set.
 
 SetBuild sets Build field to given value.
 
+### HasBuild
+
+`func (o *ConnectionServerMonitorDetails) HasBuild() bool`
+
+HasBuild returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -65,6 +70,11 @@ and a boolean to check if the value has been set.
 
 SetVersion sets Version field to given value.
 
+### HasVersion
+
+`func (o *ConnectionServerMonitorDetails) HasVersion() bool`
+
+HasVersion returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

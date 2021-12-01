@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DeleteInProgess** | **bool** | Indicates whether the Farm is in the process of being deleted. Default value is false. | 
+**DeleteInProgess** | Pointer to **bool** | Indicates whether the Farm is in the process of being deleted. Default value is false. | [optional] 
 **DesktopId** | Pointer to **string** | Desktop pool Id representing the RDS Desktop pool to which this Farm belongs. | [optional] 
 **DisplayProtocolSettings** | Pointer to [**FarmDisplayProtocolSettings**](FarmDisplayProtocolSettings.md) |  | [optional] 
 **LoadBalancerSettings** | Pointer to [**FarmLoadBalancerSettings**](FarmLoadBalancerSettings.md) |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewFarmSettings
 
-`func NewFarmSettings(deleteInProgess bool, ) *FarmSettings`
+`func NewFarmSettings() *FarmSettings`
 
 NewFarmSettings instantiates a new FarmSettings object
 This constructor will assign default values to properties that have it defined,
@@ -49,6 +49,11 @@ and a boolean to check if the value has been set.
 
 SetDeleteInProgess sets DeleteInProgess field to given value.
 
+### HasDeleteInProgess
+
+`func (o *FarmSettings) HasDeleteInProgess() bool`
+
+HasDeleteInProgess returns a boolean if a field has been set.
 
 ### GetDesktopId
 

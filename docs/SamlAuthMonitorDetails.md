@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdministratorUrl** | Pointer to **string** | The administrator URL for the SAML authenticator. | [optional] 
-**Label** | **string** | The label of the SAML Authenticator. | 
-**MetadataUrl** | **string** | The metadata URL of the SAML Authenticator. | 
+**Label** | Pointer to **string** | The label of the SAML Authenticator. | [optional] 
+**MetadataUrl** | Pointer to **string** | The metadata URL of the SAML Authenticator. | [optional] 
 
 ## Methods
 
 ### NewSAMLAuthMonitorDetails
 
-`func NewSAMLAuthMonitorDetails(label string, metadataUrl string, ) *SAMLAuthMonitorDetails`
+`func NewSAMLAuthMonitorDetails() *SAMLAuthMonitorDetails`
 
 NewSAMLAuthMonitorDetails instantiates a new SAMLAuthMonitorDetails object
 This constructor will assign default values to properties that have it defined,
@@ -71,6 +71,11 @@ and a boolean to check if the value has been set.
 
 SetLabel sets Label field to given value.
 
+### HasLabel
+
+`func (o *SAMLAuthMonitorDetails) HasLabel() bool`
+
+HasLabel returns a boolean if a field has been set.
 
 ### GetMetadataUrl
 
@@ -91,6 +96,11 @@ and a boolean to check if the value has been set.
 
 SetMetadataUrl sets MetadataUrl field to given value.
 
+### HasMetadataUrl
+
+`func (o *SAMLAuthMonitorDetails) HasMetadataUrl() bool`
+
+HasMetadataUrl returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

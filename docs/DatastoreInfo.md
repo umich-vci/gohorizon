@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **CapacityMb** | Pointer to **int64** | Maximum capacity of this datastore, in MB. | [optional] 
 **DatacenterId** | Pointer to **string** | Datacenter id for this datastore. | [optional] 
 **DiskType** | Pointer to **string** | Disk type of the datastore. * SSD: Solid State Drive disk type. * NON_SSD: NON-Solid State Drive disk type. * UNKNOWN: Unknown disk type. * NON_VMFS: NON-VMFS disk type. | [optional] 
-**FileSystemType** | Pointer to **string** | File system type of the datastore. * VMFS: Virtual Machine File System. * NFS: Network File System. * VSAN: vSAN File System. * VVOL: Virtual Volumes. | [optional] 
+**FileSystemType** | Pointer to **string** | File system type of the datastore. * VMFS: Virtual Machine File System. * NFS: Network File System. * VSAN: vSAN File System. * VVOL: Virtual Volumes. * UNKNOWN: Unknown File System type. | [optional] 
 **FreeSpaceMb** | Pointer to **int64** | Available capacity of this datastore, in MB. | [optional] 
 **HostOrClusterId** | Pointer to **string** | Host or Cluster id for this datastore. | [optional] 
 **Id** | Pointer to **string** | Unique ID representing the datastore. | [optional] 

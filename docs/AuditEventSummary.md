@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Message** | Pointer to **string** | Audit event message.  | [optional] 
 **Module** | Pointer to **string** | Horizon component that has logged this event. Supported Filters : &#39;Equals&#39;. | [optional] 
 **Severity** | Pointer to **string** | Severity type of the event. Supported Filters : &#39;Equals&#39;. * INFO: Audit event is of INFO severity. * WARNING: Audit event is of WARNING severity * ERROR: Audit event is of ERROR severity * AUDIT_SUCCESS: Audit event is of AUDIT_SUCCESS severity * AUDIT_FAIL: Audit event is of AUDIT_FAIL severity * UNKNOWN: Not able to identify severity | [optional] 
-**Time** | Pointer to **int64** | Time at which the event occurred. Supported Filters : &#39;Equals&#39;. | [optional] 
+**Time** | Pointer to **int64** | Time at which the event occurred. Supported Filters : &#39;Between&#39;. | [optional] 
 **Type** | Pointer to **string** | Event name that corresponds to an item in the message catalog. Supported Filters : &#39;Equals&#39;. | [optional] 
 **UserId** | Pointer to **string** | Sid of the user associated with this event. Supported Filters : &#39;Equals&#39;. | [optional] 
 

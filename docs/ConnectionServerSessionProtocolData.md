@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SessionCount** | **int32** | Number of active sessions launched using the protocol. | 
-**SessionProtocol** | **string** | Protocol used in launching the session. * PCOIP: Display protocol is PCoIP. * RDP: Display protocol is RDP. * BLAST: Display protocol is BLAST. * CONSOLE: Display protocol is console. * UNKNOWN: Display protocol is unknown. | 
+**SessionCount** | Pointer to **int32** | Number of active sessions launched using the protocol. | [optional] 
+**SessionProtocol** | Pointer to **string** | Protocol used in launching the session. * PCOIP: Display protocol is PCoIP. * RDP: Display protocol is RDP. * BLAST: Display protocol is BLAST. * CONSOLE: Display protocol is console. * UNKNOWN: Display protocol is unknown. | [optional] 
 
 ## Methods
 
 ### NewConnectionServerSessionProtocolData
 
-`func NewConnectionServerSessionProtocolData(sessionCount int32, sessionProtocol string, ) *ConnectionServerSessionProtocolData`
+`func NewConnectionServerSessionProtocolData() *ConnectionServerSessionProtocolData`
 
 NewConnectionServerSessionProtocolData instantiates a new ConnectionServerSessionProtocolData object
 This constructor will assign default values to properties that have it defined,
@@ -45,6 +45,11 @@ and a boolean to check if the value has been set.
 
 SetSessionCount sets SessionCount field to given value.
 
+### HasSessionCount
+
+`func (o *ConnectionServerSessionProtocolData) HasSessionCount() bool`
+
+HasSessionCount returns a boolean if a field has been set.
 
 ### GetSessionProtocol
 
@@ -65,6 +70,11 @@ and a boolean to check if the value has been set.
 
 SetSessionProtocol sets SessionProtocol field to given value.
 
+### HasSessionProtocol
+
+`func (o *ConnectionServerSessionProtocolData) HasSessionProtocol() bool`
+
+HasSessionProtocol returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

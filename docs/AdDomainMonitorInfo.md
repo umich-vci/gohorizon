@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ConnectionServers** | Pointer to [**[]ADDomainMonitorConnectionServer**](ADDomainMonitorConnectionServer.md) | Information about the AD Domain connections from each of the connection servers. | [optional] 
-**DnsName** | **string** | The DNS name for the domain. | 
-**NetbiosName** | **string** | The NetBIOS name for the domain. | 
-**Nt4Domain** | **bool** | If this is an NT4 domain or not. | 
+**DnsName** | Pointer to **string** | The DNS name for the domain. | [optional] 
+**NetbiosName** | Pointer to **string** | The NetBIOS name for the domain. | [optional] 
+**Nt4Domain** | Pointer to **bool** | If this is an NT4 domain or not. | [optional] 
 
 ## Methods
 
 ### NewADDomainMonitorInfo
 
-`func NewADDomainMonitorInfo(dnsName string, netbiosName string, nt4Domain bool, ) *ADDomainMonitorInfo`
+`func NewADDomainMonitorInfo() *ADDomainMonitorInfo`
 
 NewADDomainMonitorInfo instantiates a new ADDomainMonitorInfo object
 This constructor will assign default values to properties that have it defined,
@@ -72,6 +72,11 @@ and a boolean to check if the value has been set.
 
 SetDnsName sets DnsName field to given value.
 
+### HasDnsName
+
+`func (o *ADDomainMonitorInfo) HasDnsName() bool`
+
+HasDnsName returns a boolean if a field has been set.
 
 ### GetNetbiosName
 
@@ -92,6 +97,11 @@ and a boolean to check if the value has been set.
 
 SetNetbiosName sets NetbiosName field to given value.
 
+### HasNetbiosName
+
+`func (o *ADDomainMonitorInfo) HasNetbiosName() bool`
+
+HasNetbiosName returns a boolean if a field has been set.
 
 ### GetNt4Domain
 
@@ -112,6 +122,11 @@ and a boolean to check if the value has been set.
 
 SetNt4Domain sets Nt4Domain field to given value.
 
+### HasNt4Domain
+
+`func (o *ADDomainMonitorInfo) HasNt4Domain() bool`
+
+HasNt4Domain returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

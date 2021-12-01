@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ConnectionServers** | [**[]SAMLAuthenticatorMonitorConnectionServerV2**](SAMLAuthenticatorMonitorConnectionServerV2.md) | Information about the SAML authenticator connections from each of the connection servers. | 
-**Details** | [**SAMLAuthMonitorDetails**](SAMLAuthMonitorDetails.md) |  | 
-**Id** | **string** | Unique ID of the SAML Authenticator. | 
+**ConnectionServers** | Pointer to [**[]SAMLAuthenticatorMonitorConnectionServerV2**](SAMLAuthenticatorMonitorConnectionServerV2.md) | Information about the SAML authenticator connections from each of the connection servers. | [optional] 
+**Details** | Pointer to [**SAMLAuthMonitorDetails**](SAMLAuthMonitorDetails.md) |  | [optional] 
+**Id** | Pointer to **string** | Unique ID of the SAML Authenticator. | [optional] 
 
 ## Methods
 
 ### NewSAMLAuthenticatorMonitorInfoV2
 
-`func NewSAMLAuthenticatorMonitorInfoV2(connectionServers []SAMLAuthenticatorMonitorConnectionServerV2, details SAMLAuthMonitorDetails, id string, ) *SAMLAuthenticatorMonitorInfoV2`
+`func NewSAMLAuthenticatorMonitorInfoV2() *SAMLAuthenticatorMonitorInfoV2`
 
 NewSAMLAuthenticatorMonitorInfoV2 instantiates a new SAMLAuthenticatorMonitorInfoV2 object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +46,11 @@ and a boolean to check if the value has been set.
 
 SetConnectionServers sets ConnectionServers field to given value.
 
+### HasConnectionServers
+
+`func (o *SAMLAuthenticatorMonitorInfoV2) HasConnectionServers() bool`
+
+HasConnectionServers returns a boolean if a field has been set.
 
 ### GetDetails
 
@@ -66,6 +71,11 @@ and a boolean to check if the value has been set.
 
 SetDetails sets Details field to given value.
 
+### HasDetails
+
+`func (o *SAMLAuthenticatorMonitorInfoV2) HasDetails() bool`
+
+HasDetails returns a boolean if a field has been set.
 
 ### GetId
 
@@ -86,6 +96,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *SAMLAuthenticatorMonitorInfoV2) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

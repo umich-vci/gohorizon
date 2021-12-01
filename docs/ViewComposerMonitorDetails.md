@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApiVerion** | **string** | The version of the View Composer API used to communicate with the View Composer server. | 
-**Build** | **string** | The build of the View Composer server. | 
-**MinEsxVersion** | **string** | The minimum ESX version required for compatibility with this View Composer server. | 
-**MinVcVersion** | **string** | The minimum Virtual Center version required for compatibility with this View Composer server. | 
-**ReferencedVcs** | **[]string** | The Virtual Center servers referencing to this View Composer. | 
-**Version** | **string** | The version of the View Composer server. | 
+**ApiVerion** | Pointer to **string** | The version of the View Composer API used to communicate with the View Composer server. | [optional] 
+**Build** | Pointer to **string** | The build of the View Composer server. | [optional] 
+**MinEsxVersion** | Pointer to **string** | The minimum ESX version required for compatibility with this View Composer server. | [optional] 
+**MinVcVersion** | Pointer to **string** | The minimum Virtual Center version required for compatibility with this View Composer server. | [optional] 
+**ReferencedVcs** | Pointer to **[]string** | The Virtual Center servers referencing to this View Composer. | [optional] 
+**Version** | Pointer to **string** | The version of the View Composer server. | [optional] 
 
 ## Methods
 
 ### NewViewComposerMonitorDetails
 
-`func NewViewComposerMonitorDetails(apiVerion string, build string, minEsxVersion string, minVcVersion string, referencedVcs []string, version string, ) *ViewComposerMonitorDetails`
+`func NewViewComposerMonitorDetails() *ViewComposerMonitorDetails`
 
 NewViewComposerMonitorDetails instantiates a new ViewComposerMonitorDetails object
 This constructor will assign default values to properties that have it defined,
@@ -49,6 +49,11 @@ and a boolean to check if the value has been set.
 
 SetApiVerion sets ApiVerion field to given value.
 
+### HasApiVerion
+
+`func (o *ViewComposerMonitorDetails) HasApiVerion() bool`
+
+HasApiVerion returns a boolean if a field has been set.
 
 ### GetBuild
 
@@ -69,6 +74,11 @@ and a boolean to check if the value has been set.
 
 SetBuild sets Build field to given value.
 
+### HasBuild
+
+`func (o *ViewComposerMonitorDetails) HasBuild() bool`
+
+HasBuild returns a boolean if a field has been set.
 
 ### GetMinEsxVersion
 
@@ -89,6 +99,11 @@ and a boolean to check if the value has been set.
 
 SetMinEsxVersion sets MinEsxVersion field to given value.
 
+### HasMinEsxVersion
+
+`func (o *ViewComposerMonitorDetails) HasMinEsxVersion() bool`
+
+HasMinEsxVersion returns a boolean if a field has been set.
 
 ### GetMinVcVersion
 
@@ -109,6 +124,11 @@ and a boolean to check if the value has been set.
 
 SetMinVcVersion sets MinVcVersion field to given value.
 
+### HasMinVcVersion
+
+`func (o *ViewComposerMonitorDetails) HasMinVcVersion() bool`
+
+HasMinVcVersion returns a boolean if a field has been set.
 
 ### GetReferencedVcs
 
@@ -129,6 +149,11 @@ and a boolean to check if the value has been set.
 
 SetReferencedVcs sets ReferencedVcs field to given value.
 
+### HasReferencedVcs
+
+`func (o *ViewComposerMonitorDetails) HasReferencedVcs() bool`
+
+HasReferencedVcs returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -149,6 +174,11 @@ and a boolean to check if the value has been set.
 
 SetVersion sets Version field to given value.
 
+### HasVersion
+
+`func (o *ViewComposerMonitorDetails) HasVersion() bool`
+
+HasVersion returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

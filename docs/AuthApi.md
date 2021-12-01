@@ -31,7 +31,7 @@ import (
 )
 
 func main() {
-    body := *openapiclient.NewAuthLogin("AD-TEST-DOMAIN", "<password>", "Administrator") // AuthLogin | Login credentials needed for Authentication
+    body := *openapiclient.NewAuthLogin("AD-TEST-DOMAIN", []string{"Password_example"}, "Administrator") // AuthLogin | Login credentials needed for Authentication
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)

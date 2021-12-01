@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Domain** | **string** | Domain | 
-**Password** | **string** | User password | 
+**Password** | **[]string** | User password | 
 **Username** | **string** | User Name | 
 
 ## Methods
 
 ### NewAuthLogin
 
-`func NewAuthLogin(domain string, password string, username string, ) *AuthLogin`
+`func NewAuthLogin(domain string, password []string, username string, ) *AuthLogin`
 
 NewAuthLogin instantiates a new AuthLogin object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetDomain sets Domain field to given value.
 
 ### GetPassword
 
-`func (o *AuthLogin) GetPassword() string`
+`func (o *AuthLogin) GetPassword() []string`
 
 GetPassword returns the Password field if non-nil, zero value otherwise.
 
 ### GetPasswordOk
 
-`func (o *AuthLogin) GetPasswordOk() (*string, bool)`
+`func (o *AuthLogin) GetPasswordOk() (*[]string, bool)`
 
 GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPassword
 
-`func (o *AuthLogin) SetPassword(v string)`
+`func (o *AuthLogin) SetPassword(v []string)`
 
 SetPassword sets Password field to given value.
 

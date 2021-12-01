@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** | Friendly name for the file type. If unset, no friendly name will be displayed. | [optional] 
 **Name** | **string** | The name for other file type data. | 
-**Type** | **string** | Other file type currently supported. * URL: URL scheme types supported by application. | 
+**Type** | **string** | Other file type currently supported. * URL: URL scheme types supported by application. * OTHER: Other scheme types supported by application. | 
 
 ## Methods
 

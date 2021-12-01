@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccessToken** | **string** | Access Token to be used in API calls. | 
-**RefreshToken** | **string** | Refresh Token to be used to get a new Access token. | 
+**AccessToken** | Pointer to **string** | Access Token to be used in API calls. | [optional] 
+**RefreshToken** | Pointer to **string** | Refresh Token to be used to get a new Access token. | [optional] 
 
 ## Methods
 
 ### NewAuthTokens
 
-`func NewAuthTokens(accessToken string, refreshToken string, ) *AuthTokens`
+`func NewAuthTokens() *AuthTokens`
 
 NewAuthTokens instantiates a new AuthTokens object
 This constructor will assign default values to properties that have it defined,
@@ -45,6 +45,11 @@ and a boolean to check if the value has been set.
 
 SetAccessToken sets AccessToken field to given value.
 
+### HasAccessToken
+
+`func (o *AuthTokens) HasAccessToken() bool`
+
+HasAccessToken returns a boolean if a field has been set.
 
 ### GetRefreshToken
 
@@ -65,6 +70,11 @@ and a boolean to check if the value has been set.
 
 SetRefreshToken sets RefreshToken field to given value.
 
+### HasRefreshToken
+
+`func (o *AuthTokens) HasRefreshToken() bool`
+
+HasRefreshToken returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

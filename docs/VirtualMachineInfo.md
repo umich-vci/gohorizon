@@ -4,20 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HardwareVersion** | **int32** | Hardware version for this VM. | 
-**Id** | **string** | Unique ID representing a VM. | 
+**HardwareVersion** | Pointer to **int32** | Hardware version for this VM. | [optional] 
+**Id** | Pointer to **string** | Unique ID representing a VM. | [optional] 
 **IncompatibleReasons** | Pointer to **[]string** | Reasons that may preclude this Virtual Machine from having its snapshots used in linked or instant clone desktop or farm. | [optional] 
-**Name** | **string** | VM name. | 
-**OperatingSystem** | **string** | Operating system. * UNKNOWN: Unknown * WINDOWS_XP: Windows XP * WINDOWS_VISTA: Windows Vista * WINDOWS_7: Windows 7 * WINDOWS_8: Windows 8 * WINDOWS_10: Windows 10 * WINDOWS_SERVER_2003: Windows Server 2003 * WINDOWS_SERVER_2008: Windows Server 2008 * WINDOWS_SERVER_2008_R2: Windows Server 2008 R2 * WINDOWS_SERVER_2012: Windows Server 2012 * WINDOWS_SERVER_2012_R2: Windows Server 2012 R2 * WINDOWS_SERVER_2016_OR_ABOVE: Windows Server 2016 or above * LINUX_OTHER: Linux (other) * LINUX_SERVER_OTHER: Linux server (other) * LINUX_UBUNTU: Linux (Ubuntu) * LINUX_RHEL: Linux (Red Hat Enterprise) * LINUX_SUSE: Linux (Suse) * LINUX_CENTOS: Linux (CentOS) | 
-**OperatingSystemDisplayName** | **string** | Operating system display name from Virtual Center. | 
-**Path** | **string** | VM path. | 
-**VGputype** | **string** | Virtual GPU type. | 
+**Name** | Pointer to **string** | VM name. | [optional] 
+**OperatingSystem** | Pointer to **string** | Operating system. * UNKNOWN: Unknown * WINDOWS_XP: Windows XP * WINDOWS_VISTA: Windows Vista * WINDOWS_7: Windows 7 * WINDOWS_8: Windows 8 * WINDOWS_10: Windows 10 * WINDOWS_SERVER_2003: Windows Server 2003 * WINDOWS_SERVER_2008: Windows Server 2008 * WINDOWS_SERVER_2008_R2: Windows Server 2008 R2 * WINDOWS_SERVER_2012: Windows Server 2012 * WINDOWS_SERVER_2012_R2: Windows Server 2012 R2 * WINDOWS_SERVER_2016_OR_ABOVE: Windows Server 2016 or above * LINUX_OTHER: Linux (other) * LINUX_SERVER_OTHER: Linux server (other) * LINUX_UBUNTU: Linux (Ubuntu) * LINUX_RHEL: Linux (Red Hat Enterprise) * LINUX_SUSE: Linux (Suse) * LINUX_CENTOS: Linux (CentOS) | [optional] 
+**OperatingSystemDisplayName** | Pointer to **string** | Operating system display name from Virtual Center. | [optional] 
+**Path** | Pointer to **string** | VM path. | [optional] 
+**VGputype** | Pointer to **string** | Virtual GPU type. | [optional] 
 
 ## Methods
 
 ### NewVirtualMachineInfo
 
-`func NewVirtualMachineInfo(hardwareVersion int32, id string, name string, operatingSystem string, operatingSystemDisplayName string, path string, vGputype string, ) *VirtualMachineInfo`
+`func NewVirtualMachineInfo() *VirtualMachineInfo`
 
 NewVirtualMachineInfo instantiates a new VirtualMachineInfo object
 This constructor will assign default values to properties that have it defined,
@@ -51,6 +51,11 @@ and a boolean to check if the value has been set.
 
 SetHardwareVersion sets HardwareVersion field to given value.
 
+### HasHardwareVersion
+
+`func (o *VirtualMachineInfo) HasHardwareVersion() bool`
+
+HasHardwareVersion returns a boolean if a field has been set.
 
 ### GetId
 
@@ -71,6 +76,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *VirtualMachineInfo) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetIncompatibleReasons
 
@@ -116,6 +126,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *VirtualMachineInfo) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetOperatingSystem
 
@@ -136,6 +151,11 @@ and a boolean to check if the value has been set.
 
 SetOperatingSystem sets OperatingSystem field to given value.
 
+### HasOperatingSystem
+
+`func (o *VirtualMachineInfo) HasOperatingSystem() bool`
+
+HasOperatingSystem returns a boolean if a field has been set.
 
 ### GetOperatingSystemDisplayName
 
@@ -156,6 +176,11 @@ and a boolean to check if the value has been set.
 
 SetOperatingSystemDisplayName sets OperatingSystemDisplayName field to given value.
 
+### HasOperatingSystemDisplayName
+
+`func (o *VirtualMachineInfo) HasOperatingSystemDisplayName() bool`
+
+HasOperatingSystemDisplayName returns a boolean if a field has been set.
 
 ### GetPath
 
@@ -176,6 +201,11 @@ and a boolean to check if the value has been set.
 
 SetPath sets Path field to given value.
 
+### HasPath
+
+`func (o *VirtualMachineInfo) HasPath() bool`
+
+HasPath returns a boolean if a field has been set.
 
 ### GetVGputype
 
@@ -196,6 +226,11 @@ and a boolean to check if the value has been set.
 
 SetVGputype sets VGputype field to given value.
 
+### HasVGputype
+
+`func (o *VirtualMachineInfo) HasVGputype() bool`
+
+HasVGputype returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

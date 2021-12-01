@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClusterGuid** | **string** | The GUID of a group of Connection Servers sharing the same configuration. | 
-**ClusterName** | **string** | The name of a group of Connection Servers sharing the same configuration. | 
-**FipsModeEnabled** | **bool** | Indicates if FIPS mode is enabled. | 
-**IpMode** | **string** | Indicates the IP mode of the environment. * IPv4: The ip mode is IPv4. * IPv6: The ip mode is IPv6. | 
+**ClusterGuid** | Pointer to **string** | The GUID of a group of Connection Servers sharing the same configuration. | [optional] 
+**ClusterName** | Pointer to **string** | The name of a group of Connection Servers sharing the same configuration. | [optional] 
+**FipsModeEnabled** | Pointer to **bool** | Indicates if FIPS mode is enabled. | [optional] 
+**IpMode** | Pointer to **string** | Indicates the IP mode of the environment. * IPv4: The ip mode is IPv4. * IPv6: The ip mode is IPv6. | [optional] 
 **LocalPodName** | Pointer to **string** | The name of the current pod in the Multi-DataCenter Horizon Pod, the value will be null when PodFederation is not initialized. | [optional] 
-**TimezoneOffset** | **int32** | Represents the clusters time zone offset from UTC in seconds. | 
+**TimezoneOffset** | Pointer to **int32** | Represents the clusters time zone offset from UTC in seconds. | [optional] 
 
 ## Methods
 
 ### NewEnvironmentInfo
 
-`func NewEnvironmentInfo(clusterGuid string, clusterName string, fipsModeEnabled bool, ipMode string, timezoneOffset int32, ) *EnvironmentInfo`
+`func NewEnvironmentInfo() *EnvironmentInfo`
 
 NewEnvironmentInfo instantiates a new EnvironmentInfo object
 This constructor will assign default values to properties that have it defined,
@@ -49,6 +49,11 @@ and a boolean to check if the value has been set.
 
 SetClusterGuid sets ClusterGuid field to given value.
 
+### HasClusterGuid
+
+`func (o *EnvironmentInfo) HasClusterGuid() bool`
+
+HasClusterGuid returns a boolean if a field has been set.
 
 ### GetClusterName
 
@@ -69,6 +74,11 @@ and a boolean to check if the value has been set.
 
 SetClusterName sets ClusterName field to given value.
 
+### HasClusterName
+
+`func (o *EnvironmentInfo) HasClusterName() bool`
+
+HasClusterName returns a boolean if a field has been set.
 
 ### GetFipsModeEnabled
 
@@ -89,6 +99,11 @@ and a boolean to check if the value has been set.
 
 SetFipsModeEnabled sets FipsModeEnabled field to given value.
 
+### HasFipsModeEnabled
+
+`func (o *EnvironmentInfo) HasFipsModeEnabled() bool`
+
+HasFipsModeEnabled returns a boolean if a field has been set.
 
 ### GetIpMode
 
@@ -109,6 +124,11 @@ and a boolean to check if the value has been set.
 
 SetIpMode sets IpMode field to given value.
 
+### HasIpMode
+
+`func (o *EnvironmentInfo) HasIpMode() bool`
+
+HasIpMode returns a boolean if a field has been set.
 
 ### GetLocalPodName
 
@@ -154,6 +174,11 @@ and a boolean to check if the value has been set.
 
 SetTimezoneOffset sets TimezoneOffset field to given value.
 
+### HasTimezoneOffset
+
+`func (o *EnvironmentInfo) HasTimezoneOffset() bool`
+
+HasTimezoneOffset returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

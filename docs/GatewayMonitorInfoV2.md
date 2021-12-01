@@ -6,18 +6,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ActiveConnectionCount** | Pointer to **int32** | Number of active connections for the gateway. Includes PCoIP and BLAST connection counts. | [optional] 
 **BlastConnectionCount** | Pointer to **int32** | Number of BLAST connections for the gateway. | [optional] 
-**Details** | [**GatewayMonitorDetails**](GatewayMonitorDetails.md) |  | 
-**Id** | **string** | Unique ID of the Gateway. | 
+**Details** | Pointer to [**GatewayMonitorDetails**](GatewayMonitorDetails.md) |  | [optional] 
+**Id** | Pointer to **string** | Unique ID of the Gateway. | [optional] 
 **LastUpdatedTimestamp** | Pointer to **int64** | The timestamp in milliseconds when the last update was obtained. Measured as epoch time. | [optional] 
-**Name** | **string** | Gateway name. | 
+**Name** | Pointer to **string** | Gateway name. | [optional] 
 **PcoipConnectionCount** | Pointer to **int32** | Number of PCoIP connections for the gateway. | [optional] 
-**Status** | **string** | Status of the Gateway. * NOT_CONTACTED: There has been no contact from the gateway. * PROBLEM: The gateway has reported a problem. * STALE: Gateway is stale. Gateway will be marked as stale when Connection Server does not receive any request from the Gateway in last two successive intervals. * OK: The Gateway is working as expected. | 
+**Status** | Pointer to **string** | Status of the Gateway. * NOT_CONTACTED: There has been no contact from the gateway. * PROBLEM: The gateway has reported a problem. * STALE: Gateway is stale. Gateway will be marked as stale when Connection Server does not receive any request from the Gateway in last two successive intervals. * OK: The Gateway is working as expected. | [optional] 
 
 ## Methods
 
 ### NewGatewayMonitorInfoV2
 
-`func NewGatewayMonitorInfoV2(details GatewayMonitorDetails, id string, name string, status string, ) *GatewayMonitorInfoV2`
+`func NewGatewayMonitorInfoV2() *GatewayMonitorInfoV2`
 
 NewGatewayMonitorInfoV2 instantiates a new GatewayMonitorInfoV2 object
 This constructor will assign default values to properties that have it defined,
@@ -101,6 +101,11 @@ and a boolean to check if the value has been set.
 
 SetDetails sets Details field to given value.
 
+### HasDetails
+
+`func (o *GatewayMonitorInfoV2) HasDetails() bool`
+
+HasDetails returns a boolean if a field has been set.
 
 ### GetId
 
@@ -121,6 +126,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *GatewayMonitorInfoV2) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetLastUpdatedTimestamp
 
@@ -166,6 +176,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *GatewayMonitorInfoV2) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetPcoipConnectionCount
 
@@ -211,6 +226,11 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
+### HasStatus
+
+`func (o *GatewayMonitorInfoV2) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

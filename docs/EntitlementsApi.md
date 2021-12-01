@@ -854,7 +854,7 @@ import (
 func main() {
     filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
     page := int32(1) // int32 | page, if passed should be > 0. (optional)
-    size := int32(10) // int32 | size, if passed should be > 0 (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -881,7 +881,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
  **page** | **int32** | page, if passed should be &gt; 0. | 
- **size** | **int32** | size, if passed should be &gt; 0 | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
 
 ### Return type
 
@@ -924,7 +924,7 @@ import (
 func main() {
     filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
     page := int32(1) // int32 | page, if passed should be > 0. (optional)
-    size := int32(10) // int32 | size, if passed should be > 0 (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -951,7 +951,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
  **page** | **int32** | page, if passed should be &gt; 0. | 
- **size** | **int32** | size, if passed should be &gt; 0 | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
 
 ### Return type
 
@@ -994,7 +994,7 @@ import (
 func main() {
     filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
     page := int32(1) // int32 | page, if passed should be > 0. (optional)
-    size := int32(10) // int32 | size, if passed should be > 0 (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -1021,7 +1021,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
  **page** | **int32** | page, if passed should be &gt; 0. | 
- **size** | **int32** | size, if passed should be &gt; 0 | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
 
 ### Return type
 
@@ -1064,7 +1064,7 @@ import (
 func main() {
     filter := "{"type":"And", "filters":[{"type":"Equals", "name":"<>", "value":"<>"}] }" // string | filter expression built using fields with <b>'supported filters'</b> as described in output <b>model</b> schema of this API. (optional)
     page := int32(1) // int32 | page, if passed should be > 0. (optional)
-    size := int32(10) // int32 | size, if passed should be > 0 (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -1091,7 +1091,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string** | filter expression built using fields with &lt;b&gt;&#39;supported filters&#39;&lt;/b&gt; as described in output &lt;b&gt;model&lt;/b&gt; schema of this API. | 
  **page** | **int32** | page, if passed should be &gt; 0. | 
- **size** | **int32** | size, if passed should be &gt; 0 | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
 
 ### Return type
 

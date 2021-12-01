@@ -6,17 +6,17 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ActiveConnectionCount** | Pointer to **int32** | Number of active connections for the gateway. Includes PCoIP and BLAST connection counts. | [optional] 
 **BlastConnectionCount** | Pointer to **int32** | Number of BLAST connections for the gateway. | [optional] 
-**Details** | [**GatewayMonitorDetails**](GatewayMonitorDetails.md) |  | 
-**Id** | **string** | Unique ID of the Gateway. | 
-**Name** | **string** | Gateway name. | 
+**Details** | Pointer to [**GatewayMonitorDetails**](GatewayMonitorDetails.md) |  | [optional] 
+**Id** | Pointer to **string** | Unique ID of the Gateway. | [optional] 
+**Name** | Pointer to **string** | Gateway name. | [optional] 
 **PcoipConnectionCount** | Pointer to **int32** | Number of PCoIP connections for the gateway. | [optional] 
-**Status** | **string** | Status of the Gateway. * NOT_CONTACTED: There has been no contact from the gateway. * PROBLEM: The gateway has reported a problem. * STALE: Gateway is stale. Gateway will be marked as stale when Connection Server does not receive any request from the Gateway in last two successive intervals. * OK: The Gateway is working as expected. | 
+**Status** | Pointer to **string** | Status of the Gateway. * NOT_CONTACTED: There has been no contact from the gateway. * PROBLEM: The gateway has reported a problem. * STALE: Gateway is stale. Gateway will be marked as stale when Connection Server does not receive any request from the Gateway in last two successive intervals. * OK: The Gateway is working as expected. | [optional] 
 
 ## Methods
 
 ### NewGatewayMonitorInfo
 
-`func NewGatewayMonitorInfo(details GatewayMonitorDetails, id string, name string, status string, ) *GatewayMonitorInfo`
+`func NewGatewayMonitorInfo() *GatewayMonitorInfo`
 
 NewGatewayMonitorInfo instantiates a new GatewayMonitorInfo object
 This constructor will assign default values to properties that have it defined,
@@ -100,6 +100,11 @@ and a boolean to check if the value has been set.
 
 SetDetails sets Details field to given value.
 
+### HasDetails
+
+`func (o *GatewayMonitorInfo) HasDetails() bool`
+
+HasDetails returns a boolean if a field has been set.
 
 ### GetId
 
@@ -120,6 +125,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *GatewayMonitorInfo) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -140,6 +150,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *GatewayMonitorInfo) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetPcoipConnectionCount
 
@@ -185,6 +200,11 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
+### HasStatus
+
+`func (o *GatewayMonitorInfo) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -5,17 +5,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdDomainAdvancedSettings** | Pointer to [**ADDomainAdvancedSettings**](ADDomainAdvancedSettings.md) |  | [optional] 
-**DnsName** | **string** | DNS name of the AD Domain. | 
+**DnsName** | Pointer to **string** | DNS name of the AD Domain. | [optional] 
 **DomainType** | Pointer to **string** | AD Domain Type. * CONNECTION_SERVER_DOMAIN: The domain having trust with connection server domain. * NO_TRUST_DOMAIN: The domain not having any trust with connection server domain. | [optional] 
-**Id** | **string** | Unique SID representing AD Domain. | 
-**NetbiosName** | **string** | NetBIOS name of the AD Domain. | 
+**Id** | Pointer to **string** | Unique SID representing AD Domain. | [optional] 
+**NetbiosName** | Pointer to **string** | NetBIOS name of the AD Domain. | [optional] 
 **PrimaryAccount** | Pointer to [**ServiceAccountCredentials**](ServiceAccountCredentials.md) |  | [optional] 
 
 ## Methods
 
 ### NewADDomainInfoV2
 
-`func NewADDomainInfoV2(dnsName string, id string, netbiosName string, ) *ADDomainInfoV2`
+`func NewADDomainInfoV2() *ADDomainInfoV2`
 
 NewADDomainInfoV2 instantiates a new ADDomainInfoV2 object
 This constructor will assign default values to properties that have it defined,
@@ -74,6 +74,11 @@ and a boolean to check if the value has been set.
 
 SetDnsName sets DnsName field to given value.
 
+### HasDnsName
+
+`func (o *ADDomainInfoV2) HasDnsName() bool`
+
+HasDnsName returns a boolean if a field has been set.
 
 ### GetDomainType
 
@@ -119,6 +124,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *ADDomainInfoV2) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetNetbiosName
 
@@ -139,6 +149,11 @@ and a boolean to check if the value has been set.
 
 SetNetbiosName sets NetbiosName field to given value.
 
+### HasNetbiosName
+
+`func (o *ADDomainInfoV2) HasNetbiosName() bool`
+
+HasNetbiosName returns a boolean if a field has been set.
 
 ### GetPrimaryAccount
 

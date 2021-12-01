@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccessGroupId** | **string** | Access groups can organize the entities (like application pools, desktop pools) in the organization. They can also be used for delegated administration. For application pool, this is the same as that of the farm or desktop pool that the application pool belongs to.&lt;br&gt;Supported Filters: &#39;Equals&#39;. | 
+**AccessGroupId** | Pointer to **string** | Access groups can organize the entities (like application pools, desktop pools) in the organization. They can also be used for delegated administration. For application pool, this is the same as that of the farm or desktop pool that the application pool belongs to.&lt;br&gt;Supported Filters: &#39;Equals&#39;. | [optional] 
 **AntiAffinityData** | Pointer to [**ApplicationAntiAffinityData**](ApplicationAntiAffinityData.md) |  | [optional] 
 **CategoryFolderName** | Pointer to **string** | Name of the category folder in the user&#39;s OS containing a shortcut to the application. Unset if the application does not belong to a category. | [optional] 
 **CloudBrokered** | Pointer to **bool** | Indicates whether the application pool is cloud brokered.&lt;br&gt;Supported Filters: &#39;Equals&#39;. | [optional] 
@@ -15,15 +15,15 @@ Name | Type | Description | Notes
 **DisplayName** | Pointer to **string** | The display name is the name that users will see when they connect to view client. If the display name is left blank, it defaults to name.&lt;br&gt;Supported Filters: &#39;Equals&#39;, &#39;StartsWith&#39; and &#39;Contains&#39;. | [optional] 
 **EnableClientRestrictions** | Pointer to **bool** | Indicates whether client restrictions are to be applied to application pool. Currently it is valid for application pool created from farm.&lt;br&gt;Supported Filters: &#39;Equals&#39;. | [optional] 
 **EnablePreLaunch** | Pointer to **bool** | Whether to pre-launch the application.&lt;br&gt;Supported Filters: &#39;Equals&#39;. | [optional] 
-**Enabled** | **bool** | Indicates whether the application pool is enabled.&lt;br&gt;Supported Filters: &#39;Equals&#39;. | 
-**ExecutablePath** | **string** | Path to application executable.&lt;br&gt;Supported Filters: &#39;Equals&#39;, &#39;StartsWith&#39;, &#39;EndsWith&#39; and &#39;Contains&#39;. | 
+**Enabled** | Pointer to **bool** | Indicates whether the application pool is enabled.&lt;br&gt;Supported Filters: &#39;Equals&#39;. | [optional] 
+**ExecutablePath** | Pointer to **string** | Path to application executable.&lt;br&gt;Supported Filters: &#39;Equals&#39;, &#39;StartsWith&#39;, &#39;EndsWith&#39; and &#39;Contains&#39;. | [optional] 
 **FarmId** | Pointer to **string** | ID of the farm from which this application pool is created. Either this or desktop pool id will be set.&lt;br&gt;Supported Filters: &#39;Equals&#39;. | [optional] 
 **GlobalApplicationEntitlementId** | Pointer to **string** | Global application entitlement for this application pool. Caller should have permission to FEDERATED_LDAP_VIEW privilege for this field to be populated or to use in filter.&lt;br&gt;Supported Filters: &#39;Equals&#39;. | [optional] 
 **IconIds** | Pointer to **[]string** | List of icon IDs associated with the application which are fetched from the agent. | [optional] 
-**Id** | **string** | Unique ID representing application pool.&lt;br&gt;Supported Filters: &#39;Equals&#39;. | 
+**Id** | Pointer to **string** | Unique ID representing application pool.&lt;br&gt;Supported Filters: &#39;Equals&#39;. | [optional] 
 **MaxMultiSessions** | Pointer to **int32** | Maximum number of multi-sessions a user can have in this application pool. This property is required if multi-session mode is set to \&quot;ENABLED_DEFAULT_OFF\&quot;, \&quot;ENABLED_DEFAULT_ON\&quot;, or \&quot;ENABLED_ENFORCED\&quot; | [optional] 
 **MultiSessionMode** | Pointer to **string** | Multi-session mode for the application pool. An application launched in multi-session mode does not support reconnect behavior when user logs in from a different client instance. Multi-session mode should be disabled when pre-launch is enabled.&lt;br&gt;Supported Filters: &#39;Equals&#39;. * DISABLED: Multi-session is not supported for this application. * ENABLED_DEFAULT_OFF: Multi-session is supported for this application but is disabled by default. The client would need to explicitly request multi-session launch, if wanted. If a legacy client is used, this will always result in a single-session application launch. * ENABLED_DEFAULT_ON: Multi-session mode is supported for this application and is enabled by default. The client can request explicitly for single-session launch, if wanted. If a legacy client is used, this will always result in a multi-session application launch. * ENABLED_ENFORCED: Multi-session is supported for this application and it is enforced. The client can not select to launch this application as a single-session application. | [optional] 
-**Name** | **string** | The application name is the unique identifier used to identify this application pool. This property must contain only alphanumerics, underscores, and dashes. The maximum length is 64 characters.&lt;br&gt;Supported Filters: &#39;Equals&#39;, &#39;StartsWith&#39; and &#39;Contains&#39;. | 
+**Name** | Pointer to **string** | The application name is the unique identifier used to identify this application pool. This property must contain only alphanumerics, underscores, and dashes. The maximum length is 64 characters.&lt;br&gt;Supported Filters: &#39;Equals&#39;, &#39;StartsWith&#39; and &#39;Contains&#39;. | [optional] 
 **Parameters** | Pointer to **string** | Parameters to pass to application when launching. | [optional] 
 **Publisher** | Pointer to **string** | Application publisher.&lt;br&gt;Supported Filters: &#39;Equals&#39;, &#39;StartsWith&#39; and &#39;Contains&#39;. | [optional] 
 **ShortcutLocations** | Pointer to **[]string** | Locations of the category folder in the user&#39;s OS containing a shortcut to the application. The value must be set if category folder name is provided. | [optional] 
@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 
 ### NewApplicationPoolInfoV3
 
-`func NewApplicationPoolInfoV3(accessGroupId string, enabled bool, executablePath string, id string, name string, ) *ApplicationPoolInfoV3`
+`func NewApplicationPoolInfoV3() *ApplicationPoolInfoV3`
 
 NewApplicationPoolInfoV3 instantiates a new ApplicationPoolInfoV3 object
 This constructor will assign default values to properties that have it defined,
@@ -69,6 +69,11 @@ and a boolean to check if the value has been set.
 
 SetAccessGroupId sets AccessGroupId field to given value.
 
+### HasAccessGroupId
+
+`func (o *ApplicationPoolInfoV3) HasAccessGroupId() bool`
+
+HasAccessGroupId returns a boolean if a field has been set.
 
 ### GetAntiAffinityData
 
@@ -339,6 +344,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *ApplicationPoolInfoV3) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetExecutablePath
 
@@ -359,6 +369,11 @@ and a boolean to check if the value has been set.
 
 SetExecutablePath sets ExecutablePath field to given value.
 
+### HasExecutablePath
+
+`func (o *ApplicationPoolInfoV3) HasExecutablePath() bool`
+
+HasExecutablePath returns a boolean if a field has been set.
 
 ### GetFarmId
 
@@ -454,6 +469,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *ApplicationPoolInfoV3) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetMaxMultiSessions
 
@@ -524,6 +544,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *ApplicationPoolInfoV3) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetParameters
 

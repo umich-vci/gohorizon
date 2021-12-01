@@ -5,17 +5,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ApplicationCount** | Pointer to **int32** | Number of Applications published from the farm. | [optional] 
-**Details** | [**FarmMonitorDetails**](FarmMonitorDetails.md) |  | 
-**Id** | **string** | Unique ID of the Farm. | 
-**Name** | **string** | Farm name. | 
+**Details** | Pointer to [**FarmMonitorDetails**](FarmMonitorDetails.md) |  | [optional] 
+**Id** | Pointer to **string** | Unique ID of the Farm. | [optional] 
+**Name** | Pointer to **string** | Farm name. | [optional] 
 **RdsServerCount** | Pointer to **int32** | Number of RDS Servers in the farm. | [optional] 
-**Status** | **string** | Status of Farm. * OK: Farm is enabled and no servers are in WARNING or ERROR state. One or more server(s) may be DISABLED (including the case where all of them are DISABLED). * WARNING: Farm is enabled. One or more of the following is true: 1) One or more server(s) is either in WARNING or ERROR (not exceeding the predefined threshold) state. 2) The RDS Servers in this Farm present a mix of both known and unknown load preferences. * ERROR: Farm is enabled. One or more server(s) (exceeding the predefined threshold) is in ERROR state, or, for Automated Farms, there could be a provisioning error. * DISABLED: Farm is disabled. | 
+**Status** | Pointer to **string** | Status of Farm. * OK: Farm is enabled and no servers are in WARNING or ERROR state. One or more server(s) may be DISABLED (including the case where all of them are DISABLED). * WARNING: Farm is enabled. One or more of the following is true: 1) One or more server(s) is either in WARNING or ERROR (not exceeding the predefined threshold) state. 2) The RDS Servers in this Farm present a mix of both known and unknown load preferences. * ERROR: Farm is enabled. One or more server(s) (exceeding the predefined threshold) is in ERROR state, or, for Automated Farms, there could be a provisioning error. * DISABLED: Farm is disabled. | [optional] 
 
 ## Methods
 
 ### NewFarmMonitorInfo
 
-`func NewFarmMonitorInfo(details FarmMonitorDetails, id string, name string, status string, ) *FarmMonitorInfo`
+`func NewFarmMonitorInfo() *FarmMonitorInfo`
 
 NewFarmMonitorInfo instantiates a new FarmMonitorInfo object
 This constructor will assign default values to properties that have it defined,
@@ -74,6 +74,11 @@ and a boolean to check if the value has been set.
 
 SetDetails sets Details field to given value.
 
+### HasDetails
+
+`func (o *FarmMonitorInfo) HasDetails() bool`
+
+HasDetails returns a boolean if a field has been set.
 
 ### GetId
 
@@ -94,6 +99,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *FarmMonitorInfo) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -114,6 +124,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *FarmMonitorInfo) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetRdsServerCount
 
@@ -159,6 +174,11 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
+### HasStatus
+
+`func (o *FarmMonitorInfo) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

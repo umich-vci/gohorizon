@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | Datastore name. | 
-**Path** | **string** | Path to the datastore. | 
-**Url** | **string** | Unique locator for datastore. | 
+**Name** | Pointer to **string** | Datastore name. | [optional] 
+**Path** | Pointer to **string** | Path to the datastore. | [optional] 
+**Url** | Pointer to **string** | Unique locator for datastore. | [optional] 
 
 ## Methods
 
 ### NewVCMonitorDatastoreDetails
 
-`func NewVCMonitorDatastoreDetails(name string, path string, url string, ) *VCMonitorDatastoreDetails`
+`func NewVCMonitorDatastoreDetails() *VCMonitorDatastoreDetails`
 
 NewVCMonitorDatastoreDetails instantiates a new VCMonitorDatastoreDetails object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +46,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *VCMonitorDatastoreDetails) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetPath
 
@@ -66,6 +71,11 @@ and a boolean to check if the value has been set.
 
 SetPath sets Path field to given value.
 
+### HasPath
+
+`func (o *VCMonitorDatastoreDetails) HasPath() bool`
+
+HasPath returns a boolean if a field has been set.
 
 ### GetUrl
 
@@ -86,6 +96,11 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
+### HasUrl
+
+`func (o *VCMonitorDatastoreDetails) HasUrl() bool`
+
+HasUrl returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

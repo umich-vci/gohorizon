@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccessToken** | **string** | Access Token to be used in API calls. | 
+**AccessToken** | Pointer to **string** | Access Token to be used in API calls. | [optional] 
 
 ## Methods
 
 ### NewAccessToken
 
-`func NewAccessToken(accessToken string, ) *AccessToken`
+`func NewAccessToken() *AccessToken`
 
 NewAccessToken instantiates a new AccessToken object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetAccessToken sets AccessToken field to given value.
 
+### HasAccessToken
+
+`func (o *AccessToken) HasAccessToken() bool`
+
+HasAccessToken returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

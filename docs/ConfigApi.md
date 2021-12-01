@@ -2049,7 +2049,7 @@ import (
 
 func main() {
     page := int32(1) // int32 | page, if passed should be > 0. (optional)
-    size := int32(10) // int32 | size, if passed should be > 0 (optional)
+    size := int32(10) // int32 | size, if passed should be > 0. (optional)
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -2075,7 +2075,7 @@ Other parameters are passed through a pointer to a apiListICDomainAccountsReques
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int32** | page, if passed should be &gt; 0. | 
- **size** | **int32** | size, if passed should be &gt; 0 | 
+ **size** | **int32** | size, if passed should be &gt; 0. | 
 
 ### Return type
 

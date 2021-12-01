@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AgentBuild** | **string** | Agent build number. | 
-**AgentVersion** | **string** | Agent version. | 
+**AgentBuild** | Pointer to **string** | Agent build number. | [optional] 
+**AgentVersion** | Pointer to **string** | Agent version. | [optional] 
 **MaxSessionsCountConfigured** | Pointer to **int32** | Maximum number of sessions for RDS server as configured by administrator. Will be unset if the value is not configured. | [optional] 
-**OperatingSystem** | **string** | Operating System version. * UNKNOWN: Unknown * WINDOWS_SERVER_2003: Windows Server 2003 * WINDOWS_SERVER_2008: Windows Server 2008 * WINDOWS_SERVER_2008_R2: Windows Server 2008 R2 * WINDOWS_SERVER_2012: Windows Server 2012 * WINDOWS_SERVER_2012_R2: Windows Server 2012 R2 * WINDOWS_SERVER_2016_OR_ABOVE: Windows Server 2016 or above * LINUX_SERVER_OTHER: Linux Server (other) | 
-**State** | **string** | State of RDS Server. * WAIT_FOR_AGENT: Connection Server is waiting to establish communication with View Agent on a RDS Server. * AGENT_UNREACHABLE: Connection Server cannot establish communication with View Agent on a RDS Server. * AGENT_CONFIG_ERROR: The RDS Server has configuration error. Ex: Remote Desktop Service role is not enabled. * AVAILABLE: The RDS Server is powered on and ready for an active connection. * DISABLED: The RDS Server is disabled. * DISABLE_IN_PROGRESS: Disabled RDS server still has some brokered sessions. It can still accept re-connections. * PROVISIONING: The RDS Server is being provisioned. * PROVISIONING_ERROR: An error occurred during provisioning. * CUSTOMIZING: The RDS Server is being customized. * DELETING: The RDS Server is marked for deletion. It will be deleted soon. * MAINTENANCE: The RDS Server is in maintenance mode. * ERROR: An unknown error occurred in the RDS Server. * PROVISIONED: The RDS Server has been provisioned. * CONNECTED: The RDS Server is in an active session. * DISCONNECTED: The RDS Server is in an active session but is disconnected. * AGENT_ERR_STARTUP_IN_PROGRESS: The Horizon Agent has started on the virtual machine, but other required services such as the display protocol are still starting. * AGENT_ERR_DISABLED: The Horizon Agent is disabled. * AGENT_ERR_INVALID_IP: The Horizon Agent has an invalid IP. * AGENT_ERR_NEED_REBOOT: The Horizon Agent needs reboot. * AGENT_ERR_PROTOCOL_FAILURE: Protocol such as RDP or PCoIP is not enabled. * AGENT_ERR_DOMAIN_FAILURE: The RDS Server has an invalid domain. * AGENT_DRAIN_MODE: The RDS Server is configured for drain mode. * AGENT_DRAIN_UNTIL_RESTART: The RDS Server is configured a mode to drain until restart. * ALREADY_USED: The RDS Server cannot accept new sessions. * IN_PROGRESS: There is a RDS Server operation in progress. * VALIDATING: The connection server is synchronizing state information with the agent. * UNKNOWN: Could not determine the state of the RDS Server. | 
+**OperatingSystem** | Pointer to **string** | Operating System version. * UNKNOWN: Unknown * WINDOWS_SERVER_2003: Windows Server 2003 * WINDOWS_SERVER_2008: Windows Server 2008 * WINDOWS_SERVER_2008_R2: Windows Server 2008 R2 * WINDOWS_SERVER_2012: Windows Server 2012 * WINDOWS_SERVER_2012_R2: Windows Server 2012 R2 * WINDOWS_SERVER_2016_OR_ABOVE: Windows Server 2016 or above * LINUX_SERVER_OTHER: Linux Server (other) | [optional] 
+**State** | Pointer to **string** | State of RDS Server. * WAIT_FOR_AGENT: Connection Server is waiting to establish communication with View Agent on a RDS Server. * AGENT_UNREACHABLE: Connection Server cannot establish communication with View Agent on a RDS Server. * AGENT_CONFIG_ERROR: The RDS Server has configuration error. Ex: Remote Desktop Service role is not enabled. * AVAILABLE: The RDS Server is powered on and ready for an active connection. * DISABLED: The RDS Server is disabled. * DISABLE_IN_PROGRESS: Disabled RDS server still has some brokered sessions. It can still accept re-connections. * PROVISIONING: The RDS Server is being provisioned. * PROVISIONING_ERROR: An error occurred during provisioning. * CUSTOMIZING: The RDS Server is being customized. * DELETING: The RDS Server is marked for deletion. It will be deleted soon. * MAINTENANCE: The RDS Server is in maintenance mode. * ERROR: An unknown error occurred in the RDS Server. * PROVISIONED: The RDS Server has been provisioned. * CONNECTED: The RDS Server is in an active session. * DISCONNECTED: The RDS Server is in an active session but is disconnected. * AGENT_ERR_STARTUP_IN_PROGRESS: The Horizon Agent has started on the virtual machine, but other required services such as the display protocol are still starting. * AGENT_ERR_DISABLED: The Horizon Agent is disabled. * AGENT_ERR_INVALID_IP: The Horizon Agent has an invalid IP. * AGENT_ERR_NEED_REBOOT: The Horizon Agent needs reboot. * AGENT_ERR_PROTOCOL_FAILURE: Protocol such as RDP or PCoIP is not enabled. * AGENT_ERR_DOMAIN_FAILURE: The RDS Server has an invalid domain. * AGENT_DRAIN_MODE: The RDS Server is configured for drain mode. * AGENT_DRAIN_UNTIL_RESTART: The RDS Server is configured a mode to drain until restart. * ALREADY_USED: The RDS Server cannot accept new sessions. * IN_PROGRESS: There is a RDS Server operation in progress. * VALIDATING: The connection server is synchronizing state information with the agent. * UNKNOWN: Could not determine the state of the RDS Server. | [optional] 
 
 ## Methods
 
 ### NewRDSServerMonitorDetails
 
-`func NewRDSServerMonitorDetails(agentBuild string, agentVersion string, operatingSystem string, state string, ) *RDSServerMonitorDetails`
+`func NewRDSServerMonitorDetails() *RDSServerMonitorDetails`
 
 NewRDSServerMonitorDetails instantiates a new RDSServerMonitorDetails object
 This constructor will assign default values to properties that have it defined,
@@ -48,6 +48,11 @@ and a boolean to check if the value has been set.
 
 SetAgentBuild sets AgentBuild field to given value.
 
+### HasAgentBuild
+
+`func (o *RDSServerMonitorDetails) HasAgentBuild() bool`
+
+HasAgentBuild returns a boolean if a field has been set.
 
 ### GetAgentVersion
 
@@ -68,6 +73,11 @@ and a boolean to check if the value has been set.
 
 SetAgentVersion sets AgentVersion field to given value.
 
+### HasAgentVersion
+
+`func (o *RDSServerMonitorDetails) HasAgentVersion() bool`
+
+HasAgentVersion returns a boolean if a field has been set.
 
 ### GetMaxSessionsCountConfigured
 
@@ -113,6 +123,11 @@ and a boolean to check if the value has been set.
 
 SetOperatingSystem sets OperatingSystem field to given value.
 
+### HasOperatingSystem
+
+`func (o *RDSServerMonitorDetails) HasOperatingSystem() bool`
+
+HasOperatingSystem returns a boolean if a field has been set.
 
 ### GetState
 
@@ -133,6 +148,11 @@ and a boolean to check if the value has been set.
 
 SetState sets State field to given value.
 
+### HasState
+
+`func (o *RDSServerMonitorDetails) HasState() bool`
+
+HasState returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

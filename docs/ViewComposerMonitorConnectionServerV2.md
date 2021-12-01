@@ -5,17 +5,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Certificate** | Pointer to [**CertificateMonitorInfo**](CertificateMonitorInfo.md) |  | [optional] 
-**Id** | **string** | Unique ID of the Connection Server. | 
+**Id** | Pointer to **string** | Unique ID of the Connection Server. | [optional] 
 **LastUpdatedTimestamp** | Pointer to **int64** | The timestamp in milliseconds when the last update was obtained. Measured as epoch time. | [optional] 
-**Name** | **string** | Connection server host name or IP address. | 
-**Status** | **string** | Status of the View Composer with respect to this Connection Server. * OK: The connection to View Composer server is working properly. * MALFORMED_URL: The connection to View Composer server was not possible due to a malformed URL. * ERROR: Error occurred when connecting to View Composer server. * CERT_ERROR: Certificate validation error when connecting to the View Composer server. | 
-**ThumbprintAccepted** | **bool** | Indicates if the thumbprint of the View Composer was accepted. | 
+**Name** | Pointer to **string** | Connection server host name or IP address. | [optional] 
+**Status** | Pointer to **string** | Status of the View Composer with respect to this Connection Server. * OK: The connection to View Composer server is working properly. * MALFORMED_URL: The connection to View Composer server was not possible due to a malformed URL. * ERROR: Error occurred when connecting to View Composer server. * CERT_ERROR: Certificate validation error when connecting to the View Composer server. | [optional] 
+**ThumbprintAccepted** | Pointer to **bool** | Indicates if the thumbprint of the View Composer was accepted. | [optional] 
 
 ## Methods
 
 ### NewViewComposerMonitorConnectionServerV2
 
-`func NewViewComposerMonitorConnectionServerV2(id string, name string, status string, thumbprintAccepted bool, ) *ViewComposerMonitorConnectionServerV2`
+`func NewViewComposerMonitorConnectionServerV2() *ViewComposerMonitorConnectionServerV2`
 
 NewViewComposerMonitorConnectionServerV2 instantiates a new ViewComposerMonitorConnectionServerV2 object
 This constructor will assign default values to properties that have it defined,
@@ -74,6 +74,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *ViewComposerMonitorConnectionServerV2) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetLastUpdatedTimestamp
 
@@ -119,6 +124,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *ViewComposerMonitorConnectionServerV2) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetStatus
 
@@ -139,6 +149,11 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
+### HasStatus
+
+`func (o *ViewComposerMonitorConnectionServerV2) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 ### GetThumbprintAccepted
 
@@ -159,6 +174,11 @@ and a boolean to check if the value has been set.
 
 SetThumbprintAccepted sets ThumbprintAccepted field to given value.
 
+### HasThumbprintAccepted
+
+`func (o *ViewComposerMonitorConnectionServerV2) HasThumbprintAccepted() bool`
+
+HasThumbprintAccepted returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

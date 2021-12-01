@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Unique ID representing RCX server. | 
-**Name** | **string** | FQDN/IP address of the RCX server. | 
-**Port** | **int32** | RCX server&#39;s port. | 
-**Status** | **string** | This indicates the current status of RCX server. * UP: RCX server is running. * DOWN: RCX server is down. * UNKNOWN: RCX server status is unknown. | 
+**Id** | Pointer to **string** | Unique ID representing RCX server. | [optional] 
+**Name** | Pointer to **string** | FQDN/IP address of the RCX server. | [optional] 
+**Port** | Pointer to **int32** | RCX server&#39;s port. | [optional] 
+**Status** | Pointer to **string** | This indicates the current status of RCX server. * UP: RCX server is running. * DOWN: RCX server is down. * UNKNOWN: RCX server status is unknown. | [optional] 
 **Thumbprints** | Pointer to [**[]CertificateThumbprint**](CertificateThumbprint.md) | Thumbprints of the RCX server certificates. | [optional] 
-**Version** | **string** | Version information of RCX server. | 
+**Version** | Pointer to **string** | Version information of RCX server. | [optional] 
 
 ## Methods
 
 ### NewRCXServerInfo
 
-`func NewRCXServerInfo(id string, name string, port int32, status string, version string, ) *RCXServerInfo`
+`func NewRCXServerInfo() *RCXServerInfo`
 
 NewRCXServerInfo instantiates a new RCXServerInfo object
 This constructor will assign default values to properties that have it defined,
@@ -49,6 +49,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *RCXServerInfo) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -69,6 +74,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *RCXServerInfo) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetPort
 
@@ -89,6 +99,11 @@ and a boolean to check if the value has been set.
 
 SetPort sets Port field to given value.
 
+### HasPort
+
+`func (o *RCXServerInfo) HasPort() bool`
+
+HasPort returns a boolean if a field has been set.
 
 ### GetStatus
 
@@ -109,6 +124,11 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
+### HasStatus
+
+`func (o *RCXServerInfo) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 ### GetThumbprints
 
@@ -154,6 +174,11 @@ and a boolean to check if the value has been set.
 
 SetVersion sets Version field to given value.
 
+### HasVersion
+
+`func (o *RCXServerInfo) HasVersion() bool`
+
+HasVersion returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

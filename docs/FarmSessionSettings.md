@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DisconnectedSessionTimeoutMinutes** | Pointer to **int32** | Disconnected sessions timeout (in minutes).Will be set when disconnected_session_timeout_policy is set to AFTER. | [optional] 
-**DisconnectedSessionTimeoutPolicy** | **string** | Log-off policy after disconnected session. Default value is NEVER. * IMMEDIATELY: Immediately Logoff after user disconnect. * AFTER: Logoff after the specified number of minutes after user disconnect. * NEVER: Do not logoff after user disconnect. | 
+**DisconnectedSessionTimeoutPolicy** | Pointer to **string** | Log-off policy after disconnected session. Default value is NEVER. * IMMEDIATELY: Immediately Logoff after user disconnect. * AFTER: Logoff after the specified number of minutes after user disconnect. * NEVER: Do not logoff after user disconnect. | [optional] 
 **EmptySessionTimeoutMinutes** | Pointer to **int32** | Application empty session timeout in minutes. An empty session that has no remote-ablewindow is disconnected after the timeout. Default value is 1.Will be set when the empty_session_timeout_policy set to AFTER. | [optional] 
-**EmptySessionTimeoutPolicy** | **string** | Application empty session timeout policy. Default value is AFTER. * IMMEDIATE: Empty session will be disconnected immediately. * NEVER: Empty session will never disconnected. * AFTER: Empty session will be disconnected after specified number of minutes. | 
-**LogoffAfterTimeout** | **bool** | After timeout, empty application sessions are logged off when set to true. Otherwise sessions are disconnected.Default value is false. | 
+**EmptySessionTimeoutPolicy** | Pointer to **string** | Application empty session timeout policy. Default value is AFTER. * IMMEDIATE: Empty session will be disconnected immediately. * NEVER: Empty session will never disconnected. * AFTER: Empty session will be disconnected after specified number of minutes. | [optional] 
+**LogoffAfterTimeout** | Pointer to **bool** | After timeout, empty application sessions are logged off when set to true. Otherwise sessions are disconnected.Default value is false. | [optional] 
 **PreLaunchSessionTimeoutMinutes** | Pointer to **int32** | Application pre-launch session timeout in minutes. A pre-launch session is disconnected after the timeout.Will be set only when pre_launch_timeout_policy is set to AFTER. | [optional] 
 **PreLaunchSessionTimeoutPolicy** | Pointer to **string** | Pre-launch session timeout policy for the application sessions on this Farm. * AFTER: Pre-launched session is disconnected after specified number of minutes. * NEVER: Pre-launched session is never disconnected. | [optional] 
 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewFarmSessionSettings
 
-`func NewFarmSessionSettings(disconnectedSessionTimeoutPolicy string, emptySessionTimeoutPolicy string, logoffAfterTimeout bool, ) *FarmSessionSettings`
+`func NewFarmSessionSettings() *FarmSessionSettings`
 
 NewFarmSessionSettings instantiates a new FarmSessionSettings object
 This constructor will assign default values to properties that have it defined,
@@ -75,6 +75,11 @@ and a boolean to check if the value has been set.
 
 SetDisconnectedSessionTimeoutPolicy sets DisconnectedSessionTimeoutPolicy field to given value.
 
+### HasDisconnectedSessionTimeoutPolicy
+
+`func (o *FarmSessionSettings) HasDisconnectedSessionTimeoutPolicy() bool`
+
+HasDisconnectedSessionTimeoutPolicy returns a boolean if a field has been set.
 
 ### GetEmptySessionTimeoutMinutes
 
@@ -120,6 +125,11 @@ and a boolean to check if the value has been set.
 
 SetEmptySessionTimeoutPolicy sets EmptySessionTimeoutPolicy field to given value.
 
+### HasEmptySessionTimeoutPolicy
+
+`func (o *FarmSessionSettings) HasEmptySessionTimeoutPolicy() bool`
+
+HasEmptySessionTimeoutPolicy returns a boolean if a field has been set.
 
 ### GetLogoffAfterTimeout
 
@@ -140,6 +150,11 @@ and a boolean to check if the value has been set.
 
 SetLogoffAfterTimeout sets LogoffAfterTimeout field to given value.
 
+### HasLogoffAfterTimeout
+
+`func (o *FarmSessionSettings) HasLogoffAfterTimeout() bool`
+
+HasLogoffAfterTimeout returns a boolean if a field has been set.
 
 ### GetPreLaunchSessionTimeoutMinutes
 

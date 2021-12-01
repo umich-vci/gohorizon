@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ClusterPublicKey** | **string** | The Base 64 encoded public key of the cluster in PEM format. | 
+**ClusterPublicKey** | Pointer to **string** | The Base 64 encoded public key of the cluster in PEM format. | [optional] 
 **ClusterPublicKeyId** | Pointer to **string** | Key Id to identify the cluster&#39;s active key pair. | [optional] 
-**DataRecoveryPasswordConfigured** | **bool** | Indicates whether the backup recovery password has been configured. | 
-**MessageSecurityMode** | **string** | Determines if signing and verification of the JMS messages passed between Horizon components takes place. * DISABLED: Message security mode is disabled. * MIXED: Message security mode is enabled but not enforced. * ENABLED: Message security mode is enabled. Unsigned messages are rejected by Horizon components. * ENHANCED: Message Security mode is Enhanced. Message signing and validation is performed based on the current Security Level and desktop Message Security mode. | 
-**MessageSecurityStatus** | **string** | The status of the JMS message security. This tracks the application of changes to messageSecurityMode. * READY: The cluster is performing at the specified message security mode. * INITIALIZING_ENHANCED: The cluster is initializing a transition to the ENHANCED message security mode. * PENDING_ENHANCED: The cluster is propagating the change to ENHANCED message security mode to all nodes. * LEAVING_ENHANCED: The cluster is leaving the ENHANCED message security mode. | 
-**ReAuthSecureTunnelAfterInterruption** | **bool** | Determines if user credentials must be re-authenticated after a network interruption when Horizon clients use secure tunnel connections to Horizon resources. When you select this setting, if a secure tunnel connection ends during a session, Horizon Client requires the user to re-authenticate before reconnecting. | 
+**DataRecoveryPasswordConfigured** | Pointer to **bool** | Indicates whether the backup recovery password has been configured. | [optional] 
+**MessageSecurityMode** | Pointer to **string** | Determines if signing and verification of the JMS messages passed between Horizon components takes place. * DISABLED: Message security mode is disabled. * MIXED: Message security mode is enabled but not enforced. * ENABLED: Message security mode is enabled. Unsigned messages are rejected by Horizon components. * ENHANCED: Message Security mode is Enhanced. Message signing and validation is performed based on the current Security Level and desktop Message Security mode. | [optional] 
+**MessageSecurityStatus** | Pointer to **string** | The status of the JMS message security. This tracks the application of changes to messageSecurityMode. * READY: The cluster is performing at the specified message security mode. * INITIALIZING_ENHANCED: The cluster is initializing a transition to the ENHANCED message security mode. * PENDING_ENHANCED: The cluster is propagating the change to ENHANCED message security mode to all nodes. * LEAVING_ENHANCED: The cluster is leaving the ENHANCED message security mode. | [optional] 
+**ReAuthSecureTunnelAfterInterruption** | Pointer to **bool** | Determines if user credentials must be re-authenticated after a network interruption when Horizon clients use secure tunnel connections to Horizon resources. When you select this setting, if a secure tunnel connection ends during a session, Horizon Client requires the user to re-authenticate before reconnecting. | [optional] 
 
 ## Methods
 
 ### NewSecuritySettings
 
-`func NewSecuritySettings(clusterPublicKey string, dataRecoveryPasswordConfigured bool, messageSecurityMode string, messageSecurityStatus string, reAuthSecureTunnelAfterInterruption bool, ) *SecuritySettings`
+`func NewSecuritySettings() *SecuritySettings`
 
 NewSecuritySettings instantiates a new SecuritySettings object
 This constructor will assign default values to properties that have it defined,
@@ -49,6 +49,11 @@ and a boolean to check if the value has been set.
 
 SetClusterPublicKey sets ClusterPublicKey field to given value.
 
+### HasClusterPublicKey
+
+`func (o *SecuritySettings) HasClusterPublicKey() bool`
+
+HasClusterPublicKey returns a boolean if a field has been set.
 
 ### GetClusterPublicKeyId
 
@@ -94,6 +99,11 @@ and a boolean to check if the value has been set.
 
 SetDataRecoveryPasswordConfigured sets DataRecoveryPasswordConfigured field to given value.
 
+### HasDataRecoveryPasswordConfigured
+
+`func (o *SecuritySettings) HasDataRecoveryPasswordConfigured() bool`
+
+HasDataRecoveryPasswordConfigured returns a boolean if a field has been set.
 
 ### GetMessageSecurityMode
 
@@ -114,6 +124,11 @@ and a boolean to check if the value has been set.
 
 SetMessageSecurityMode sets MessageSecurityMode field to given value.
 
+### HasMessageSecurityMode
+
+`func (o *SecuritySettings) HasMessageSecurityMode() bool`
+
+HasMessageSecurityMode returns a boolean if a field has been set.
 
 ### GetMessageSecurityStatus
 
@@ -134,6 +149,11 @@ and a boolean to check if the value has been set.
 
 SetMessageSecurityStatus sets MessageSecurityStatus field to given value.
 
+### HasMessageSecurityStatus
+
+`func (o *SecuritySettings) HasMessageSecurityStatus() bool`
+
+HasMessageSecurityStatus returns a boolean if a field has been set.
 
 ### GetReAuthSecureTunnelAfterInterruption
 
@@ -154,6 +174,11 @@ and a boolean to check if the value has been set.
 
 SetReAuthSecureTunnelAfterInterruption sets ReAuthSecureTunnelAfterInterruption field to given value.
 
+### HasReAuthSecureTunnelAfterInterruption
+
+`func (o *SecuritySettings) HasReAuthSecureTunnelAfterInterruption() bool`
+
+HasReAuthSecureTunnelAfterInterruption returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

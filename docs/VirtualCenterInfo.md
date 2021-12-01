@@ -7,24 +7,24 @@ Name | Type | Description | Notes
 **CertificateOverride** | Pointer to [**CertificateOverrideData**](CertificateOverrideData.md) |  | [optional] 
 **Description** | Pointer to **string** | Human readable description of the Virtual Center instance. | [optional] 
 **DisplayName** | Pointer to **string** | Human readable name of the Virtual Center instance. | [optional] 
-**Enabled** | **bool** | Indicates if the virtual center is enabled. | 
-**Id** | **string** | Unique ID of the Virtual Center. | 
+**Enabled** | Pointer to **bool** | Indicates if the virtual center is enabled. | [optional] 
+**Id** | Pointer to **string** | Unique ID of the Virtual Center. | [optional] 
 **InstanceUuid** | Pointer to **string** | Virtual center&#39;s instanceUuid. | [optional] 
-**Limits** | [**VCLimits**](VCLimits.md) |  | 
-**Port** | **int32** | Port of the virtual center to connect to. | 
-**SeSparseReclamationEnabled** | **bool** | Indicates if Storage Efficiency Sparse (seSparse) reclamation is enabled. | 
-**ServerName** | **string** | Virtual Center&#39;s server name or IP address. | 
-**StorageAcceleratorData** | [**StorageAcceleratorData**](StorageAcceleratorData.md) |  | 
-**UseSsl** | **bool** | Indicates if SSL should be used when connecting to the server. | 
-**UserName** | **string** | User name to use for the connection. | 
-**Version** | **string** | Version of the Virtual Center. | 
+**Limits** | Pointer to [**VCLimits**](VCLimits.md) |  | [optional] 
+**Port** | Pointer to **int32** | Port of the virtual center to connect to. | [optional] 
+**SeSparseReclamationEnabled** | Pointer to **bool** | Indicates if Storage Efficiency Sparse (seSparse) reclamation is enabled. | [optional] 
+**ServerName** | Pointer to **string** | Virtual Center&#39;s server name or IP address. | [optional] 
+**StorageAcceleratorData** | Pointer to [**StorageAcceleratorData**](StorageAcceleratorData.md) |  | [optional] 
+**UseSsl** | Pointer to **bool** | Indicates if SSL should be used when connecting to the server. | [optional] 
+**UserName** | Pointer to **string** | User name to use for the connection. | [optional] 
+**Version** | Pointer to **string** | Version of the Virtual Center. | [optional] 
 **VmcDeployment** | Pointer to **bool** | Indicates if virtual center is deployed in VMC. | [optional] 
 
 ## Methods
 
 ### NewVirtualCenterInfo
 
-`func NewVirtualCenterInfo(enabled bool, id string, limits VCLimits, port int32, seSparseReclamationEnabled bool, serverName string, storageAcceleratorData StorageAcceleratorData, useSsl bool, userName string, version string, ) *VirtualCenterInfo`
+`func NewVirtualCenterInfo() *VirtualCenterInfo`
 
 NewVirtualCenterInfo instantiates a new VirtualCenterInfo object
 This constructor will assign default values to properties that have it defined,
@@ -133,6 +133,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *VirtualCenterInfo) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetId
 
@@ -153,6 +158,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *VirtualCenterInfo) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetInstanceUuid
 
@@ -198,6 +208,11 @@ and a boolean to check if the value has been set.
 
 SetLimits sets Limits field to given value.
 
+### HasLimits
+
+`func (o *VirtualCenterInfo) HasLimits() bool`
+
+HasLimits returns a boolean if a field has been set.
 
 ### GetPort
 
@@ -218,6 +233,11 @@ and a boolean to check if the value has been set.
 
 SetPort sets Port field to given value.
 
+### HasPort
+
+`func (o *VirtualCenterInfo) HasPort() bool`
+
+HasPort returns a boolean if a field has been set.
 
 ### GetSeSparseReclamationEnabled
 
@@ -238,6 +258,11 @@ and a boolean to check if the value has been set.
 
 SetSeSparseReclamationEnabled sets SeSparseReclamationEnabled field to given value.
 
+### HasSeSparseReclamationEnabled
+
+`func (o *VirtualCenterInfo) HasSeSparseReclamationEnabled() bool`
+
+HasSeSparseReclamationEnabled returns a boolean if a field has been set.
 
 ### GetServerName
 
@@ -258,6 +283,11 @@ and a boolean to check if the value has been set.
 
 SetServerName sets ServerName field to given value.
 
+### HasServerName
+
+`func (o *VirtualCenterInfo) HasServerName() bool`
+
+HasServerName returns a boolean if a field has been set.
 
 ### GetStorageAcceleratorData
 
@@ -278,6 +308,11 @@ and a boolean to check if the value has been set.
 
 SetStorageAcceleratorData sets StorageAcceleratorData field to given value.
 
+### HasStorageAcceleratorData
+
+`func (o *VirtualCenterInfo) HasStorageAcceleratorData() bool`
+
+HasStorageAcceleratorData returns a boolean if a field has been set.
 
 ### GetUseSsl
 
@@ -298,6 +333,11 @@ and a boolean to check if the value has been set.
 
 SetUseSsl sets UseSsl field to given value.
 
+### HasUseSsl
+
+`func (o *VirtualCenterInfo) HasUseSsl() bool`
+
+HasUseSsl returns a boolean if a field has been set.
 
 ### GetUserName
 
@@ -318,6 +358,11 @@ and a boolean to check if the value has been set.
 
 SetUserName sets UserName field to given value.
 
+### HasUserName
+
+`func (o *VirtualCenterInfo) HasUserName() bool`
+
+HasUserName returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -338,6 +383,11 @@ and a boolean to check if the value has been set.
 
 SetVersion sets Version field to given value.
 
+### HasVersion
+
+`func (o *VirtualCenterInfo) HasVersion() bool`
+
+HasVersion returns a boolean if a field has been set.
 
 ### GetVmcDeployment
 

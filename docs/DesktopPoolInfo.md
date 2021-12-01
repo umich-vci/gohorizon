@@ -6,18 +6,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** | Description of the Desktop Pool. The maximum length is 1024 characters. | [optional] 
 **DisplayName** | Pointer to **string** | Display name of the Desktop Pool. The maximum length is 256 characters. | [optional] 
-**Enabled** | **bool** | Indicates whether the Desktop Pool is enabled for brokering. | 
-**Id** | **string** | Unique ID representing Desktop Pool. | 
-**Name** | **string** | Name of the Desktop Pool. The maximum length is 64 characters. | 
-**Settings** | [**DesktopPoolSettings**](DesktopPoolSettings.md) |  | 
-**Source** | **string** | Source of the Machines in this Desktop Pool. * INSTANT_CLONE: The Desktop Pool uses instant clone technology for provisioning the machines.Applicable for AUTOMATED type desktop pools. * LINKED_CLONE: The Desktop Pool uses linked clone technology for provisioning the machines.Applicable for AUTOMATED type desktop pools. * VIRTUAL_CENTER: The Desktop Pool uses Virtual Center as source for provisioning the machines.Applicable for AUTOMATED and MANUAL type desktop pools. * RDS: The Desktop Pool is backed by Farm. The Farm used in this Desktop Pool can be of any Source. * UNMANAGED: The Desktop Pool holds the non-vCenter source machines that includes physical computers,blade PCs and non-vCenter servers. Applicable for MANUAL type desktop pools. | 
-**Type** | **string** | Type of the Desktop Pool. * AUTOMATED: Automated Desktop Pool. * MANUAL: Manual Desktop Pool. * RDS: RDS Desktop Pool. | 
+**Enabled** | Pointer to **bool** | Indicates whether the Desktop Pool is enabled for brokering. | [optional] 
+**Id** | Pointer to **string** | Unique ID representing Desktop Pool. | [optional] 
+**Name** | Pointer to **string** | Name of the Desktop Pool. The maximum length is 64 characters. | [optional] 
+**Settings** | Pointer to [**DesktopPoolSettings**](DesktopPoolSettings.md) |  | [optional] 
+**Source** | Pointer to **string** | Source of the Machines in this Desktop Pool. * INSTANT_CLONE: The Desktop Pool uses instant clone technology for provisioning the machines. Applicable for AUTOMATED type desktop pools. * LINKED_CLONE: The Desktop Pool uses linked clone technology for provisioning the machines. Applicable for AUTOMATED type desktop pools. * VIRTUAL_CENTER: The Desktop Pool uses Virtual Center as source for provisioning the machines. Applicable for AUTOMATED and MANUAL type desktop pools. * RDS: The Desktop Pool is backed by Farm. The Farm used in this Desktop Pool can be of any Source. * UNMANAGED: The Desktop Pool holds the non-vCenter source machines that includes physical computers, blade PCs and non-vCenter servers. Applicable for MANUAL type desktop pools. | [optional] 
+**Type** | Pointer to **string** | Type of the Desktop Pool. * AUTOMATED: Automated Desktop Pool. * MANUAL: Manual Desktop Pool. * RDS: RDS Desktop Pool. | [optional] 
 
 ## Methods
 
 ### NewDesktopPoolInfo
 
-`func NewDesktopPoolInfo(enabled bool, id string, name string, settings DesktopPoolSettings, source string, type_ string, ) *DesktopPoolInfo`
+`func NewDesktopPoolInfo() *DesktopPoolInfo`
 
 NewDesktopPoolInfo instantiates a new DesktopPoolInfo object
 This constructor will assign default values to properties that have it defined,
@@ -101,6 +101,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *DesktopPoolInfo) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetId
 
@@ -121,6 +126,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *DesktopPoolInfo) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -141,6 +151,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *DesktopPoolInfo) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetSettings
 
@@ -161,6 +176,11 @@ and a boolean to check if the value has been set.
 
 SetSettings sets Settings field to given value.
 
+### HasSettings
+
+`func (o *DesktopPoolInfo) HasSettings() bool`
+
+HasSettings returns a boolean if a field has been set.
 
 ### GetSource
 
@@ -181,6 +201,11 @@ and a boolean to check if the value has been set.
 
 SetSource sets Source field to given value.
 
+### HasSource
+
+`func (o *DesktopPoolInfo) HasSource() bool`
+
+HasSource returns a boolean if a field has been set.
 
 ### GetType
 
@@ -201,6 +226,11 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+### HasType
+
+`func (o *DesktopPoolInfo) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

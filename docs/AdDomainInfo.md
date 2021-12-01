@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DnsName** | **string** | DNS name of the AD Domain. | 
-**Id** | **string** | Unique SID representing AD Domain. | 
-**NetbiosName** | **string** | NetBIOS name of the AD Domain. | 
+**DnsName** | Pointer to **string** | DNS name of the AD Domain. | [optional] 
+**Id** | Pointer to **string** | Unique SID representing AD Domain. | [optional] 
+**NetbiosName** | Pointer to **string** | NetBIOS name of the AD Domain. | [optional] 
 
 ## Methods
 
 ### NewADDomainInfo
 
-`func NewADDomainInfo(dnsName string, id string, netbiosName string, ) *ADDomainInfo`
+`func NewADDomainInfo() *ADDomainInfo`
 
 NewADDomainInfo instantiates a new ADDomainInfo object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +46,11 @@ and a boolean to check if the value has been set.
 
 SetDnsName sets DnsName field to given value.
 
+### HasDnsName
+
+`func (o *ADDomainInfo) HasDnsName() bool`
+
+HasDnsName returns a boolean if a field has been set.
 
 ### GetId
 
@@ -66,6 +71,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *ADDomainInfo) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetNetbiosName
 
@@ -86,6 +96,11 @@ and a boolean to check if the value has been set.
 
 SetNetbiosName sets NetbiosName field to given value.
 
+### HasNetbiosName
+
+`func (o *ADDomainInfo) HasNetbiosName() bool`
+
+HasNetbiosName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Cluster** | **bool** | Whether or not this is a cluster or a host. | 
-**DatacenterId** | **string** | Datacenter id for this host or cluster. | 
-**IncompatibleReasons** | **[]string** | Reasons that may preclude this Host Or Cluster from being used in desktop pool creation. | 
-**Name** | **string** | Host or cluster display name. | 
-**Path** | **string** | Host or cluster path. | 
-**VcenterId** | **string** | Virtual Center id for this host or cluster. | 
+**Cluster** | Pointer to **bool** | Whether or not this is a cluster or a host. | [optional] 
+**DatacenterId** | Pointer to **string** | Datacenter id for this host or cluster. | [optional] 
+**IncompatibleReasons** | Pointer to **[]string** | Reasons that may preclude this Host Or Cluster from being used in desktop pool creation. | [optional] 
+**Name** | Pointer to **string** | Host or cluster display name. | [optional] 
+**Path** | Pointer to **string** | Host or cluster path. | [optional] 
+**VcenterId** | Pointer to **string** | Virtual Center id for this host or cluster. | [optional] 
 **VgpuTypes** | Pointer to **[]string** | Types of NVIDIA GRID vGPUs supported by this host or at least one host on this cluster. If unset, this host or cluster does not support NVIDIA GRID vGPUs and cannot be used for desktop creation with NVIDIA GRID vGPU support enabled. | [optional] 
 
 ## Methods
 
 ### NewHostOrClusterDetails
 
-`func NewHostOrClusterDetails(cluster bool, datacenterId string, incompatibleReasons []string, name string, path string, vcenterId string, ) *HostOrClusterDetails`
+`func NewHostOrClusterDetails() *HostOrClusterDetails`
 
 NewHostOrClusterDetails instantiates a new HostOrClusterDetails object
 This constructor will assign default values to properties that have it defined,
@@ -50,6 +50,11 @@ and a boolean to check if the value has been set.
 
 SetCluster sets Cluster field to given value.
 
+### HasCluster
+
+`func (o *HostOrClusterDetails) HasCluster() bool`
+
+HasCluster returns a boolean if a field has been set.
 
 ### GetDatacenterId
 
@@ -70,6 +75,11 @@ and a boolean to check if the value has been set.
 
 SetDatacenterId sets DatacenterId field to given value.
 
+### HasDatacenterId
+
+`func (o *HostOrClusterDetails) HasDatacenterId() bool`
+
+HasDatacenterId returns a boolean if a field has been set.
 
 ### GetIncompatibleReasons
 
@@ -90,6 +100,11 @@ and a boolean to check if the value has been set.
 
 SetIncompatibleReasons sets IncompatibleReasons field to given value.
 
+### HasIncompatibleReasons
+
+`func (o *HostOrClusterDetails) HasIncompatibleReasons() bool`
+
+HasIncompatibleReasons returns a boolean if a field has been set.
 
 ### GetName
 
@@ -110,6 +125,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *HostOrClusterDetails) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetPath
 
@@ -130,6 +150,11 @@ and a boolean to check if the value has been set.
 
 SetPath sets Path field to given value.
 
+### HasPath
+
+`func (o *HostOrClusterDetails) HasPath() bool`
+
+HasPath returns a boolean if a field has been set.
 
 ### GetVcenterId
 
@@ -150,6 +175,11 @@ and a boolean to check if the value has been set.
 
 SetVcenterId sets VcenterId field to given value.
 
+### HasVcenterId
+
+`func (o *HostOrClusterDetails) HasVcenterId() bool`
+
+HasVcenterId returns a boolean if a field has been set.
 
 ### GetVgpuTypes
 

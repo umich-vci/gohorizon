@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DatabaseName** | **string** | The name of the database. | 
-**Port** | **int32** | The port of the database server. | 
-**Prefix** | **string** | The prefix for event tables in the database. | 
-**ServerName** | **string** | The name or ip address of the database server. | 
-**Type** | **string** | The type of the database. * ORACLE: An Oracle database. * SQL_SERVER: A SQL server database. * POSTGRESQL: A PostgreSQL database. | 
-**UserName** | **string** | The username used to connect to the database. | 
+**DatabaseName** | Pointer to **string** | The name of the database. | [optional] 
+**Port** | Pointer to **int32** | The port of the database server. | [optional] 
+**Prefix** | Pointer to **string** | The prefix for event tables in the database. | [optional] 
+**ServerName** | Pointer to **string** | The name or ip address of the database server. | [optional] 
+**Type** | Pointer to **string** | The type of the database. * ORACLE: An Oracle database. * SQL_SERVER: A SQL server database. * POSTGRESQL: A PostgreSQL database. | [optional] 
+**UserName** | Pointer to **string** | The username used to connect to the database. | [optional] 
 
 ## Methods
 
 ### NewEventDatabaseMonitorDetails
 
-`func NewEventDatabaseMonitorDetails(databaseName string, port int32, prefix string, serverName string, type_ string, userName string, ) *EventDatabaseMonitorDetails`
+`func NewEventDatabaseMonitorDetails() *EventDatabaseMonitorDetails`
 
 NewEventDatabaseMonitorDetails instantiates a new EventDatabaseMonitorDetails object
 This constructor will assign default values to properties that have it defined,
@@ -49,6 +49,11 @@ and a boolean to check if the value has been set.
 
 SetDatabaseName sets DatabaseName field to given value.
 
+### HasDatabaseName
+
+`func (o *EventDatabaseMonitorDetails) HasDatabaseName() bool`
+
+HasDatabaseName returns a boolean if a field has been set.
 
 ### GetPort
 
@@ -69,6 +74,11 @@ and a boolean to check if the value has been set.
 
 SetPort sets Port field to given value.
 
+### HasPort
+
+`func (o *EventDatabaseMonitorDetails) HasPort() bool`
+
+HasPort returns a boolean if a field has been set.
 
 ### GetPrefix
 
@@ -89,6 +99,11 @@ and a boolean to check if the value has been set.
 
 SetPrefix sets Prefix field to given value.
 
+### HasPrefix
+
+`func (o *EventDatabaseMonitorDetails) HasPrefix() bool`
+
+HasPrefix returns a boolean if a field has been set.
 
 ### GetServerName
 
@@ -109,6 +124,11 @@ and a boolean to check if the value has been set.
 
 SetServerName sets ServerName field to given value.
 
+### HasServerName
+
+`func (o *EventDatabaseMonitorDetails) HasServerName() bool`
+
+HasServerName returns a boolean if a field has been set.
 
 ### GetType
 
@@ -129,6 +149,11 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+### HasType
+
+`func (o *EventDatabaseMonitorDetails) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 ### GetUserName
 
@@ -149,6 +174,11 @@ and a boolean to check if the value has been set.
 
 SetUserName sets UserName field to given value.
 
+### HasUserName
+
+`func (o *EventDatabaseMonitorDetails) HasUserName() bool`
+
+HasUserName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

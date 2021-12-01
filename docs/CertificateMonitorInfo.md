@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Valid** | **bool** | Indicates if the certificate is valid. | 
-**ValidFrom** | **int64** | Start time of the certificate validity in milliseconds. Measured as epoch time. | 
-**ValidTo** | **int64** | Expiration time of the certificate validity in milliseconds. Measured as epoch time. | 
+**Valid** | Pointer to **bool** | Indicates if the certificate is valid. | [optional] 
+**ValidFrom** | Pointer to **int64** | Start time of the certificate validity in milliseconds. Measured as epoch time. | [optional] 
+**ValidTo** | Pointer to **int64** | Expiration time of the certificate validity in milliseconds. Measured as epoch time. | [optional] 
 
 ## Methods
 
 ### NewCertificateMonitorInfo
 
-`func NewCertificateMonitorInfo(valid bool, validFrom int64, validTo int64, ) *CertificateMonitorInfo`
+`func NewCertificateMonitorInfo() *CertificateMonitorInfo`
 
 NewCertificateMonitorInfo instantiates a new CertificateMonitorInfo object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +46,11 @@ and a boolean to check if the value has been set.
 
 SetValid sets Valid field to given value.
 
+### HasValid
+
+`func (o *CertificateMonitorInfo) HasValid() bool`
+
+HasValid returns a boolean if a field has been set.
 
 ### GetValidFrom
 
@@ -66,6 +71,11 @@ and a boolean to check if the value has been set.
 
 SetValidFrom sets ValidFrom field to given value.
 
+### HasValidFrom
+
+`func (o *CertificateMonitorInfo) HasValidFrom() bool`
+
+HasValidFrom returns a boolean if a field has been set.
 
 ### GetValidTo
 
@@ -86,6 +96,11 @@ and a boolean to check if the value has been set.
 
 SetValidTo sets ValidTo field to given value.
 
+### HasValidTo
+
+`func (o *CertificateMonitorInfo) HasValidTo() bool`
+
+HasValidTo returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

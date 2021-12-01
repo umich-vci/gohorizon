@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Enabled** | **bool** | Indicates whether an endpoint is enabled. A disabled endpoint will be excluded from participating inter-pod communication. | 
-**Id** | **string** | Unique ID for a pod endpoint. | 
+**Enabled** | Pointer to **bool** | Indicates whether an endpoint is enabled. A disabled endpoint will be excluded from participating inter-pod communication. | [optional] 
+**Id** | Pointer to **string** | Unique ID for a pod endpoint. | [optional] 
 **LastUpdatedTimestamp** | Pointer to **int64** | The timestamp in milliseconds when the last update was obtained. Measured as epoch time. | [optional] 
-**Name** | **string** | Name for the pod endpoint. | 
+**Name** | Pointer to **string** | Name for the pod endpoint. | [optional] 
 **RoundtripTime** | Pointer to **int64** | Round trip time (in milliseconds) for ping request between the local pod endpoint and the remote pod. | [optional] 
-**Status** | **string** | Status of the pod endpoint. * ONLINE: Pod endpoint is online and functional. * UNCHECKED: Pod endpoint was offline and it just came back online but the system has not verified that it is functional. * OFFLINE: Pod endpoint is offline or unreachable. | 
-**Url** | **string** | The URL for the pod endpoint. This address and special port will be used for inter-pod communication. | 
+**Status** | Pointer to **string** | Status of the pod endpoint. * ONLINE: Pod endpoint is online and functional. * UNCHECKED: Pod endpoint was offline and it just came back online but the system has not verified that it is functional. * OFFLINE: Pod endpoint is offline or unreachable. | [optional] 
+**Url** | Pointer to **string** | The URL for the pod endpoint. This address and special port will be used for inter-pod communication. | [optional] 
 
 ## Methods
 
 ### NewPodEndPointDataV2
 
-`func NewPodEndPointDataV2(enabled bool, id string, name string, status string, url string, ) *PodEndPointDataV2`
+`func NewPodEndPointDataV2() *PodEndPointDataV2`
 
 NewPodEndPointDataV2 instantiates a new PodEndPointDataV2 object
 This constructor will assign default values to properties that have it defined,
@@ -50,6 +50,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *PodEndPointDataV2) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetId
 
@@ -70,6 +75,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *PodEndPointDataV2) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetLastUpdatedTimestamp
 
@@ -115,6 +125,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *PodEndPointDataV2) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetRoundtripTime
 
@@ -160,6 +175,11 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
+### HasStatus
+
+`func (o *PodEndPointDataV2) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 ### GetUrl
 
@@ -180,6 +200,11 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
+### HasUrl
+
+`func (o *PodEndPointDataV2) HasUrl() bool`
+
+HasUrl returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

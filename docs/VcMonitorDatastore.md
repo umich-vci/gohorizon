@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CapacityMb** | **int32** | The capacity of the datastore in megabytes. | 
-**Details** | [**VCMonitorDatastoreDetails**](VCMonitorDatastoreDetails.md) |  | 
-**FreeSpaceMb** | **int32** | The free space on the datastore in megabytes. | 
-**Status** | **string** | Status of the datastore. * ACCESSIBLE: The datastore is accessible. * NOT_ACCESSIBLE: The datastore is not accessible. | 
-**Type** | **string** | Type of the datastore. * VMFS: VMFS datastore. * VSAN: VSAN datastore. * VVOL: VVOL datastore. | 
+**CapacityMb** | Pointer to **int32** | The capacity of the datastore in megabytes. | [optional] 
+**Details** | Pointer to [**VCMonitorDatastoreDetails**](VCMonitorDatastoreDetails.md) |  | [optional] 
+**FreeSpaceMb** | Pointer to **int32** | The free space on the datastore in megabytes. | [optional] 
+**Status** | Pointer to **string** | Status of the datastore. * ACCESSIBLE: The datastore is accessible. * NOT_ACCESSIBLE: The datastore is not accessible. | [optional] 
+**Type** | Pointer to **string** | Type of the datastore. * VMFS: VMFS datastore. * VSAN: VSAN datastore. * VVOL: VVOL datastore. | [optional] 
 
 ## Methods
 
 ### NewVCMonitorDatastore
 
-`func NewVCMonitorDatastore(capacityMb int32, details VCMonitorDatastoreDetails, freeSpaceMb int32, status string, type_ string, ) *VCMonitorDatastore`
+`func NewVCMonitorDatastore() *VCMonitorDatastore`
 
 NewVCMonitorDatastore instantiates a new VCMonitorDatastore object
 This constructor will assign default values to properties that have it defined,
@@ -48,6 +48,11 @@ and a boolean to check if the value has been set.
 
 SetCapacityMb sets CapacityMb field to given value.
 
+### HasCapacityMb
+
+`func (o *VCMonitorDatastore) HasCapacityMb() bool`
+
+HasCapacityMb returns a boolean if a field has been set.
 
 ### GetDetails
 
@@ -68,6 +73,11 @@ and a boolean to check if the value has been set.
 
 SetDetails sets Details field to given value.
 
+### HasDetails
+
+`func (o *VCMonitorDatastore) HasDetails() bool`
+
+HasDetails returns a boolean if a field has been set.
 
 ### GetFreeSpaceMb
 
@@ -88,6 +98,11 @@ and a boolean to check if the value has been set.
 
 SetFreeSpaceMb sets FreeSpaceMb field to given value.
 
+### HasFreeSpaceMb
+
+`func (o *VCMonitorDatastore) HasFreeSpaceMb() bool`
+
+HasFreeSpaceMb returns a boolean if a field has been set.
 
 ### GetStatus
 
@@ -108,6 +123,11 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
+### HasStatus
+
+`func (o *VCMonitorDatastore) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 ### GetType
 
@@ -128,6 +148,11 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+### HasType
+
+`func (o *VCMonitorDatastore) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

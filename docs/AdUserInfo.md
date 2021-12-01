@@ -7,16 +7,16 @@ Name | Type | Description | Notes
 **Domain** | Pointer to **string** | DNS name of the domain in which this user or group belongs to. | [optional] 
 **GroupGuids** | Pointer to **[]string** | Guids of the user&#39;s groups in RFC 4122 format. | [optional] 
 **GroupSids** | Pointer to **[]string** | List of unique SIDs of the groups, this user or group belongs to. | [optional] 
-**UserGuid** | **string** | GUID of the user in RFC 4122 format. | 
+**UserGuid** | Pointer to **string** | GUID of the user in RFC 4122 format. | [optional] 
 **UserPrincipalName** | Pointer to **string** | User Principal name(UPN) of this user. | [optional] 
-**UserSid** | **string** | Unique SID representing this AD User. | 
+**UserSid** | Pointer to **string** | Unique SID representing this AD User. | [optional] 
 **Username** | Pointer to **string** | Username of this user. | [optional] 
 
 ## Methods
 
 ### NewADUserInfo
 
-`func NewADUserInfo(userGuid string, userSid string, ) *ADUserInfo`
+`func NewADUserInfo() *ADUserInfo`
 
 NewADUserInfo instantiates a new ADUserInfo object
 This constructor will assign default values to properties that have it defined,
@@ -125,6 +125,11 @@ and a boolean to check if the value has been set.
 
 SetUserGuid sets UserGuid field to given value.
 
+### HasUserGuid
+
+`func (o *ADUserInfo) HasUserGuid() bool`
+
+HasUserGuid returns a boolean if a field has been set.
 
 ### GetUserPrincipalName
 
@@ -170,6 +175,11 @@ and a boolean to check if the value has been set.
 
 SetUserSid sets UserSid field to given value.
 
+### HasUserSid
+
+`func (o *ADUserInfo) HasUserSid() bool`
+
+HasUserSid returns a boolean if a field has been set.
 
 ### GetUsername
 

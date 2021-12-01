@@ -6,17 +6,17 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdDomainAdvancedSettings** | Pointer to [**ADDomainAdvancedSettings**](ADDomainAdvancedSettings.md) |  | [optional] 
 **AuxiliaryAccounts** | Pointer to [**[]ServiceAccountCredentialsInfo**](ServiceAccountCredentialsInfo.md) | Auxiliary service accounts information of untrusted domain. | [optional] 
-**DnsName** | **string** | DNS name of the AD Domain. | 
+**DnsName** | Pointer to **string** | DNS name of the AD Domain. | [optional] 
 **DomainType** | Pointer to **string** | AD Domain Type. * CONNECTION_SERVER_DOMAIN: The domain having trust with connection server domain. * NO_TRUST_DOMAIN: The domain not having any trust with connection server domain. | [optional] 
-**Id** | **string** | Unique SID representing AD Domain. | 
-**NetbiosName** | **string** | NetBIOS name of the AD Domain. | 
+**Id** | Pointer to **string** | Unique SID representing AD Domain. | [optional] 
+**NetbiosName** | Pointer to **string** | NetBIOS name of the AD Domain. | [optional] 
 **PrimaryAccount** | Pointer to [**ServiceAccountCredentials**](ServiceAccountCredentials.md) |  | [optional] 
 
 ## Methods
 
 ### NewADDomainInfoV3
 
-`func NewADDomainInfoV3(dnsName string, id string, netbiosName string, ) *ADDomainInfoV3`
+`func NewADDomainInfoV3() *ADDomainInfoV3`
 
 NewADDomainInfoV3 instantiates a new ADDomainInfoV3 object
 This constructor will assign default values to properties that have it defined,
@@ -100,6 +100,11 @@ and a boolean to check if the value has been set.
 
 SetDnsName sets DnsName field to given value.
 
+### HasDnsName
+
+`func (o *ADDomainInfoV3) HasDnsName() bool`
+
+HasDnsName returns a boolean if a field has been set.
 
 ### GetDomainType
 
@@ -145,6 +150,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *ADDomainInfoV3) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetNetbiosName
 
@@ -165,6 +175,11 @@ and a boolean to check if the value has been set.
 
 SetNetbiosName sets NetbiosName field to given value.
 
+### HasNetbiosName
+
+`func (o *ADDomainInfoV3) HasNetbiosName() bool`
+
+HasNetbiosName returns a boolean if a field has been set.
 
 ### GetPrimaryAccount
 

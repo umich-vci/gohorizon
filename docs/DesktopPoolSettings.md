@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **CloudAssigned** | Pointer to **bool** | Indicates whether this desktop is assigned to a workspace in Horizon Cloud Services. Default value is false. | [optional] 
 **CloudManaged** | Pointer to **bool** | Indicates whether this desktop is managed by Horizon Cloud Services.This can be false only when cloud_assigned is false. Default value is false. | [optional] 
 **CsRestrictionTags** | Pointer to **[]string** | List of tags for which the access to the desktop pool is restricted to.No list indicates that desktop pool can be accessed from any connection server. | [optional] 
-**DeleteInProgress** | **bool** | Indicates whether the desktop pool is in the process of being deleted.Default value is false. | 
+**DeleteInProgress** | Pointer to **bool** | Indicates whether the desktop pool is in the process of being deleted.Default value is false. | [optional] 
 **DisplayProtocolSettings** | Pointer to [**DesktopPoolDisplayProtocolSettings**](DesktopPoolDisplayProtocolSettings.md) |  | [optional] 
 **EnableClientRestrictions** | Pointer to **bool** | Client restrictions to be applied to the desktop pool.Currently it is valid for RDS desktop pools only. Default value is false. | [optional] 
 **SessionSettings** | Pointer to [**DesktopPoolSessionSettings**](DesktopPoolSessionSettings.md) |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewDesktopPoolSettings
 
-`func NewDesktopPoolSettings(deleteInProgress bool, ) *DesktopPoolSettings`
+`func NewDesktopPoolSettings() *DesktopPoolSettings`
 
 NewDesktopPoolSettings instantiates a new DesktopPoolSettings object
 This constructor will assign default values to properties that have it defined,
@@ -179,6 +179,11 @@ and a boolean to check if the value has been set.
 
 SetDeleteInProgress sets DeleteInProgress field to given value.
 
+### HasDeleteInProgress
+
+`func (o *DesktopPoolSettings) HasDeleteInProgress() bool`
+
+HasDeleteInProgress returns a boolean if a field has been set.
 
 ### GetDisplayProtocolSettings
 

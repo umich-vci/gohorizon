@@ -6,16 +6,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdditionalDetails** | Pointer to **map[string]string** | Additional details about image management tag. | [optional] 
 **Description** | Pointer to **string** | Image management tag description. | [optional] 
-**Id** | **string** | Unique ID representing image management tag. | 
-**ImStreamId** | **string** | Image management stream ID to which this tag belongs. | 
-**ImVersionId** | **string** | Image management version ID to which this tag belongs. | 
-**Name** | **string** | Image management tag name. | 
+**Id** | Pointer to **string** | Unique ID representing image management tag. | [optional] 
+**ImStreamId** | Pointer to **string** | Image management stream ID to which this tag belongs. | [optional] 
+**ImVersionId** | Pointer to **string** | Image management version ID to which this tag belongs. | [optional] 
+**Name** | Pointer to **string** | Image management tag name. | [optional] 
 
 ## Methods
 
 ### NewImageManagementTagInfo
 
-`func NewImageManagementTagInfo(id string, imStreamId string, imVersionId string, name string, ) *ImageManagementTagInfo`
+`func NewImageManagementTagInfo() *ImageManagementTagInfo`
 
 NewImageManagementTagInfo instantiates a new ImageManagementTagInfo object
 This constructor will assign default values to properties that have it defined,
@@ -99,6 +99,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *ImageManagementTagInfo) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetImStreamId
 
@@ -119,6 +124,11 @@ and a boolean to check if the value has been set.
 
 SetImStreamId sets ImStreamId field to given value.
 
+### HasImStreamId
+
+`func (o *ImageManagementTagInfo) HasImStreamId() bool`
+
+HasImStreamId returns a boolean if a field has been set.
 
 ### GetImVersionId
 
@@ -139,6 +149,11 @@ and a boolean to check if the value has been set.
 
 SetImVersionId sets ImVersionId field to given value.
 
+### HasImVersionId
+
+`func (o *ImageManagementTagInfo) HasImVersionId() bool`
+
+HasImVersionId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -159,6 +174,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *ImageManagementTagInfo) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

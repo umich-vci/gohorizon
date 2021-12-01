@@ -7,17 +7,17 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | Farm description. The maximum length is 1024 characters. | [optional] 
 **DisplayName** | Pointer to **string** | Display name of the Farm. The maximum length is 256 characters. | [optional] 
 **Enabled** | Pointer to **bool** | Indicates whether the Farm is enabled for brokering. Default value is true. | [optional] 
-**Id** | **string** | Unique ID representing Farm. | 
-**Name** | **string** | Name of the Farm. The maximum length is 64 characters. | 
-**Settings** | [**FarmSettings**](FarmSettings.md) |  | 
+**Id** | Pointer to **string** | Unique ID representing Farm. | [optional] 
+**Name** | Pointer to **string** | Name of the Farm. The maximum length is 64 characters. | [optional] 
+**Settings** | Pointer to [**FarmSettings**](FarmSettings.md) |  | [optional] 
 **Source** | Pointer to **string** | Type of the Farm. * INSTANT_CLONE: The Farm uses instant clone technology for provisioning the RDS Servers.Applicable for AUTOMATED type Farms only. * LINKED_CLONE: The Farm uses linked clone technology for provisioning the RDS Servers.Applicable for AUTOMATED type Farms only. | [optional] 
-**Type** | **string** | Type of the Farm. * AUTOMATED: Automated Farm. * MANUAL: Manual Farm. | 
+**Type** | Pointer to **string** | Type of the Farm. * AUTOMATED: Automated Farm. * MANUAL: Manual Farm. | [optional] 
 
 ## Methods
 
 ### NewFarmInfo
 
-`func NewFarmInfo(id string, name string, settings FarmSettings, type_ string, ) *FarmInfo`
+`func NewFarmInfo() *FarmInfo`
 
 NewFarmInfo instantiates a new FarmInfo object
 This constructor will assign default values to properties that have it defined,
@@ -126,6 +126,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *FarmInfo) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -146,6 +151,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *FarmInfo) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetSettings
 
@@ -166,6 +176,11 @@ and a boolean to check if the value has been set.
 
 SetSettings sets Settings field to given value.
 
+### HasSettings
+
+`func (o *FarmInfo) HasSettings() bool`
+
+HasSettings returns a boolean if a field has been set.
 
 ### GetSource
 
@@ -211,6 +226,11 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+### HasType
+
+`func (o *FarmInfo) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

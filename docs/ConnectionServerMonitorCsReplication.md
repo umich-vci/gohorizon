@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServerName** | **string** | Connection Server host name or IP address. | 
-**Status** | **string** | LDAP replication status. * OK: The connection to the Connection Server is working properly. * ERROR: There is a problem with LDAP replication to the Connection Server. | 
+**ServerName** | Pointer to **string** | Connection Server host name or IP address. | [optional] 
+**Status** | Pointer to **string** | LDAP replication status. * OK: The connection to the Connection Server is working properly. * ERROR: There is a problem with LDAP replication to the Connection Server. | [optional] 
 
 ## Methods
 
 ### NewConnectionServerMonitorCSReplication
 
-`func NewConnectionServerMonitorCSReplication(serverName string, status string, ) *ConnectionServerMonitorCSReplication`
+`func NewConnectionServerMonitorCSReplication() *ConnectionServerMonitorCSReplication`
 
 NewConnectionServerMonitorCSReplication instantiates a new ConnectionServerMonitorCSReplication object
 This constructor will assign default values to properties that have it defined,
@@ -45,6 +45,11 @@ and a boolean to check if the value has been set.
 
 SetServerName sets ServerName field to given value.
 
+### HasServerName
+
+`func (o *ConnectionServerMonitorCSReplication) HasServerName() bool`
+
+HasServerName returns a boolean if a field has been set.
 
 ### GetStatus
 
@@ -65,6 +70,11 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
+### HasStatus
+
+`func (o *ConnectionServerMonitorCSReplication) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

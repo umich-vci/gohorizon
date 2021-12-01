@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AllowDisplayProtocolOverride** | **bool** | Indicates whether the display protocol settings could be overridden.If set to false, then default_display_protocol is used.Default value is true. | 
-**DefaultDisplayProtocol** | **string** | The default server display protocol. Default value is PCOIP. * RDP: Microsoft Remote Desktop Protocol. * PCOIP: PCoIP protocol. * BLAST: BLAST protocol. | 
+**AllowDisplayProtocolOverride** | Pointer to **bool** | Indicates whether the display protocol settings could be overridden.If set to false, then default_display_protocol is used.Default value is true. | [optional] 
+**DefaultDisplayProtocol** | Pointer to **string** | The default server display protocol. Default value is PCOIP. * RDP: Microsoft Remote Desktop Protocol. * PCOIP: PCoIP protocol. * BLAST: BLAST protocol. | [optional] 
 **GridVgpusEnabled** | Pointer to **bool** | If this is true, the host or cluster associated with the farm must support NVIDIA GRID andvGPU types required by the RDSH desktop virtualMachines, VmTemplate, or BaseImageSnapshot.If this is false, RDSH instant clone farm must not support NVIDIA GRID vGPUs.Default value is false. | [optional] 
-**HtmlAccessEnabled** | **bool** | This property is no longer in use for Horizon Components. It is always set to true. HTML Access, enabled by VMware Blast technology, allows users to connect to Horizon machines from Web browsers. Horizon Client software does not have to be installed on the client devices. To enable HTML Access, you must install the HTML Machine Access feature pack. | 
-**SessionCollaborationEnabled** | **bool** | Enable session collaboration feature. Session collaborationallows a user to share their remote session with other users.BLAST must be configured as a supported protocol in supported_display_protocols.Default value is false. | 
+**HtmlAccessEnabled** | Pointer to **bool** | This property is no longer in use for Horizon Components. It is always set to true. HTML Access, enabled by VMware Blast technology, allows users to connect to Horizon machines from Web browsers. Horizon Client software does not have to be installed on the client devices. To enable HTML Access, you must install the HTML Machine Access feature pack. | [optional] 
+**SessionCollaborationEnabled** | Pointer to **bool** | Enable session collaboration feature. Session collaborationallows a user to share their remote session with other users.BLAST must be configured as a supported protocol in supported_display_protocols.Default value is false. | [optional] 
 **VgpuGridProfile** | Pointer to **string** | NVIDIA GRID vGPUs might have multiple profiles and any one of the available profiles can beapplied to newly created instant clone RDSH server. The profile specified in this field will beused in the newly created instant clone RDSH server. Will be set if enable_grid_vgpus set to true. | [optional] 
 
 ## Methods
 
 ### NewFarmDisplayProtocolSettings
 
-`func NewFarmDisplayProtocolSettings(allowDisplayProtocolOverride bool, defaultDisplayProtocol string, htmlAccessEnabled bool, sessionCollaborationEnabled bool, ) *FarmDisplayProtocolSettings`
+`func NewFarmDisplayProtocolSettings() *FarmDisplayProtocolSettings`
 
 NewFarmDisplayProtocolSettings instantiates a new FarmDisplayProtocolSettings object
 This constructor will assign default values to properties that have it defined,
@@ -49,6 +49,11 @@ and a boolean to check if the value has been set.
 
 SetAllowDisplayProtocolOverride sets AllowDisplayProtocolOverride field to given value.
 
+### HasAllowDisplayProtocolOverride
+
+`func (o *FarmDisplayProtocolSettings) HasAllowDisplayProtocolOverride() bool`
+
+HasAllowDisplayProtocolOverride returns a boolean if a field has been set.
 
 ### GetDefaultDisplayProtocol
 
@@ -69,6 +74,11 @@ and a boolean to check if the value has been set.
 
 SetDefaultDisplayProtocol sets DefaultDisplayProtocol field to given value.
 
+### HasDefaultDisplayProtocol
+
+`func (o *FarmDisplayProtocolSettings) HasDefaultDisplayProtocol() bool`
+
+HasDefaultDisplayProtocol returns a boolean if a field has been set.
 
 ### GetGridVgpusEnabled
 
@@ -114,6 +124,11 @@ and a boolean to check if the value has been set.
 
 SetHtmlAccessEnabled sets HtmlAccessEnabled field to given value.
 
+### HasHtmlAccessEnabled
+
+`func (o *FarmDisplayProtocolSettings) HasHtmlAccessEnabled() bool`
+
+HasHtmlAccessEnabled returns a boolean if a field has been set.
 
 ### GetSessionCollaborationEnabled
 
@@ -134,6 +149,11 @@ and a boolean to check if the value has been set.
 
 SetSessionCollaborationEnabled sets SessionCollaborationEnabled field to given value.
 
+### HasSessionCollaborationEnabled
+
+`func (o *FarmDisplayProtocolSettings) HasSessionCollaborationEnabled() bool`
+
+HasSessionCollaborationEnabled returns a boolean if a field has been set.
 
 ### GetVgpuGridProfile
 

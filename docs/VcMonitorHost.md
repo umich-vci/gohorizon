@@ -6,15 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CpuCoreCount** | Pointer to **int32** | Number of physical CPU cores on the host. | [optional] 
 **CpuMhz** | Pointer to **int32** | CPU speed per core in Mhz. This might be an averaged value if the speed is not uniform across all cores. | [optional] 
-**Details** | [**VCMonitorHostDetails**](VCMonitorHostDetails.md) |  | 
+**Details** | Pointer to [**VCMonitorHostDetails**](VCMonitorHostDetails.md) |  | [optional] 
 **MemorySizeMb** | Pointer to **int32** | The physical memory size in mega bytes. | [optional] 
-**Status** | **string** | Status of the host connection. * CONNECTED: The host is successfully connected to Virtual Center server. * DISCONNECTED: The host is disconnected from Virtual Center server. * NOT_RESPONDING: The host is not responding. | 
+**Status** | Pointer to **string** | Status of the host connection. * CONNECTED: The host is successfully connected to Virtual Center server. * DISCONNECTED: The host is disconnected from Virtual Center server. * NOT_RESPONDING: The host is not responding. | [optional] 
 
 ## Methods
 
 ### NewVCMonitorHost
 
-`func NewVCMonitorHost(details VCMonitorHostDetails, status string, ) *VCMonitorHost`
+`func NewVCMonitorHost() *VCMonitorHost`
 
 NewVCMonitorHost instantiates a new VCMonitorHost object
 This constructor will assign default values to properties that have it defined,
@@ -98,6 +98,11 @@ and a boolean to check if the value has been set.
 
 SetDetails sets Details field to given value.
 
+### HasDetails
+
+`func (o *VCMonitorHost) HasDetails() bool`
+
+HasDetails returns a boolean if a field has been set.
 
 ### GetMemorySizeMb
 
@@ -143,6 +148,11 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
+### HasStatus
+
+`func (o *VCMonitorHost) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

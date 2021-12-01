@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ConnectionServers** | [**[]VCMonitorConnectionServerV2**](VCMonitorConnectionServerV2.md) | Information about the Virtual Center connections from each of the connection servers. | 
-**Datastores** | [**[]VCMonitorDatastore**](VCMonitorDatastore.md) | Information about the datastores of the Virtual Center. | 
-**DesktopPoolsAndFarmsCount** | **int32** | Number of Desktop Pools And Farms managed by the virtual center | 
-**Details** | [**VCMonitorDetails**](VCMonitorDetails.md) |  | 
-**Hosts** | [**[]VCMonitorHost**](VCMonitorHost.md) | Information about the ESX hosts added in the Virtual Center. | 
-**Id** | **string** | Unique ID of the Virtual Center. | 
-**Name** | **string** | Virtual Center server name or IP address. | 
+**ConnectionServers** | Pointer to [**[]VCMonitorConnectionServerV2**](VCMonitorConnectionServerV2.md) | Information about the Virtual Center connections from each of the connection servers. | [optional] 
+**Datastores** | Pointer to [**[]VCMonitorDatastore**](VCMonitorDatastore.md) | Information about the datastores of the Virtual Center. | [optional] 
+**DesktopPoolsAndFarmsCount** | Pointer to **int32** | Number of Desktop Pools And Farms managed by the virtual center | [optional] 
+**Details** | Pointer to [**VCMonitorDetails**](VCMonitorDetails.md) |  | [optional] 
+**Hosts** | Pointer to [**[]VCMonitorHost**](VCMonitorHost.md) | Information about the ESX hosts added in the Virtual Center. | [optional] 
+**Id** | Pointer to **string** | Unique ID of the Virtual Center. | [optional] 
+**Name** | Pointer to **string** | Virtual Center server name or IP address. | [optional] 
 
 ## Methods
 
 ### NewVirtualCenterMonitorInfoV2
 
-`func NewVirtualCenterMonitorInfoV2(connectionServers []VCMonitorConnectionServerV2, datastores []VCMonitorDatastore, desktopPoolsAndFarmsCount int32, details VCMonitorDetails, hosts []VCMonitorHost, id string, name string, ) *VirtualCenterMonitorInfoV2`
+`func NewVirtualCenterMonitorInfoV2() *VirtualCenterMonitorInfoV2`
 
 NewVirtualCenterMonitorInfoV2 instantiates a new VirtualCenterMonitorInfoV2 object
 This constructor will assign default values to properties that have it defined,
@@ -50,6 +50,11 @@ and a boolean to check if the value has been set.
 
 SetConnectionServers sets ConnectionServers field to given value.
 
+### HasConnectionServers
+
+`func (o *VirtualCenterMonitorInfoV2) HasConnectionServers() bool`
+
+HasConnectionServers returns a boolean if a field has been set.
 
 ### GetDatastores
 
@@ -70,6 +75,11 @@ and a boolean to check if the value has been set.
 
 SetDatastores sets Datastores field to given value.
 
+### HasDatastores
+
+`func (o *VirtualCenterMonitorInfoV2) HasDatastores() bool`
+
+HasDatastores returns a boolean if a field has been set.
 
 ### GetDesktopPoolsAndFarmsCount
 
@@ -90,6 +100,11 @@ and a boolean to check if the value has been set.
 
 SetDesktopPoolsAndFarmsCount sets DesktopPoolsAndFarmsCount field to given value.
 
+### HasDesktopPoolsAndFarmsCount
+
+`func (o *VirtualCenterMonitorInfoV2) HasDesktopPoolsAndFarmsCount() bool`
+
+HasDesktopPoolsAndFarmsCount returns a boolean if a field has been set.
 
 ### GetDetails
 
@@ -110,6 +125,11 @@ and a boolean to check if the value has been set.
 
 SetDetails sets Details field to given value.
 
+### HasDetails
+
+`func (o *VirtualCenterMonitorInfoV2) HasDetails() bool`
+
+HasDetails returns a boolean if a field has been set.
 
 ### GetHosts
 
@@ -130,6 +150,11 @@ and a boolean to check if the value has been set.
 
 SetHosts sets Hosts field to given value.
 
+### HasHosts
+
+`func (o *VirtualCenterMonitorInfoV2) HasHosts() bool`
+
+HasHosts returns a boolean if a field has been set.
 
 ### GetId
 
@@ -150,6 +175,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *VirtualCenterMonitorInfoV2) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -170,6 +200,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *VirtualCenterMonitorInfoV2) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DnsName** | **string** | Enrollment server dns name. | 
-**Id** | **string** | Unique ID of the Enrollment Server. | 
-**Status** | **string** | Enrollment server status. * OK: The state of enrollment server is OK. * ERROR: The enrollment server has an error. | 
+**DnsName** | Pointer to **string** | Enrollment server dns name. | [optional] 
+**Id** | Pointer to **string** | Unique ID of the Enrollment Server. | [optional] 
+**Status** | Pointer to **string** | Enrollment server status. * OK: The state of enrollment server is OK. * ERROR: The enrollment server has an error. | [optional] 
 
 ## Methods
 
 ### NewEnrollmentServerDetails
 
-`func NewEnrollmentServerDetails(dnsName string, id string, status string, ) *EnrollmentServerDetails`
+`func NewEnrollmentServerDetails() *EnrollmentServerDetails`
 
 NewEnrollmentServerDetails instantiates a new EnrollmentServerDetails object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +46,11 @@ and a boolean to check if the value has been set.
 
 SetDnsName sets DnsName field to given value.
 
+### HasDnsName
+
+`func (o *EnrollmentServerDetails) HasDnsName() bool`
+
+HasDnsName returns a boolean if a field has been set.
 
 ### GetId
 
@@ -66,6 +71,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *EnrollmentServerDetails) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetStatus
 
@@ -86,6 +96,11 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
+### HasStatus
+
+`func (o *EnrollmentServerDetails) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

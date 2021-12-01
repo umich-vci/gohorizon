@@ -4,21 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Details** | [**RDSServerMonitorDetails**](RDSServerMonitorDetails.md) |  | 
-**Enabled** | **bool** | Indicates if RDS server is enabled. | 
-**FarmId** | **string** | Indicates the Farm ID to which the RDS Server belongs to. | 
-**Id** | **string** | Unique ID of the RDS server. | 
+**Details** | Pointer to [**RDSServerMonitorDetails**](RDSServerMonitorDetails.md) |  | [optional] 
+**Enabled** | Pointer to **bool** | Indicates if RDS server is enabled. | [optional] 
+**FarmId** | Pointer to **string** | Indicates the Farm ID to which the RDS Server belongs to. | [optional] 
+**Id** | Pointer to **string** | Unique ID of the RDS server. | [optional] 
 **LoadIndex** | Pointer to **int32** | This value is similar to load_preference and represents the load on RDS Server in the range of 0 to 100. | [optional] 
 **LoadPreference** | Pointer to **string** | Based on the current load of this RDS Server, gives a measure of how preferential this server is to be chosen for new application sessions. * BLOCK: RDS Server is blocked and new sessions will not be accepted. * HEAVY: RDS Server is experiencing heavy load and should likely not be chosen for new sessions. * NORMAL: RDS Server is experiencing normal load and is okay to be chosen for new sessions. * LIGHT: RDS Server is experiencing light load and is okay to be chosen for new sessions. * UNKNOWN: RDS Server did not report a load preference. This is potentially a configuration issue if other RDS Servers in the same Farm do report load preferences. | [optional] 
-**Name** | **string** | RDS Server name. | 
+**Name** | Pointer to **string** | RDS Server name. | [optional] 
 **SessionCount** | Pointer to **int32** | RDS server session count. | [optional] 
-**Status** | **string** | RDS server status. * OK: RDS Server is reachable. All applications (defined on its farm) are verified installed on the RDS Server. * WARNING: RDS Server is reachable. Some applications are detected as not installed on the RDS Server. * ERROR: RDS Server is unreachable, or, none of the applications are installed. * DISABLED: RDS Server is disabled. | 
+**Status** | Pointer to **string** | RDS server status. * OK: RDS Server is reachable. All applications (defined on its farm) are verified installed on the RDS Server. * WARNING: RDS Server is reachable. Some applications are detected as not installed on the RDS Server. * ERROR: RDS Server is unreachable, or, none of the applications are installed. * DISABLED: RDS Server is disabled. | [optional] 
 
 ## Methods
 
 ### NewRDSServerMonitorInfo
 
-`func NewRDSServerMonitorInfo(details RDSServerMonitorDetails, enabled bool, farmId string, id string, name string, status string, ) *RDSServerMonitorInfo`
+`func NewRDSServerMonitorInfo() *RDSServerMonitorInfo`
 
 NewRDSServerMonitorInfo instantiates a new RDSServerMonitorInfo object
 This constructor will assign default values to properties that have it defined,
@@ -52,6 +52,11 @@ and a boolean to check if the value has been set.
 
 SetDetails sets Details field to given value.
 
+### HasDetails
+
+`func (o *RDSServerMonitorInfo) HasDetails() bool`
+
+HasDetails returns a boolean if a field has been set.
 
 ### GetEnabled
 
@@ -72,6 +77,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *RDSServerMonitorInfo) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetFarmId
 
@@ -92,6 +102,11 @@ and a boolean to check if the value has been set.
 
 SetFarmId sets FarmId field to given value.
 
+### HasFarmId
+
+`func (o *RDSServerMonitorInfo) HasFarmId() bool`
+
+HasFarmId returns a boolean if a field has been set.
 
 ### GetId
 
@@ -112,6 +127,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *RDSServerMonitorInfo) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetLoadIndex
 
@@ -182,6 +202,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *RDSServerMonitorInfo) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetSessionCount
 
@@ -227,6 +252,11 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
+### HasStatus
+
+`func (o *RDSServerMonitorInfo) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

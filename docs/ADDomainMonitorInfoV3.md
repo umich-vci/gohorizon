@@ -5,17 +5,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ConnectionServers** | Pointer to [**[]ADDomainMonitorConnectionServerV2**](ADDomainMonitorConnectionServerV2.md) | Information about the AD Domain connections from each of the connection servers. | [optional] 
-**DnsName** | **string** | The DNS name for the domain. | 
+**DnsName** | Pointer to **string** | The DNS name for the domain. | [optional] 
 **DomainType** | Pointer to **string** | AD Domain Type. * CONNECTION_SERVER_DOMAIN: The domain having trust with connection server domain. * NO_TRUST_DOMAIN: The domain not having any trust with connection server domain. | [optional] 
-**NetbiosName** | **string** | The NetBIOS name for the domain. | 
-**Nt4Domain** | **bool** | If this is an NT4 domain or not. | 
+**NetbiosName** | Pointer to **string** | The NetBIOS name for the domain. | [optional] 
+**Nt4Domain** | Pointer to **bool** | If this is an NT4 domain or not. | [optional] 
 **ServiceAccounts** | Pointer to [**[]ServiceAccount**](ServiceAccount.md) | Service accounts for the domain. | [optional] 
 
 ## Methods
 
 ### NewADDomainMonitorInfoV3
 
-`func NewADDomainMonitorInfoV3(dnsName string, netbiosName string, nt4Domain bool, ) *ADDomainMonitorInfoV3`
+`func NewADDomainMonitorInfoV3() *ADDomainMonitorInfoV3`
 
 NewADDomainMonitorInfoV3 instantiates a new ADDomainMonitorInfoV3 object
 This constructor will assign default values to properties that have it defined,
@@ -74,6 +74,11 @@ and a boolean to check if the value has been set.
 
 SetDnsName sets DnsName field to given value.
 
+### HasDnsName
+
+`func (o *ADDomainMonitorInfoV3) HasDnsName() bool`
+
+HasDnsName returns a boolean if a field has been set.
 
 ### GetDomainType
 
@@ -119,6 +124,11 @@ and a boolean to check if the value has been set.
 
 SetNetbiosName sets NetbiosName field to given value.
 
+### HasNetbiosName
+
+`func (o *ADDomainMonitorInfoV3) HasNetbiosName() bool`
+
+HasNetbiosName returns a boolean if a field has been set.
 
 ### GetNt4Domain
 
@@ -139,6 +149,11 @@ and a boolean to check if the value has been set.
 
 SetNt4Domain sets Nt4Domain field to given value.
 
+### HasNt4Domain
+
+`func (o *ADDomainMonitorInfoV3) HasNt4Domain() bool`
+
+HasNt4Domain returns a boolean if a field has been set.
 
 ### GetServiceAccounts
 

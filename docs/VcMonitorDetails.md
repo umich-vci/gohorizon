@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApiVersion** | **string** | API Version of the Virtual Center. | 
-**Build** | **string** | Build number of the Virtual Center. | 
-**Version** | **string** | Version of the Virtual Center. | 
+**ApiVersion** | Pointer to **string** | API Version of the Virtual Center. | [optional] 
+**Build** | Pointer to **string** | Build number of the Virtual Center. | [optional] 
+**Version** | Pointer to **string** | Version of the Virtual Center. | [optional] 
 
 ## Methods
 
 ### NewVCMonitorDetails
 
-`func NewVCMonitorDetails(apiVersion string, build string, version string, ) *VCMonitorDetails`
+`func NewVCMonitorDetails() *VCMonitorDetails`
 
 NewVCMonitorDetails instantiates a new VCMonitorDetails object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +46,11 @@ and a boolean to check if the value has been set.
 
 SetApiVersion sets ApiVersion field to given value.
 
+### HasApiVersion
+
+`func (o *VCMonitorDetails) HasApiVersion() bool`
+
+HasApiVersion returns a boolean if a field has been set.
 
 ### GetBuild
 
@@ -66,6 +71,11 @@ and a boolean to check if the value has been set.
 
 SetBuild sets Build field to given value.
 
+### HasBuild
+
+`func (o *VCMonitorDetails) HasBuild() bool`
+
+HasBuild returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -86,6 +96,11 @@ and a boolean to check if the value has been set.
 
 SetVersion sets Version field to given value.
 
+### HasVersion
+
+`func (o *VCMonitorDetails) HasVersion() bool`
+
+HasVersion returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

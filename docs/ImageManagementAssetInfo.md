@@ -5,23 +5,23 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdditionalDetails** | Pointer to **map[string]string** | Additional details about image management asset. | [optional] 
-**BaseSnapshotId** | **string** | Virtual machine snapshot. Must be set if vm_template_id is unset. | 
-**BaseVmId** | **string** | Virtual machine ID. Must be set if vm_template_id is unset. | 
-**CloneType** | **string** | Image management asset clone type. * FULL_CLONE: Image management asset to be used in full clone automated desktop pool. * INSTANT_CLONE: Image management asset to be used in instant clone desktop pool/farm. | 
-**DatacenterId** | **string** | Datacenter where this asset is created. | 
-**Id** | **string** | Unique ID representing image management asset. | 
-**ImStreamId** | **string** | Image management stream to which this asset belongs to. | 
-**ImVersionId** | **string** | Image management version to which this asset belongs to. | 
-**ImageType** | **string** | Image management asset image type. * RDSH_APPS: Image management asset to be used for farm creation which is be used in application. * RDSH_DESKTOP: Image management asset is for farm creation to be created. * VDI_DESKTOP: Image management asset is available for desktops/farms to be created. | 
-**Status** | **string** | Image management asset status. * AVAILABLE: Image management asset is available for desktop pools/farms to be created. * DEPLOYING_VM: Image management asset is deploying VM on the virtual center. * DEPLOYMENT_DONE: Image management asset VM deployed on the virtual center. * DELETED: Image management asset has been deleted. * DISABLED: Image management asset has been disabled and no further pool/farm operation can be done using the same. * FAILED: Image management asset creation has failed. * REPLICATING: Copying the specialized images across all virtual centers. * RETRY_PENDING: When image management asset creation has failed, retry action is pending for asset to be created. * SPECIALIZING_VM: Image management asset is being published and specialized internally like installing agents etc. | 
-**VcenterId** | **string** | Virtual Center where this asset is created. | 
-**VmTemplateId** | **string** | Virtual machine template ID. | 
+**BaseSnapshotId** | Pointer to **string** | Virtual machine snapshot. Must be set if vm_template_id is unset. | [optional] 
+**BaseVmId** | Pointer to **string** | Virtual machine ID. Must be set if vm_template_id is unset. | [optional] 
+**CloneType** | Pointer to **string** | Image management asset clone type. * FULL_CLONE: Image management asset to be used in full clone automated desktop pool. * INSTANT_CLONE: Image management asset to be used in instant clone desktop pool/farm. | [optional] 
+**DatacenterId** | Pointer to **string** | Datacenter where this asset is created. | [optional] 
+**Id** | Pointer to **string** | Unique ID representing image management asset. | [optional] 
+**ImStreamId** | Pointer to **string** | Image management stream to which this asset belongs to. | [optional] 
+**ImVersionId** | Pointer to **string** | Image management version to which this asset belongs to. | [optional] 
+**ImageType** | Pointer to **string** | Image management asset image type. * RDSH_APPS: Image management asset to be used for farm creation which is be used in application. * RDSH_DESKTOP: Image management asset is for farm creation to be created. * VDI_DESKTOP: Image management asset is available for desktops/farms to be created. | [optional] 
+**Status** | Pointer to **string** | Image management asset status. * AVAILABLE: Image management asset is available for desktop pools/farms to be created. * DEPLOYING_VM: Image management asset is deploying VM on the virtual center. * DEPLOYMENT_DONE: Image management asset VM deployed on the virtual center. * DELETED: Image management asset has been deleted. * DISABLED: Image management asset has been disabled and no further pool/farm operation can be done using the same. * FAILED: Image management asset creation has failed. * REPLICATING: Copying the specialized images across all virtual centers. * RETRY_PENDING: When image management asset creation has failed, retry action is pending for asset to be created. * SPECIALIZING_VM: Image management asset is being published and specialized internally like installing agents etc. | [optional] 
+**VcenterId** | Pointer to **string** | Virtual Center where this asset is created. | [optional] 
+**VmTemplateId** | Pointer to **string** | Virtual machine template ID. | [optional] 
 
 ## Methods
 
 ### NewImageManagementAssetInfo
 
-`func NewImageManagementAssetInfo(baseSnapshotId string, baseVmId string, cloneType string, datacenterId string, id string, imStreamId string, imVersionId string, imageType string, status string, vcenterId string, vmTemplateId string, ) *ImageManagementAssetInfo`
+`func NewImageManagementAssetInfo() *ImageManagementAssetInfo`
 
 NewImageManagementAssetInfo instantiates a new ImageManagementAssetInfo object
 This constructor will assign default values to properties that have it defined,
@@ -80,6 +80,11 @@ and a boolean to check if the value has been set.
 
 SetBaseSnapshotId sets BaseSnapshotId field to given value.
 
+### HasBaseSnapshotId
+
+`func (o *ImageManagementAssetInfo) HasBaseSnapshotId() bool`
+
+HasBaseSnapshotId returns a boolean if a field has been set.
 
 ### GetBaseVmId
 
@@ -100,6 +105,11 @@ and a boolean to check if the value has been set.
 
 SetBaseVmId sets BaseVmId field to given value.
 
+### HasBaseVmId
+
+`func (o *ImageManagementAssetInfo) HasBaseVmId() bool`
+
+HasBaseVmId returns a boolean if a field has been set.
 
 ### GetCloneType
 
@@ -120,6 +130,11 @@ and a boolean to check if the value has been set.
 
 SetCloneType sets CloneType field to given value.
 
+### HasCloneType
+
+`func (o *ImageManagementAssetInfo) HasCloneType() bool`
+
+HasCloneType returns a boolean if a field has been set.
 
 ### GetDatacenterId
 
@@ -140,6 +155,11 @@ and a boolean to check if the value has been set.
 
 SetDatacenterId sets DatacenterId field to given value.
 
+### HasDatacenterId
+
+`func (o *ImageManagementAssetInfo) HasDatacenterId() bool`
+
+HasDatacenterId returns a boolean if a field has been set.
 
 ### GetId
 
@@ -160,6 +180,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *ImageManagementAssetInfo) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetImStreamId
 
@@ -180,6 +205,11 @@ and a boolean to check if the value has been set.
 
 SetImStreamId sets ImStreamId field to given value.
 
+### HasImStreamId
+
+`func (o *ImageManagementAssetInfo) HasImStreamId() bool`
+
+HasImStreamId returns a boolean if a field has been set.
 
 ### GetImVersionId
 
@@ -200,6 +230,11 @@ and a boolean to check if the value has been set.
 
 SetImVersionId sets ImVersionId field to given value.
 
+### HasImVersionId
+
+`func (o *ImageManagementAssetInfo) HasImVersionId() bool`
+
+HasImVersionId returns a boolean if a field has been set.
 
 ### GetImageType
 
@@ -220,6 +255,11 @@ and a boolean to check if the value has been set.
 
 SetImageType sets ImageType field to given value.
 
+### HasImageType
+
+`func (o *ImageManagementAssetInfo) HasImageType() bool`
+
+HasImageType returns a boolean if a field has been set.
 
 ### GetStatus
 
@@ -240,6 +280,11 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
+### HasStatus
+
+`func (o *ImageManagementAssetInfo) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 ### GetVcenterId
 
@@ -260,6 +305,11 @@ and a boolean to check if the value has been set.
 
 SetVcenterId sets VcenterId field to given value.
 
+### HasVcenterId
+
+`func (o *ImageManagementAssetInfo) HasVcenterId() bool`
+
+HasVcenterId returns a boolean if a field has been set.
 
 ### GetVmTemplateId
 
@@ -280,6 +330,11 @@ and a boolean to check if the value has been set.
 
 SetVmTemplateId sets VmTemplateId field to given value.
 
+### HasVmTemplateId
+
+`func (o *ImageManagementAssetInfo) HasVmTemplateId() bool`
+
+HasVmTemplateId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

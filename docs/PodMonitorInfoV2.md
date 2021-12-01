@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Endpoints** | Pointer to [**[]PodEndPointDataV2**](PodEndPointDataV2.md) | The list of pod endpoints within this pod. An endpoint is basically a connection server in that pod. | [optional] 
-**Id** | **string** | Unique ID of the pod. | 
-**Name** | **string** | Display name for the pod. | 
-**SiteId** | **string** | The Id of the site this pod belongs to. | 
+**Id** | Pointer to **string** | Unique ID of the pod. | [optional] 
+**Name** | Pointer to **string** | Display name for the pod. | [optional] 
+**SiteId** | Pointer to **string** | The Id of the site this pod belongs to. | [optional] 
 
 ## Methods
 
 ### NewPodMonitorInfoV2
 
-`func NewPodMonitorInfoV2(id string, name string, siteId string, ) *PodMonitorInfoV2`
+`func NewPodMonitorInfoV2() *PodMonitorInfoV2`
 
 NewPodMonitorInfoV2 instantiates a new PodMonitorInfoV2 object
 This constructor will assign default values to properties that have it defined,
@@ -72,6 +72,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *PodMonitorInfoV2) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -92,6 +97,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *PodMonitorInfoV2) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetSiteId
 
@@ -112,6 +122,11 @@ and a boolean to check if the value has been set.
 
 SetSiteId sets SiteId field to given value.
 
+### HasSiteId
+
+`func (o *PodMonitorInfoV2) HasSiteId() bool`
+
+HasSiteId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

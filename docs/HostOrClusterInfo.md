@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Container** | Pointer to [**HostOrClusterContainer**](HostOrClusterContainer.md) |  | [optional] 
 **Details** | Pointer to [**HostOrClusterDetails**](HostOrClusterDetails.md) |  | [optional] 
-**Id** | **string** | Unique ID representing a host or cluster. | 
+**Id** | Pointer to **string** | Unique ID representing a host or cluster. | [optional] 
 
 ## Methods
 
 ### NewHostOrClusterInfo
 
-`func NewHostOrClusterInfo(id string, ) *HostOrClusterInfo`
+`func NewHostOrClusterInfo() *HostOrClusterInfo`
 
 NewHostOrClusterInfo instantiates a new HostOrClusterInfo object
 This constructor will assign default values to properties that have it defined,
@@ -96,6 +96,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *HostOrClusterInfo) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

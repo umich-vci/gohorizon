@@ -4,24 +4,24 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AdDomainDnsName** | **string** | The DNS name of the domain. | 
-**AdDomainId** | **string** | Unique SID of the AD Domain. | 
-**AdDomainStatus** | **string** | The state of the domain health, taken as the most severe reported by one of the enrollment servers. * OK: The state of the domain is OK as reported by the enrollment servers. * WARN: At least one of the enrollment servers has a warning. * ERROR: At least one of the enrollment servers is in an error state. | 
-**CertificateServerDetails** | [**[]CertificateServerDetails**](CertificateServerDetails.md) | Details of each certificate server. | 
-**Enabled** | **bool** | Indicates if the True SSO connector is enabled. | 
-**Id** | **string** | Unique ID of the True SSO Connector. | 
-**Name** | **string** | True SSO connector name. | 
-**PrimaryEnrollmentServer** | [**EnrollmentServerDetails**](EnrollmentServerDetails.md) |  | 
+**AdDomainDnsName** | Pointer to **string** | The DNS name of the domain. | [optional] 
+**AdDomainId** | Pointer to **string** | Unique SID of the AD Domain. | [optional] 
+**AdDomainStatus** | Pointer to **string** | The state of the domain health, taken as the most severe reported by one of the enrollment servers. * OK: The state of the domain is OK as reported by the enrollment servers. * WARN: At least one of the enrollment servers has a warning. * ERROR: At least one of the enrollment servers is in an error state. | [optional] 
+**CertificateServerDetails** | Pointer to [**[]CertificateServerDetails**](CertificateServerDetails.md) | Details of each certificate server. | [optional] 
+**Enabled** | Pointer to **bool** | Indicates if the True SSO connector is enabled. | [optional] 
+**Id** | Pointer to **string** | Unique ID of the True SSO Connector. | [optional] 
+**Name** | Pointer to **string** | True SSO connector name. | [optional] 
+**PrimaryEnrollmentServer** | Pointer to [**EnrollmentServerDetails**](EnrollmentServerDetails.md) |  | [optional] 
 **SecondaryEnrollmentServer** | Pointer to [**EnrollmentServerDetails**](EnrollmentServerDetails.md) |  | [optional] 
-**Status** | **string** | Overall status of the True SSO connector. * OK: All the components of the True SSO connector are fine. * WARN: At least one component of the True SSO connector has a warning. * ERROR: At least one component of the True SSO connector has an error. | 
-**TemplateName** | **string** | Unique name for the True SSO template. | 
-**TemplateStatus** | **string** | The state of the template health, taken as the most severe reported by one of the enrollment servers. * OK: The state of the template is OK as reported by the enrollment servers. * WARN: At least one enrollment server reports a warning on this template. * ERROR: At least one enrollment server reports an error on this template. | 
+**Status** | Pointer to **string** | Overall status of the True SSO connector. * OK: All the components of the True SSO connector are fine. * WARN: At least one component of the True SSO connector has a warning. * ERROR: At least one component of the True SSO connector has an error. | [optional] 
+**TemplateName** | Pointer to **string** | Unique name for the True SSO template. | [optional] 
+**TemplateStatus** | Pointer to **string** | The state of the template health, taken as the most severe reported by one of the enrollment servers. * OK: The state of the template is OK as reported by the enrollment servers. * WARN: At least one enrollment server reports a warning on this template. * ERROR: At least one enrollment server reports an error on this template. | [optional] 
 
 ## Methods
 
 ### NewTrueSSOMonitorInfo
 
-`func NewTrueSSOMonitorInfo(adDomainDnsName string, adDomainId string, adDomainStatus string, certificateServerDetails []CertificateServerDetails, enabled bool, id string, name string, primaryEnrollmentServer EnrollmentServerDetails, status string, templateName string, templateStatus string, ) *TrueSSOMonitorInfo`
+`func NewTrueSSOMonitorInfo() *TrueSSOMonitorInfo`
 
 NewTrueSSOMonitorInfo instantiates a new TrueSSOMonitorInfo object
 This constructor will assign default values to properties that have it defined,
@@ -55,6 +55,11 @@ and a boolean to check if the value has been set.
 
 SetAdDomainDnsName sets AdDomainDnsName field to given value.
 
+### HasAdDomainDnsName
+
+`func (o *TrueSSOMonitorInfo) HasAdDomainDnsName() bool`
+
+HasAdDomainDnsName returns a boolean if a field has been set.
 
 ### GetAdDomainId
 
@@ -75,6 +80,11 @@ and a boolean to check if the value has been set.
 
 SetAdDomainId sets AdDomainId field to given value.
 
+### HasAdDomainId
+
+`func (o *TrueSSOMonitorInfo) HasAdDomainId() bool`
+
+HasAdDomainId returns a boolean if a field has been set.
 
 ### GetAdDomainStatus
 
@@ -95,6 +105,11 @@ and a boolean to check if the value has been set.
 
 SetAdDomainStatus sets AdDomainStatus field to given value.
 
+### HasAdDomainStatus
+
+`func (o *TrueSSOMonitorInfo) HasAdDomainStatus() bool`
+
+HasAdDomainStatus returns a boolean if a field has been set.
 
 ### GetCertificateServerDetails
 
@@ -115,6 +130,11 @@ and a boolean to check if the value has been set.
 
 SetCertificateServerDetails sets CertificateServerDetails field to given value.
 
+### HasCertificateServerDetails
+
+`func (o *TrueSSOMonitorInfo) HasCertificateServerDetails() bool`
+
+HasCertificateServerDetails returns a boolean if a field has been set.
 
 ### GetEnabled
 
@@ -135,6 +155,11 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+### HasEnabled
+
+`func (o *TrueSSOMonitorInfo) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetId
 
@@ -155,6 +180,11 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
+### HasId
+
+`func (o *TrueSSOMonitorInfo) HasId() bool`
+
+HasId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -175,6 +205,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *TrueSSOMonitorInfo) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetPrimaryEnrollmentServer
 
@@ -195,6 +230,11 @@ and a boolean to check if the value has been set.
 
 SetPrimaryEnrollmentServer sets PrimaryEnrollmentServer field to given value.
 
+### HasPrimaryEnrollmentServer
+
+`func (o *TrueSSOMonitorInfo) HasPrimaryEnrollmentServer() bool`
+
+HasPrimaryEnrollmentServer returns a boolean if a field has been set.
 
 ### GetSecondaryEnrollmentServer
 
@@ -240,6 +280,11 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
+### HasStatus
+
+`func (o *TrueSSOMonitorInfo) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 ### GetTemplateName
 
@@ -260,6 +305,11 @@ and a boolean to check if the value has been set.
 
 SetTemplateName sets TemplateName field to given value.
 
+### HasTemplateName
+
+`func (o *TrueSSOMonitorInfo) HasTemplateName() bool`
+
+HasTemplateName returns a boolean if a field has been set.
 
 ### GetTemplateStatus
 
@@ -280,6 +330,11 @@ and a boolean to check if the value has been set.
 
 SetTemplateStatus sets TemplateStatus field to given value.
 
+### HasTemplateStatus
+
+`func (o *TrueSSOMonitorInfo) HasTemplateStatus() bool`
+
+HasTemplateStatus returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

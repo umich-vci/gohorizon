@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Children** | Pointer to [**[]HostOrClusterInfo**](HostOrClusterInfo.md) | Contents of the container. These may be hosts or clusters or further nested containers. | [optional] 
-**Name** | **string** | Host or cluster container node display name. | 
-**Path** | **string** | Host or cluster container node path. | 
-**Type** | **string** | Type of container. * FOLDER: A folder container. * OTHER: Other container type. | 
+**Name** | Pointer to **string** | Host or cluster container node display name. | [optional] 
+**Path** | Pointer to **string** | Host or cluster container node path. | [optional] 
+**Type** | Pointer to **string** | Type of container. * FOLDER: A folder container. * OTHER: Other container type. | [optional] 
 
 ## Methods
 
 ### NewHostOrClusterContainer
 
-`func NewHostOrClusterContainer(name string, path string, type_ string, ) *HostOrClusterContainer`
+`func NewHostOrClusterContainer() *HostOrClusterContainer`
 
 NewHostOrClusterContainer instantiates a new HostOrClusterContainer object
 This constructor will assign default values to properties that have it defined,
@@ -72,6 +72,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *HostOrClusterContainer) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetPath
 
@@ -92,6 +97,11 @@ and a boolean to check if the value has been set.
 
 SetPath sets Path field to given value.
 
+### HasPath
+
+`func (o *HostOrClusterContainer) HasPath() bool`
+
+HasPath returns a boolean if a field has been set.
 
 ### GetType
 
@@ -112,6 +122,11 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
+### HasType
+
+`func (o *HostOrClusterContainer) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

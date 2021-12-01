@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApiVersion** | **string** | API Version of the ESX Host. | 
-**ClusterName** | **string** | Name of the cluster of the ESX Host in the Virtual Center. | 
-**Name** | **string** | ESX Host name or IP address. | 
-**Version** | **string** | ESX Host version. | 
+**ApiVersion** | Pointer to **string** | API Version of the ESX Host. | [optional] 
+**ClusterName** | Pointer to **string** | Name of the cluster of the ESX Host in the Virtual Center. | [optional] 
+**Name** | Pointer to **string** | ESX Host name or IP address. | [optional] 
+**Version** | Pointer to **string** | ESX Host version. | [optional] 
 **VgpuTypes** | Pointer to **[]string** | Types of vGPUs supported by this host. | [optional] 
 
 ## Methods
 
 ### NewVCMonitorHostDetails
 
-`func NewVCMonitorHostDetails(apiVersion string, clusterName string, name string, version string, ) *VCMonitorHostDetails`
+`func NewVCMonitorHostDetails() *VCMonitorHostDetails`
 
 NewVCMonitorHostDetails instantiates a new VCMonitorHostDetails object
 This constructor will assign default values to properties that have it defined,
@@ -48,6 +48,11 @@ and a boolean to check if the value has been set.
 
 SetApiVersion sets ApiVersion field to given value.
 
+### HasApiVersion
+
+`func (o *VCMonitorHostDetails) HasApiVersion() bool`
+
+HasApiVersion returns a boolean if a field has been set.
 
 ### GetClusterName
 
@@ -68,6 +73,11 @@ and a boolean to check if the value has been set.
 
 SetClusterName sets ClusterName field to given value.
 
+### HasClusterName
+
+`func (o *VCMonitorHostDetails) HasClusterName() bool`
+
+HasClusterName returns a boolean if a field has been set.
 
 ### GetName
 
@@ -88,6 +98,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *VCMonitorHostDetails) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -108,6 +123,11 @@ and a boolean to check if the value has been set.
 
 SetVersion sets Version field to given value.
 
+### HasVersion
+
+`func (o *VCMonitorHostDetails) HasVersion() bool`
+
+HasVersion returns a boolean if a field has been set.
 
 ### GetVgpuTypes
 

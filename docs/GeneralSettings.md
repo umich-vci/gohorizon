@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ApplicationSsoTimeoutMinutes** | Pointer to **int32** | The time allowed to elapse after a user has authenticated before the application SSO credentials are locked unless the user&#39;s Horizon client supports idle sessions and the user remains active. | [optional] 
-**ApplicationSsoTimeoutPolicy** | **string** | Specifies the policy for the maximum time after which single sign on will be disabled for application sessions. * DISABLED_AFTER: Single sign on will be disabled after the specified number of minutes has elapsed since the user connected to Horizon Connection Server. * DISABLED: Single sign on is disabled. * ENABLED: Single sign on is enabled. | 
+**ApplicationSsoTimeoutPolicy** | Pointer to **string** | Specifies the policy for the maximum time after which single sign on will be disabled for application sessions. * DISABLED_AFTER: Single sign on will be disabled after the specified number of minutes has elapsed since the user connected to Horizon Connection Server. * DISABLED: Single sign on is disabled. * ENABLED: Single sign on is enabled. | [optional] 
 **BlockRestrictedClients** | Pointer to **bool** | Indicates whether restricted Horizon clients should be blocked by the Connection Server. | [optional] 
 **ClientIdleSessionTimeoutMinutes** | Pointer to **int32** | Determines how long a user can be idle before the Connection Server takes measure to protect the session. | [optional] 
-**ClientIdleSessionTimeoutPolicy** | **string** | Specifies the policy for the maximum time that a that a user can be idle before the Connection Server takes measure to protect the session. * TIMEOUT_AFTER: The timeout is set for a configurable time. * NEVER: The timeout has been disabled. | 
+**ClientIdleSessionTimeoutPolicy** | Pointer to **string** | Specifies the policy for the maximum time that a that a user can be idle before the Connection Server takes measure to protect the session. * TIMEOUT_AFTER: The timeout is set for a configurable time. * NEVER: The timeout has been disabled. | [optional] 
 **ClientMaxSessionTimeoutMinutes** | Pointer to **int32** | Determines how long a user can keep a session open after logging in to the Connection Server. When a session times out, the session is terminated and the Horizon client is disconnected from the resource. This property has a default value of 600 and a minimum value of 5. This property is required if clientMaxSessionTimeoutPolicy is set to TIMEOUT_AFTER. | [optional] 
-**ClientMaxSessionTimeoutPolicy** | **string** | Client max session lifetime policy. This property has a default value of TIMEOUT_AFTER. A value of TIMEOUT_AFTER indicates that the Horizon client session times out after a configurable session length. A value of NEVER indicates that the Horizon client session will not time out and will only end due to inactivity. * TIMEOUT_AFTER: The timeout is set for a configurable time. * NEVER: The timeout has been disabled. | 
-**ClientSessionTimeoutMinutes** | **int32** | Determines the maximum length of time that a session will be kept active if there is no traffic between the Horizon client and the Connection Server. | 
+**ClientMaxSessionTimeoutPolicy** | Pointer to **string** | Client max session lifetime policy. This property has a default value of TIMEOUT_AFTER. A value of TIMEOUT_AFTER indicates that the Horizon client session times out after a configurable session length. A value of NEVER indicates that the Horizon client session will not time out and will only end due to inactivity. * TIMEOUT_AFTER: The timeout is set for a configurable time. * NEVER: The timeout has been disabled. | [optional] 
+**ClientSessionTimeoutMinutes** | Pointer to **int32** | Determines the maximum length of time that a session will be kept active if there is no traffic between the Horizon client and the Connection Server. | [optional] 
 **ConsoleSessionTimeoutMinutes** | Pointer to **int32** | Determines how long an idle admin console session continues before the session times out. | [optional] 
 **DisplayPreLoginMessage** | Pointer to **bool** | Indicates whether to show a disclaimer or other message when the Horizon Client user logs in. This change will take effect on next login for each user. | [optional] 
 **DisplayWarningBeforeForcedLogoff** | Pointer to **bool** | Indicates whether to display a warning message when users are forced to log off because a scheduled or immediate update such as a machine-refresh operation is about to start. | [optional] 
@@ -25,18 +25,18 @@ Name | Type | Description | Notes
 **HideDomainListInClient** | Pointer to **bool** | Whether to hide the list of domains in the Horizon client user interface. If value set to true, the user will need to provide a UPN (e.g. user@domain) or a logon name in the format domain\\\\user when logging in. | [optional] 
 **HideServerInformationInClient** | Pointer to **bool** | Indicates whether to hide the server URL in the Horizon client user interface. | [optional] 
 **MachineSsoTimeoutMinutes** | Pointer to **int32** | Single sign on will be disabled after the specified time has elapsed since the user connected to Connection Server. | [optional] 
-**MachineSsoTimeoutPolicy** | **string** | Specifies the policy for the maximum time after which single sign on will be disabled after a user connects to the Connection Server. * DISABLED_AFTER: Single sign on will be disabled after the specified number of minutes has elapsed since the user connected to Horizon Connection Server. * DISABLED: Single sign on is disabled. * ENABLED: Single sign on is enabled. | 
+**MachineSsoTimeoutPolicy** | Pointer to **string** | Specifies the policy for the maximum time after which single sign on will be disabled after a user connects to the Connection Server. * DISABLED_AFTER: Single sign on will be disabled after the specified number of minutes has elapsed since the user connected to Horizon Connection Server. * DISABLED: Single sign on is disabled. * ENABLED: Single sign on is enabled. | [optional] 
 **PreLoginMessage** | Pointer to **string** | Displays a disclaimer or another message to Horizon Client users when they log in. No message will be displayed if this is not set. | [optional] 
 **RestrictedClientData** | Pointer to [**[]RestrictedClientData**](RestrictedClientData.md) | List of restricted Horizon Clients. | [optional] 
 **RestrictedClientMessage** | Pointer to **string** | The message to be displayed to Horizon clients which are blocked by the Connection Server. | [optional] 
-**StoreCalOnClient** | **bool** | Determines whether or not to store the RDS Per Device Client Access License on Horizon client devices. This value can be true only if Store Client Access License on Connection Server is true. | 
-**StoreCalOnConnectionServer** | **bool** | Determines whether or not to store the RDS Per Device Client Access License on Connection Server. | 
+**StoreCalOnClient** | Pointer to **bool** | Determines whether or not to store the RDS Per Device Client Access License on Horizon client devices. This value can be true only if Store Client Access License on Connection Server is true. | [optional] 
+**StoreCalOnConnectionServer** | Pointer to **bool** | Determines whether or not to store the RDS Per Device Client Access License on Connection Server. | [optional] 
 
 ## Methods
 
 ### NewGeneralSettings
 
-`func NewGeneralSettings(applicationSsoTimeoutPolicy string, clientIdleSessionTimeoutPolicy string, clientMaxSessionTimeoutPolicy string, clientSessionTimeoutMinutes int32, machineSsoTimeoutPolicy string, storeCalOnClient bool, storeCalOnConnectionServer bool, ) *GeneralSettings`
+`func NewGeneralSettings() *GeneralSettings`
 
 NewGeneralSettings instantiates a new GeneralSettings object
 This constructor will assign default values to properties that have it defined,
@@ -95,6 +95,11 @@ and a boolean to check if the value has been set.
 
 SetApplicationSsoTimeoutPolicy sets ApplicationSsoTimeoutPolicy field to given value.
 
+### HasApplicationSsoTimeoutPolicy
+
+`func (o *GeneralSettings) HasApplicationSsoTimeoutPolicy() bool`
+
+HasApplicationSsoTimeoutPolicy returns a boolean if a field has been set.
 
 ### GetBlockRestrictedClients
 
@@ -165,6 +170,11 @@ and a boolean to check if the value has been set.
 
 SetClientIdleSessionTimeoutPolicy sets ClientIdleSessionTimeoutPolicy field to given value.
 
+### HasClientIdleSessionTimeoutPolicy
+
+`func (o *GeneralSettings) HasClientIdleSessionTimeoutPolicy() bool`
+
+HasClientIdleSessionTimeoutPolicy returns a boolean if a field has been set.
 
 ### GetClientMaxSessionTimeoutMinutes
 
@@ -210,6 +220,11 @@ and a boolean to check if the value has been set.
 
 SetClientMaxSessionTimeoutPolicy sets ClientMaxSessionTimeoutPolicy field to given value.
 
+### HasClientMaxSessionTimeoutPolicy
+
+`func (o *GeneralSettings) HasClientMaxSessionTimeoutPolicy() bool`
+
+HasClientMaxSessionTimeoutPolicy returns a boolean if a field has been set.
 
 ### GetClientSessionTimeoutMinutes
 
@@ -230,6 +245,11 @@ and a boolean to check if the value has been set.
 
 SetClientSessionTimeoutMinutes sets ClientSessionTimeoutMinutes field to given value.
 
+### HasClientSessionTimeoutMinutes
+
+`func (o *GeneralSettings) HasClientSessionTimeoutMinutes() bool`
+
+HasClientSessionTimeoutMinutes returns a boolean if a field has been set.
 
 ### GetConsoleSessionTimeoutMinutes
 
@@ -575,6 +595,11 @@ and a boolean to check if the value has been set.
 
 SetMachineSsoTimeoutPolicy sets MachineSsoTimeoutPolicy field to given value.
 
+### HasMachineSsoTimeoutPolicy
+
+`func (o *GeneralSettings) HasMachineSsoTimeoutPolicy() bool`
+
+HasMachineSsoTimeoutPolicy returns a boolean if a field has been set.
 
 ### GetPreLoginMessage
 
@@ -670,6 +695,11 @@ and a boolean to check if the value has been set.
 
 SetStoreCalOnClient sets StoreCalOnClient field to given value.
 
+### HasStoreCalOnClient
+
+`func (o *GeneralSettings) HasStoreCalOnClient() bool`
+
+HasStoreCalOnClient returns a boolean if a field has been set.
 
 ### GetStoreCalOnConnectionServer
 
@@ -690,6 +720,11 @@ and a boolean to check if the value has been set.
 
 SetStoreCalOnConnectionServer sets StoreCalOnConnectionServer field to given value.
 
+### HasStoreCalOnConnectionServer
+
+`func (o *GeneralSettings) HasStoreCalOnConnectionServer() bool`
+
+HasStoreCalOnConnectionServer returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
