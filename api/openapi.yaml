@@ -14083,9 +14083,7 @@ components:
         password:
           description: User password
           example: <password>
-          items:
-            type: string
-          type: array
+          type: string
         username:
           description: User Name
           example: Administrator
